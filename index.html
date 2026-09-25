@@ -3,27 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xochitl | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
-            margin: 0;
-            padding: 40px;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #888;
-            font-size: 1.2rem;
-        }
-    </style>
+    <title>Xochitl | Portfolio & Resume</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Xochitl</h1>
-    <p>Designer & Developer Portfolio</p>
+
+    <!-- Sticky Top Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Xochitl Ortega</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Intro / Hero Section -->
+        <section id="about" class="intro-section">
+            <h1>Hi, I'm Xochitl. 👋</h1>
+            <p class="bio">
+                I am a designer and developer focused on crafting clean, intentional digital experiences.
+                Currently building modern web projects and exploring front-end architecture.
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Virtual Resume Section -->
+        <section id="resume" class="resume-section">
+            <h2>Virtual Resume</h2>
+
+            <!-- Experience Block -->
+            <div class="resume-block">
+                <h3>Experience</h3>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <span class="role">Role / Position Title</span>
+                        <span class="date">2024 – Present</span>
+                    </div>
+                    <p class="company">Company or Organization Name</p>
+                    <ul>
+                        <li>Key responsibility or accomplishment goes here.</li>
+                        <li>Designed and developed responsive web interfaces.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <span class="role">Previous Role Title</span>
+                        <span class="date">2022 – 2024</span>
+                    </div>
+                    <p class="company">Previous Company</p>
+                    <ul>
+                        <li>Managed project workflows and collaborated with cross-functional teams.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education Block -->
+            <div class="resume-block">
+                <h3>Education</h3>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <span class="role">B.S. in Computer Science / Related Field</span>
+                        <span class="date">Graduation Year</span>
+                    </div>
+                    <p class="company">University or Institution Name</p>
+                </div>
+            </div>
+
+            <!-- Skills Block -->
+            <div class="resume-block">
+                <h3>Skills & Tools</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Web Development</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Xochitl Ortega. Built with GitHub Pages.</p>
+    </footer>
+
 </body>
 </html>
