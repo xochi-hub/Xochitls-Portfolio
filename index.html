@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xochitl | Portfolio & Resume</title>
+    <title>Xochitl Ortega | Portfolio & Resume</title>
+    <!-- Modern Clean Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,31 +19,35 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#resume">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience & Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
-        <!-- Intro / Hero Section -->
+        <!-- 1. Intro / About Me Section -->
         <section id="about" class="intro-section">
             <h1>Hi, I'm Xochitl. 👋</h1>
             <p class="bio">
-                I am a designer and developer focused on crafting clean, intentional digital experiences.
-                Currently building modern web projects and exploring front-end architecture.
+                I am a designer and developer focused on crafting clean, intentional digital experiences. 
+                Currently building web applications, refining user interfaces, and exploring modern front-end design.
             </p>
         </section>
 
         <hr class="divider">
 
-        <!-- Virtual Resume Section -->
+        <!-- 2. Virtual Resume Section -->
         <section id="resume" class="resume-section">
-            <h2>Virtual Resume</h2>
+            <div class="section-header-row">
+                <h2>Virtual Resume</h2>
+                <!-- Link to full resume document -->
+                <a href="resume.pdf" target="_blank" class="resume-download-btn">View Full Resume PDF ↗</a>
+            </div>
 
             <!-- Experience Block -->
             <div class="resume-block">
-                <h3>Experience</h3>
+                <h3>Work Experience</h3>
 
                 <div class="resume-item">
                     <div class="item-header">
@@ -48,19 +56,19 @@
                     </div>
                     <p class="company">Company or Organization Name</p>
                     <ul>
-                        <li>Key responsibility or accomplishment goes here.</li>
-                        <li>Designed and developed responsive web interfaces.</li>
+                        <li>Key responsibility or achievement goes here.</li>
+                        <li>Designed and implemented clean, accessible web user interfaces.</li>
                     </ul>
                 </div>
 
                 <div class="resume-item">
                     <div class="item-header">
-                        <span class="role">Previous Role Title</span>
+                        <span class="role">Previous Position Title</span>
                         <span class="date">2022 – 2024</span>
                     </div>
-                    <p class="company">Previous Company</p>
+                    <p class="company">Previous Company Name</p>
                     <ul>
-                        <li>Managed project workflows and collaborated with cross-functional teams.</li>
+                        <li>Collaborated with teams to plan, design, and optimize digital assets.</li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +78,7 @@
                 <h3>Education</h3>
                 <div class="resume-item">
                     <div class="item-header">
-                        <span class="role">B.S. in Computer Science / Related Field</span>
+                        <span class="role">Degree / Program Name</span>
                         <span class="date">Graduation Year</span>
                     </div>
                     <p class="company">University or Institution Name</p>
@@ -79,21 +87,68 @@
 
             <!-- Skills Block -->
             <div class="resume-block">
-                <h3>Skills & Tools</h3>
+                <h3>Skills & Capabilities</h3>
                 <div class="skills-grid">
                     <span class="skill-tag">HTML5 / CSS3</span>
                     <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">Git & GitHub</span>
                     <span class="skill-tag">UI/UX Design</span>
-                    <span class="skill-tag">Web Development</span>
+                    <span class="skill-tag">Responsive Web Design</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- 3. Experience & Projects Section -->
+        <section id="experience" class="experience-section">
+            <h2>Experience & Featured Projects</h2>
+            <p class="section-desc">A selection of recent design and development work.</p>
+
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-preview">Project Image / Mockup</div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>Minimalist personal website and digital resume built with HTML, CSS, and GitHub Pages.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-preview">Project Image / Mockup</div>
+                    <div class="project-info">
+                        <h3>Interactive Web App</h3>
+                        <p>Experimental web project exploring smooth animations and dynamic layouts.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>UI Design</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- 4. Contact & Footer -->
     <footer id="contact">
-        <p>&copy; 2026 Xochitl Ortega. Built with GitHub Pages.</p>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h2>Let's Connect</h2>
+                <p>Feel free to reach out for collaborations or opportunities.</p>
+                <div class="contact-links">
+                    <a href="mailto:your-email@example.com" class="contact-btn">Email Me</a>
+                    <a href="https://github.com/xochi-hub" target="_blank" rel="noopener">GitHub</a>
+                    <a href="resume.pdf" target="_blank">Download Resume</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Xochitl Ortega. Built with GitHub Pages.</p>
+        </div>
     </footer>
 
 </body>
