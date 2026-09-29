@@ -30,14 +30,14 @@
         <section id="about" class="intro-section intro-box">
             <div class="photo-frame"><img src="images/284d101d6bff4cb9bd0a76e2351762f5.jpeg" alt="Xochitl Ortega" class="profile-photo"></div>
             <div class="intro-text">
-                <h1>Hi! I'm Xochi</h1>
+                <h1>Welcome!</h1>
                 <p class="credentials">University of California, Berkeley<br>Mechanical Engineering B.S. 25/M.S. 26<br>The Berkeley Certificate in Design Innovation</p>
                 <p class="bio">My focus is on the intersection of design and functionality to create innovations that improve daily quality of life.</p>
                 <p class="bio">I have experience across the entire design process and deeply value each stage, from early conception to manufacturing and testing.</p>
                 <p class="bio">As a teaching assistant for an undergraduate design course, I guide students through hands-on, iterative design, which inspires my projects and hobbies.</p>
                 <p class="bio">My interests include biomedical and healthcare applications, product development, R&amp;D, and textiles.</p>
             </div>
-            <div class="dress-scrub" role="img" aria-label="Formaflow morphing dress"></div>
+            <img class="dress-float" src="images/aa011e5a29fe4493a6b0652e67416691.gif" alt="Formaflow morphing dress">
         </section>
 
         <hr class="divider">
@@ -55,11 +55,7 @@
                     <div class="entry-text">
                     <h4>Human–AI Design Methods (ME292C):</h4>
                     <p class="entry-title">Stride Recover: a wireless smart rehabilitation sleeve that uses EMG sensing to monitor hamstring recovery in real time.</p>
-                    <p><strong>Problem Statement:</strong> Recreational athletes often lack structure and evidence-based guidance to manage injuries. This leads to inconsistent, self-managed routines and a lack of confidence regarding safe ‘return-to-play’ timing.</p>
                     <p>Stride Recover is a wireless smart rehabilitation system designed to help recreational athletes safely and confidently return to sport after hamstring injuries. The system integrates electromyography (EMG) sensing into a familiar compression sleeve, providing real-time monitoring of muscle activation, fatigue, and bilateral symmetry between injured and healthy hamstrings. By combining accurate sensing with actionable feedback, the device reduces reliance on guesswork during recovery and helps address the high reinjury rates commonly seen after return-to-play.</p>
-                    <p><strong>Reflection:</strong></p>
-                    <p>Stride recover was a through project that made me learn a lot about hardware, protoboarding and EMG data. I heavily worked on the protoboards for the watch and the hardware that was integrated in the sleeve which made me understand the component's datasheets, how to organize protoboards, and how to make hardware untethered (with batteries and soldering).</p>
-                    <p>Working with my group allowed me to grow and learn how to be more organized, delegate tasks, write and condense reports in an improved method. The prediction software also provided a new perspective using integrated AI and using API keys since it was the first time i did this approach.</p>
                     </div>
                     <div class="entry-images"><img src="images/7330eeedb20240829bad946d1c201bd8.png" alt="Stride Recover" loading="lazy"><img src="images/403941646a5243d6b120b46d831d0c26.png" alt="Stride Recover" loading="lazy"><img src="images/9d0f62916ddb488aa9842a61a01783bc.png" alt="Stride Recover" loading="lazy"><img src="images/5023fb04c87f44acb1755244dcce4c26.png" alt="Stride Recover" loading="lazy"></div>
                 </article>
@@ -159,18 +155,14 @@
     </script>
 
     <script>
-        // Dress on the intro box: scrub through its animation frames as the page scrolls
+        // Dress on the intro box: the GIF loops on its own and glides down the page as you scroll
         (function () {
-            const dress = document.querySelector('.dress-scrub');
+            const dress = document.querySelector('.dress-float');
             if (!dress) return;
-            const FRAMES = 36, COLS = 6, SCROLL_RANGE = 500;
             let current = 0;
             function tick() {
-                const progress = Math.min(Math.max(window.scrollY / SCROLL_RANGE, 0), 1);
-                current += (progress * (FRAMES - 1) - current) * 0.08;
-                const f = Math.round(current);
-                dress.style.backgroundPosition = `${(f % COLS) * 100 / (COLS - 1)}% ${Math.floor(f / COLS) * 100 / (Math.ceil(FRAMES / COLS) - 1)}%`;
-                dress.style.transform = `translateY(${current * 1.2}px)`;
+                current += (window.scrollY - current) * 0.06;
+                dress.style.transform = `translateY(${current}px)`;
                 requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);

@@ -81,14 +81,14 @@ header {
 
 /* Intro Section */
 .intro-section {
-    padding: 80px 0 20px 0;
+    padding: 40px 0 20px 0;
 }
 
 .intro-section h1 {
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -0.8px;
-    margin-bottom: 16px;
+    margin-bottom: 6px;
 }
 
 .bio {
@@ -438,7 +438,7 @@ footer {
     background: transparent;
     border-radius: 8px;
     padding: 32px;
-    margin-top: 60px;
+    margin-top: 28px;
 }
 
 /* Centered contact footer */
@@ -455,13 +455,13 @@ footer {
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1px;
+    gap: 2px;
     margin-top: 24px;
 }
 
 .photo-tile {
     aspect-ratio: 1 / 1;
-    outline: 1px solid #e0e0e0;
+    outline: 2px solid #d6d6d6;
     overflow: hidden;
 }
 
@@ -503,26 +503,30 @@ footer {
     border-radius: 8px;
 }
 
+.photo-frame {
+    aspect-ratio: 1066 / 1440; /* crops 10% off the bottom */
+}
+
 .photo-frame .profile-photo {
     display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     border-radius: 0;
     transform: scale(1.1);
     transform-origin: center bottom;
 }
 
-/* Dress peeking over the top-right of the intro box */
-.dress-scrub {
+/* Dress beside the intro box; loops on its own and follows the scroll */
+.dress-float {
     position: absolute;
-    top: -70px;
+    top: 142px;
     right: -150px;
     width: 200px;
-    height: 353px;
-    background-image: url("images/dress-sprite.webp");
-    background-size: 600% 600%;
-    background-repeat: no-repeat;
     pointer-events: none;
     z-index: 2;
+    will-change: transform;
 }
 
 /* Visual Resume: Wix-style term headings with short accent lines */
@@ -605,7 +609,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .dress-scrub {
+    .dress-float {
         display: none;
     }
 
@@ -619,10 +623,58 @@ footer {
 }
 
 @media (max-width: 1000px) {
-    .dress-scrub {
+    .dress-float {
         right: -20px;
-        top: -110px;
+        top: 38px;
         width: 140px;
-        height: 247px;
     }
+}
+
+/* Experience tiles: link to each project page, title on hover */
+.photo-tile {
+    position: relative;
+}
+
+.photo-tile a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.tile-title {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.photo-tile:hover .tile-title {
+    opacity: 1;
+}
+
+/* Project detail pages */
+.project-page {
+    padding: 60px 0;
+}
+
+.project-page h1 {
+    font-family: 'Lora', Georgia, serif;
+}
+
+.placeholder-tile a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
