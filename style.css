@@ -5,12 +5,19 @@
     padding: 0;
 }
 
+:root {
+    /* Site palette */
+    --alabaster-grey: #CCDBDC;
+    --frosted-blue: #9AD1D4;
+    --deep-space-blue: #003249;
+}
+
 html {
     scroll-behavior: smooth; /* Enables smooth scrolling between sections */
 }
 
 body {
-    background-color: #ffffff;
+    background-color: rgba(188, 222, 230, 0.25); /* brighter blue take on Alabaster Grey, 25% */
     color: #111111;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
@@ -18,7 +25,8 @@ body {
 }
 
 .container {
-    max-width: 720px;
+    width: 75%;
+    max-width: none;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -34,7 +42,8 @@ header {
 }
 
 .navbar {
-    max-width: 720px;
+    width: 75%;
+    max-width: none;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -43,6 +52,9 @@ header {
 }
 
 .logo {
+    font-family: 'Lora', Georgia, serif;
+    color: inherit;
+    text-decoration: none;
     font-weight: 700;
     font-size: 1.05rem;
     letter-spacing: -0.3px;
@@ -55,6 +67,7 @@ header {
 }
 
 .nav-links a {
+    font-family: 'Lora', Georgia, serif;
     color: #666666;
     text-decoration: none;
     font-size: 0.9rem;
@@ -75,20 +88,109 @@ header {
 
 /* Intro Section */
 .intro-section {
-    padding: 80px 0 20px 0;
+    padding: 40px 0 20px 0;
 }
 
 .intro-section h1 {
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -0.8px;
-    margin-bottom: 16px;
+    margin-bottom: 6px;
 }
 
 .bio {
     font-size: 1.2rem;
     color: #444444;
     font-weight: 400;
+}
+
+/* Intro photo + text side by side */
+.intro-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    width: 240px;
+    max-width: 100%;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.credentials {
+    color: #444444;
+    margin-bottom: 20px;
+}
+
+.intro-text .bio {
+    margin-bottom: 12px;
+}
+
+/* Visual Resume Timeline */
+.visual-resume h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.timeline-term {
+    display: flex;
+    gap: 30px;
+    border-left: 2px solid #e0e0e0;
+    padding: 0 0 40px 24px;
+}
+
+.term-label {
+    width: 110px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.degree {
+    font-weight: 700;
+}
+
+.term {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.term-entries {
+    flex: 1;
+    min-width: 0;
+}
+
+.timeline-entry {
+    margin-bottom: 32px;
+}
+
+.timeline-entry h4 {
+    font-size: 1rem;
+}
+
+.entry-title {
+    color: #444444;
+    margin-bottom: 12px;
+}
+
+.entry-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.entry-images img {
+    height: 170px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.timeline-entry p {
+    margin-bottom: 10px;
 }
 
 /* Virtual Resume Section */
@@ -254,7 +356,8 @@ footer {
 }
 
 .footer-container {
-    max-width: 720px;
+    width: 75%;
+    max-width: none;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -313,9 +416,272 @@ footer {
         gap: 14px;
     }
 
+    .intro-section,
+    .timeline-term {
+        flex-direction: column;
+        gap: 16px;
+    }
+
     .section-header-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
+}
+
+/* Home page: slightly smaller text */
+.intro-section .bio {
+    font-size: 1.05rem;
+}
+
+.visual-resume .timeline-entry p,
+.visual-resume .entry-title {
+    font-size: 0.9rem;
+}
+
+/* Thin grey outline around photo + description */
+.intro-box {
+    border: 1px solid #d9d9d9;
+    background: transparent;
+    border-radius: 8px;
+    padding: 32px;
+    margin-top: 28px;
+}
+
+/* Centered contact footer */
+.footer-container,
+.footer-contact {
+    text-align: center;
+}
+
+.contact-links {
+    justify-content: center;
+}
+
+/* Experience page: photo-library grid of square tiles */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2px;
+    margin-top: 24px;
+}
+
+.photo-tile {
+    aspect-ratio: 1 / 1;
+    outline: 2px solid #d6d6d6;
+    overflow: hidden;
+}
+
+.photo-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Home intro: Lora heading, smaller credentials + bio */
+.intro-text h1 {
+    font-family: 'Lora', Georgia, serif;
+}
+
+.intro-section .credentials {
+    font-size: 0.75rem;
+}
+
+.intro-section .bio {
+    font-size: 0.925rem;
+}
+
+.intro-box {
+    position: relative;
+}
+
+/* Profile photo: zoomed 10%, cropping from the top */
+.photo-frame {
+    width: 240px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.photo-frame {
+    aspect-ratio: 1066 / 1440; /* crops 10% off the bottom */
+}
+
+.photo-frame .profile-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 0;
+    transform: scale(1.1);
+    transform-origin: center bottom;
+}
+
+/* Dress beside the intro box; loops on its own and follows the scroll */
+.dress-float {
+    position: absolute;
+    top: 142px;
+    right: -150px;
+    width: 200px;
+    pointer-events: none;
+    z-index: 2;
+    will-change: transform;
+}
+
+/* Visual Resume: Wix-style term headings with short accent lines */
+.visual-resume .timeline-term {
+    display: block;
+    border-left: none;
+    padding: 0 0 50px 0;
+}
+
+.term-head {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    border-left: 1px solid #999999;
+    padding: 4px 0 4px 12px;
+    margin-bottom: 20px;
+}
+
+.term-head h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.8rem;
+    line-height: 1.1;
+}
+
+.term-head .degree {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.term-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.term-rule {
+    flex: 1;
+    border-top: 1px solid #999999;
+    margin: 0 0 20px 24px;
+}
+
+.visual-resume .timeline-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.visual-resume .timeline-entry:nth-of-type(1) .entry-text {
+    border-left: 1px solid #999999;
+    padding-left: 12px;
+}
+
+.visual-resume .timeline-entry h4 {
+    font-style: italic;
+}
+
+.visual-resume .entry-images {
+    gap: 0;
+}
+
+.visual-resume .entry-images img {
+    height: 160px;
+    border-radius: 0;
+}
+
+/* Experience grid: 4 columns, placeholder tiles */
+.photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.placeholder-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+    background: #fafafa;
+}
+
+@media (max-width: 600px) {
+    .dress-float {
+        display: none;
+    }
+
+    .visual-resume .timeline-entry {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .dress-float {
+        right: -20px;
+        top: 38px;
+        width: 140px;
+    }
+}
+
+/* Experience tiles: link to each project page, title on hover */
+.photo-tile {
+    position: relative;
+}
+
+.photo-tile a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.tile-title {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.photo-tile:hover .tile-title {
+    opacity: 1;
+}
+
+/* Project detail pages */
+.project-page {
+    padding: 60px 0;
+}
+
+.project-page h1 {
+    font-family: 'Lora', Georgia, serif;
+}
+
+.placeholder-tile a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
