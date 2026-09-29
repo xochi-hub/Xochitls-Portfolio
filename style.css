@@ -18,7 +18,8 @@ body {
 }
 
 .container {
-    max-width: 720px;
+    width: 75%;
+    max-width: none;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -34,7 +35,8 @@ header {
 }
 
 .navbar {
-    max-width: 720px;
+    width: 75%;
+    max-width: none;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -43,6 +45,7 @@ header {
 }
 
 .logo {
+    font-family: 'Lora', Georgia, serif;
     color: inherit;
     text-decoration: none;
     font-weight: 700;
@@ -57,6 +60,7 @@ header {
 }
 
 .nav-links a {
+    font-family: 'Lora', Georgia, serif;
     color: #666666;
     text-decoration: none;
     font-size: 0.9rem;
@@ -256,7 +260,8 @@ footer {
 }
 
 .footer-container {
-    max-width: 720px;
+    width: 75%;
+    max-width: none;
     margin: 0 auto;
     padding: 0 20px;
 }
