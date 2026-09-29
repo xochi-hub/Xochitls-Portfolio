@@ -489,8 +489,8 @@ footer {
 .intro-text h1 {
     font-family: 'Libre Caslon Text', Georgia, serif; /* closest free match to Wix's Adobe Caslon Semibold */
     font-weight: 600;
-    line-height: 1;
-    margin-top: -0.08em; /* top of the letters lines up with the top of the photo */
+    font-size: 1.875rem; /* 30px, same size as the Wix site */
+    line-height: 1.2;
 }
 
 .intro-section .credentials {
@@ -508,6 +508,7 @@ footer {
 
 .intro-box {
     position: relative;
+    align-items: center; /* text group sits centered next to the photo */
 }
 
 /* Profile photo: zoomed 10%, cropping from the top */
