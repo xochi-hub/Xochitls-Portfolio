@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xochitl Ortega | Portfolio & Resume</title>
+    <title>Experience & Projects | Xochitl Ortega</title>
     <!-- Modern Clean Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,13 +26,38 @@
     </header>
 
     <main class="container">
-        <!-- 1. Intro / About Me Section -->
-        <section id="about" class="intro-section">
-            <h1>Hi, I'm Xochitl. 👋</h1>
-            <p class="bio">
-                I am a designer and developer focused on crafting clean, intentional digital experiences. 
-                Currently building web applications, refining user interfaces, and exploring modern front-end design.
-            </p>
+        <!-- 3. Experience & Projects Section -->
+        <section id="experience" class="experience-section">
+            <h2>Experience & Featured Projects</h2>
+            <p class="section-desc">A selection of recent design and development work.</p>
+
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-preview">Project Image / Mockup</div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>Minimalist personal website and digital resume built with HTML, CSS, and GitHub Pages.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-preview">Project Image / Mockup</div>
+                    <div class="project-info">
+                        <h3>Interactive Web App</h3>
+                        <p>Experimental web project exploring smooth animations and dynamic layouts.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>UI Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -52,16 +77,5 @@
         </div>
     </footer>
 
-
-    <script>
-        // Arriving from another page with a hash: start at the top, then glide to the section
-        if (location.hash) {
-            const target = document.querySelector(location.hash);
-            if (target) {
-                window.scrollTo(0, 0);
-                window.addEventListener('load', () => target.scrollIntoView({ behavior: 'smooth' }));
-            }
-        }
-    </script>
 </body>
 </html>
