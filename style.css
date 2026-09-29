@@ -700,4 +700,10 @@ footer {
     .intro-box {
         flex-direction: row-reverse;
     }
+
+    /* Name and school lines sit on the right, next to the photo */
+    .intro-text h1,
+    .intro-text .credentials {
+        text-align: right;
+    }
 }
