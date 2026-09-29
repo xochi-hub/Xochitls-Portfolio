@@ -694,3 +694,9 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+/* Name and school lines centered within the text area */
+.intro-text h1,
+.intro-text .credentials {
+    text-align: center;
+}
