@@ -7,7 +7,7 @@
     <!-- Modern Clean Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -159,9 +159,19 @@
         (function () {
             const dress = document.querySelector('.dress-float');
             if (!dress) return;
+            // Stop point: the top of the dress rests on the Fall 2025 heading line
+            const stopLine = [...document.querySelectorAll('.term-head')]
+                .find(h => h.textContent.includes('Fall 2025'))?.querySelector('.term-rule');
             let current = 0;
+            function maxTravel() {
+                if (!stopLine) return Infinity;
+                const lineTop = stopLine.getBoundingClientRect().top + window.scrollY;
+                const dressTop = dress.getBoundingClientRect().top + window.scrollY - current;
+                return Math.max(lineTop - dressTop, 0);
+            }
             function tick() {
-                current += (window.scrollY - current) * 0.06;
+                const target = Math.min(window.scrollY, maxTravel());
+                current += (target - current) * 0.06;
                 dress.style.transform = `translateY(${current}px)`;
                 requestAnimationFrame(tick);
             }
