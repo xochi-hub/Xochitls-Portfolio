@@ -441,37 +441,6 @@ footer {
     margin-top: 60px;
 }
 
-/* Visual Resume: timeline line down the middle */
-.visual-resume h2 {
-    text-align: center;
-}
-
-.timeline {
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    border-left: 2px solid #e0e0e0;
-}
-
-.timeline-term {
-    border-left: none;
-    padding: 0 0 40px 0;
-    gap: 60px;
-}
-
-.timeline-term .term-label {
-    width: auto;
-    flex: 1;
-    align-items: flex-end;
-    text-align: right;
-}
-
 /* Centered contact footer */
 .footer-container,
 .footer-contact {
@@ -504,21 +473,123 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .timeline::before {
-        left: 0;
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Home intro: Lora heading, smaller credentials + bio */
+.intro-text h1 {
+    font-family: 'Lora', Georgia, serif;
+}
+
+.intro-section .credentials {
+    font-size: 0.875rem;
+}
+
+.intro-section .bio {
+    font-size: 0.925rem;
+}
+
+.intro-box {
+    position: relative;
+}
+
+.intro-accent {
+    width: 120px;
+    align-self: flex-end;
+    flex-shrink: 0;
+}
+
+/* Visual Resume: Wix-style term headings with short accent lines */
+.visual-resume .timeline-term {
+    display: block;
+    border-left: none;
+    padding: 0 0 50px 0;
+}
+
+.term-head {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    border-left: 1px solid #999999;
+    padding: 4px 0 4px 12px;
+    margin-bottom: 20px;
+}
+
+.term-head h3 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.8rem;
+    line-height: 1.1;
+}
+
+.term-head .degree {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.term-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.term-rule {
+    flex: 1;
+    border-top: 1px solid #999999;
+    margin: 0 0 20px 24px;
+}
+
+.visual-resume .timeline-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.visual-resume .timeline-entry:nth-of-type(1) .entry-text {
+    border-left: 1px solid #999999;
+    padding-left: 12px;
+}
+
+.visual-resume .timeline-entry h4 {
+    font-style: italic;
+}
+
+.visual-resume .entry-images {
+    gap: 0;
+}
+
+.visual-resume .entry-images img {
+    height: 160px;
+    border-radius: 0;
+}
+
+/* Experience grid: 4 columns, placeholder tiles */
+.photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.placeholder-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+    background: #fafafa;
+}
+
+@media (max-width: 600px) {
+    .intro-accent {
+        display: none;
     }
 
-    .timeline-term {
-        padding-left: 20px;
-        gap: 12px;
-    }
-
-    .timeline-term .term-label {
-        align-items: flex-start;
-        text-align: left;
+    .visual-resume .timeline-entry {
+        grid-template-columns: 1fr;
     }
 
     .photo-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
