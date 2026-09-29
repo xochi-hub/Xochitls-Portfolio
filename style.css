@@ -694,16 +694,3 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
-/* Photo on the right, text on the left (desktop) */
-@media (min-width: 601px) {
-    .intro-box {
-        flex-direction: row-reverse;
-    }
-
-    /* Name and school lines sit on the right, next to the photo */
-    .intro-text h1,
-    .intro-text .credentials {
-        text-align: right;
-    }
-}
