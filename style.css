@@ -494,6 +494,11 @@ footer {
     font-size: 0.75rem;
 }
 
+.credentials .certificate {
+    display: inline-block;
+    padding-left: 1.5em;
+}
+
 .intro-section .bio {
     font-size: 0.925rem;
 }
