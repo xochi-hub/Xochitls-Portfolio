@@ -97,6 +97,95 @@ header {
     font-weight: 400;
 }
 
+/* Intro photo + text side by side */
+.intro-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    width: 240px;
+    max-width: 100%;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.credentials {
+    color: #444444;
+    margin-bottom: 20px;
+}
+
+.intro-text .bio {
+    margin-bottom: 12px;
+}
+
+/* Visual Resume Timeline */
+.visual-resume h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.timeline-term {
+    display: flex;
+    gap: 30px;
+    border-left: 2px solid #e0e0e0;
+    padding: 0 0 40px 24px;
+}
+
+.term-label {
+    width: 110px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.degree {
+    font-weight: 700;
+}
+
+.term {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.term-entries {
+    flex: 1;
+    min-width: 0;
+}
+
+.timeline-entry {
+    margin-bottom: 32px;
+}
+
+.timeline-entry h4 {
+    font-size: 1rem;
+}
+
+.entry-title {
+    color: #444444;
+    margin-bottom: 12px;
+}
+
+.entry-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.entry-images img {
+    height: 170px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.timeline-entry p {
+    margin-bottom: 10px;
+}
+
 /* Virtual Resume Section */
 .resume-section {
     padding-bottom: 20px;
@@ -318,6 +407,12 @@ footer {
 
     .nav-links {
         gap: 14px;
+    }
+
+    .intro-section,
+    .timeline-term {
+        flex-direction: column;
+        gap: 16px;
     }
 
     .section-header-row {
