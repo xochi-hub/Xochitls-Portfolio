@@ -695,8 +695,9 @@ footer {
     justify-content: center;
 }
 
-/* Name and school lines centered within the text area */
-.intro-text h1,
-.intro-text .credentials {
-    text-align: center;
+/* Photo on the right, text on the left (desktop) */
+@media (min-width: 601px) {
+    .intro-box {
+        flex-direction: row-reverse;
+    }
 }
