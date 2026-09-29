@@ -28,7 +28,7 @@
     <main class="container">
         <!-- 1. Intro / About Me Section -->
         <section id="about" class="intro-section intro-box">
-            <img src="images/284d101d6bff4cb9bd0a76e2351762f5.jpeg" alt="Xochitl Ortega" class="profile-photo">
+            <div class="photo-frame"><img src="images/284d101d6bff4cb9bd0a76e2351762f5.jpeg" alt="Xochitl Ortega" class="profile-photo"></div>
             <div class="intro-text">
                 <h1>Hi! I'm Xochi</h1>
                 <p class="credentials">University of California, Berkeley<br>Mechanical Engineering B.S. 25/M.S. 26<br>The Berkeley Certificate in Design Innovation</p>
@@ -37,7 +37,7 @@
                 <p class="bio">As a teaching assistant for an undergraduate design course, I guide students through hands-on, iterative design, which inspires my projects and hobbies.</p>
                 <p class="bio">My interests include biomedical and healthcare applications, product development, R&amp;D, and textiles.</p>
             </div>
-            <img class="intro-accent" src="images/aa011e5a29fe4493a6b0652e67416691.gif" alt="Formaflow dress animation">
+            <div class="dress-scrub" role="img" aria-label="Formaflow morphing dress"></div>
         </section>
 
         <hr class="divider">
@@ -156,6 +156,25 @@
                 window.addEventListener('load', () => target.scrollIntoView({ behavior: 'smooth' }));
             }
         }
+    </script>
+
+    <script>
+        // Dress on the intro box: scrub through its animation frames as the page scrolls
+        (function () {
+            const dress = document.querySelector('.dress-scrub');
+            if (!dress) return;
+            const FRAMES = 36, COLS = 6, SCROLL_RANGE = 500;
+            let current = 0;
+            function tick() {
+                const progress = Math.min(Math.max(window.scrollY / SCROLL_RANGE, 0), 1);
+                current += (progress * (FRAMES - 1) - current) * 0.08;
+                const f = Math.round(current);
+                dress.style.backgroundPosition = `${(f % COLS) * 100 / (COLS - 1)}% ${Math.floor(f / COLS) * 100 / (Math.ceil(FRAMES / COLS) - 1)}%`;
+                dress.style.transform = `translateY(${current * 1.2}px)`;
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        })();
     </script>
 </body>
 </html>

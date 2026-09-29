@@ -484,7 +484,7 @@ footer {
 }
 
 .intro-section .credentials {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
 }
 
 .intro-section .bio {
@@ -495,10 +495,34 @@ footer {
     position: relative;
 }
 
-.intro-accent {
-    width: 120px;
-    align-self: flex-end;
+/* Profile photo: zoomed 10%, cropping from the top */
+.photo-frame {
+    width: 240px;
     flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.photo-frame .profile-photo {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    transform: scale(1.1);
+    transform-origin: center bottom;
+}
+
+/* Dress peeking over the top-right of the intro box */
+.dress-scrub {
+    position: absolute;
+    top: -70px;
+    right: -150px;
+    width: 200px;
+    height: 353px;
+    background-image: url("images/dress-sprite.webp");
+    background-size: 600% 600%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 2;
 }
 
 /* Visual Resume: Wix-style term headings with short accent lines */
@@ -581,7 +605,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .intro-accent {
+    .dress-scrub {
         display: none;
     }
 
@@ -591,5 +615,14 @@ footer {
 
     .photo-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .dress-scrub {
+        right: -20px;
+        top: -110px;
+        width: 140px;
+        height: 247px;
     }
 }
