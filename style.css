@@ -5,12 +5,19 @@
     padding: 0;
 }
 
+:root {
+    /* Site palette */
+    --alabaster-grey: #CCDBDC;
+    --frosted-blue: #9AD1D4;
+    --deep-space-blue: #003249;
+}
+
 html {
     scroll-behavior: smooth; /* Enables smooth scrolling between sections */
 }
 
 body {
-    background-color: #ffffff;
+    background-color: var(--alabaster-grey);
     color: #111111;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
