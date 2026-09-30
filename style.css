@@ -849,8 +849,8 @@ footer {
     align-self: flex-start;
     width: 57px;  /* 8% smaller than 62 */
     height: 57px;
-    margin-left: calc(8% - 33px); /* 8% of the heading row, pulled back 33px */
-    transform: translateY(calc(-10px - 30%)); /* raised a further 30% of its height */
+    margin-left: calc(8% - 42px); /* 8% of the heading row, pulled back 42px */
+    transform: translateY(calc(-14px - 30%)); /* raised a further 30% of its height */
 }
 
 /* HCI Lab photo pulled up beside the Summer 2026 heading */
@@ -873,6 +873,13 @@ footer {
 @media (min-width: 601px) {
     .visual-resume .timeline-entry.hci-entry {
         grid-template-columns: 1fr calc(50% - 65px);
+    }
+
+    /* Text runs right up to 10px before the photo (30px column gap + 110px photo offset - 10px) */
+    .visual-resume .timeline-entry.hci-entry .entry-text {
+        margin-right: -130px;
+        position: relative;
+        z-index: 1;
     }
 }
 
