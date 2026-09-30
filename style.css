@@ -812,7 +812,7 @@ footer {
 }
 
 .visual-resume .hci-entry .entry-images {
-    justify-content: center;
+    justify-content: flex-start; /* photo sits right next to the text column */
 }
 
 .visual-resume .hci-entry .crop-frame {
@@ -845,9 +845,9 @@ footer {
 /* Aalto logo at the end of Summer 2026, sitting slightly higher than the title */
 .term-logo-raised {
     align-self: flex-start;
-    width: 46px;  /* 15% bigger than 40 */
-    height: 46px;
-    margin-left: 8%; /* shifted right by 8% of the heading row */
+    width: 56px;
+    height: 56px;
+    margin-left: calc(8% - 10px); /* shifted right by 8% of the heading row, then back 10px */
     transform: translateY(-6px);
 }
 
