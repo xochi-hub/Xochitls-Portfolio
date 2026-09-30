@@ -704,7 +704,7 @@ footer {
 .visual-resume .section-title {
     display: inline-block;
     border-bottom: 1px solid #000000;
-    padding-bottom: 4px; /* gap between the sentence and the line */
+    padding-bottom: 3px; /* gap between the sentence and the line */
     margin-bottom: 30px;
 }
 
