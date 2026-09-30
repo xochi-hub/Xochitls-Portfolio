@@ -700,11 +700,16 @@ footer {
     padding-top: 40px;
 }
 
-/* Thin black underline under "Visual Resume": 1px thick, as wide as the words */
-.visual-resume h2 {
+/* Title + subtitle share one thin black underline (1px) below both */
+.visual-resume .section-title {
     display: inline-block;
     border-bottom: 1px solid #000000;
     padding-bottom: 6px;
+    margin-bottom: 30px;
+}
+
+.visual-resume .section-title h2 {
+    margin-bottom: 0;
 }
 
 .visual-resume h2,
@@ -759,5 +764,6 @@ footer {
 .visual-resume .section-subtitle {
     font-size: 0.75rem;
     color: #444444;
-    margin: 8px 0 24px;
+    margin: 2px 0;
+    padding-left: 1.5em; /* indent */
 }
