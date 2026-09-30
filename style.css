@@ -792,3 +792,8 @@ footer {
     from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     to   { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.3) rotate(90deg); opacity: 0; }
 }
+
+/* Bold project titles in the Visual Resume use Lora */
+.visual-resume .timeline-entry h4 {
+    font-family: 'Lora', Georgia, serif;
+}
