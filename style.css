@@ -694,3 +694,14 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+/* Visual Resume: spacing and Caslon headings to match the name */
+.visual-resume {
+    padding-top: 20px;
+}
+
+.visual-resume h2,
+.term-head h3 {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-weight: 600;
+}

@@ -163,11 +163,16 @@
                 if (!stopLine) return Infinity;
                 const lineTop = stopLine.getBoundingClientRect().top + window.scrollY;
                 const dressTop = dress.getBoundingClientRect().top + window.scrollY - current;
-                return Math.max(lineTop - dressTop - 80, 0); // stop a little above the line
+                return Math.max(lineTop - dressTop - 40, 0); // stop a little above the line
             }
+            let parked = false; // once the dress reaches its stop, it stays there
             function tick() {
-                const target = Math.min(window.scrollY, maxTravel());
-                current += (target - current) * 0.06;
+                if (!parked) {
+                    const limit = maxTravel();
+                    const target = Math.min(window.scrollY, limit);
+                    current += (target - current) * 0.06;
+                    if (limit - current < 1) { current = limit; parked = true; }
+                }
                 dress.style.transform = `translateY(${current}px)`;
                 requestAnimationFrame(tick);
             }
