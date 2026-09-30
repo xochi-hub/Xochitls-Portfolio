@@ -849,7 +849,7 @@ footer {
     align-self: flex-start;
     width: 57px;  /* 8% smaller than 62 */
     height: 57px;
-    margin-left: calc(8% - 42px); /* 8% of the heading row, pulled back 42px */
+    margin-left: calc(8% - 51px); /* 8% of the heading row, pulled back 51px */
     transform: translateY(calc(-14px - 30%)); /* raised a further 30% of its height */
 }
 
