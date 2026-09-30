@@ -697,7 +697,7 @@ footer {
 
 /* Visual Resume: spacing and Caslon headings to match the name */
 .visual-resume {
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 /* Title + subtitle share one thin black underline (1px) below both */
@@ -817,8 +817,8 @@ footer {
 
 .visual-resume .hci-entry .crop-frame {
     display: block;
-    width: 270px;  /* 10% smaller than 300 */
-    height: 252px; /* 10% smaller than 280 */
+    width: 230px;  /* 15% smaller than 270 */
+    height: 214px; /* 15% smaller than 252 */
     overflow: hidden;
     clip-path: inset(0 4px 0 0); /* trims 4px off the right edge */
 }
@@ -847,7 +847,7 @@ footer {
     align-self: flex-start;
     width: 56px;
     height: 56px;
-    margin-left: calc(8% - 10px); /* shifted right by 8% of the heading row, then back 10px */
+    margin-left: calc(8% - 25px); /* 8% of the heading row, pulled back 25px */
     transform: translateY(-6px);
 }
 
@@ -865,4 +865,11 @@ footer {
 .visual-resume .entry-title {
     margin-top: 2px;
     margin-bottom: 8px;
+}
+
+/* HCI Lab: photo column starts 50px further right, giving the text a longer line */
+@media (min-width: 601px) {
+    .visual-resume .timeline-entry.hci-entry {
+        grid-template-columns: 1fr calc(50% - 65px);
+    }
 }
