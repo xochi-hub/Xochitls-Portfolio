@@ -895,14 +895,14 @@ footer {
     content: "";
     position: absolute;
     left: 0;
-    top: calc(20% - 13px);
+    top: calc(20% - 16px);
     height: 100%;
     border-left: 1px solid #999999;
 }
 
 /* "X" = Summer 2026 title + its left line; raised 10px without moving the logo or the project */
 .term-head-summer26 h3 {
-    transform: translateY(-13px);
+    transform: translateY(-16px);
 }
 
 /* Mirror of X's left line on the right end of the Summer 2026 row */
@@ -910,7 +910,7 @@ footer {
     content: "";
     position: absolute;
     right: 0;
-    top: calc(20% - 13px);
+    top: calc(20% - 16px);
     height: 100%;
     border-right: 1px solid #999999;
 }
