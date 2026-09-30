@@ -914,3 +914,31 @@ footer {
     height: 100%;
     border-right: 1px solid #999999;
 }
+
+/* Spring 2026 section raised 20px */
+.term-spring26 {
+    margin-top: -20px;
+}
+
+/* Clickable Visual Resume entries (text + photo link to the project page) */
+.entry-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.entry-link:hover h4,
+.entry-link:hover .entry-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.entry-link .crop-frame,
+.entry-link img {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.entry-link:hover .crop-frame {
+    opacity: 0.85;
+}
