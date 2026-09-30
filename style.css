@@ -1005,3 +1005,21 @@ footer {
 .term-head:not(.term-head-summer26) {
     margin-bottom: 21px;
 }
+
+/* Placeholder copies of the Deepika entry: same look, normal vertical spacing */
+.visual-resume .timeline-entry.hci-entry.hci-copy {
+    margin-top: 0;
+}
+
+.visual-resume .hci-copy .entry-images {
+    margin-top: 0;
+}
+
+.visual-resume .timeline-entry.hci-entry.hci-copy .entry-text {
+    margin-top: 0;
+}
+
+/* Blank project pages fill the screen so they open at the top, not showing the footer first */
+.project-page {
+    min-height: 70vh;
+}
