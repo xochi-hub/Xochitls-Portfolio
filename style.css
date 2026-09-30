@@ -979,3 +979,29 @@ footer {
     width: 63px;
     height: 63px;
 }
+
+/* Multi-image entries keep their images side by side inside the link */
+.entry-link-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.entry-link-images:hover img {
+    opacity: 0.85;
+}
+
+/* Every project starts at the top of its row, right under its heading (same spacing as Summer 2026 → Deepika) */
+.visual-resume .timeline-entry {
+    align-items: start;
+}
+
+/* Term logos centered on their heading, like Spring 2026 */
+.term-head:not(.term-head-summer26) .term-logo {
+    transform: translateY(15px);
+}
+
+/* Heading-to-project gap: 26px, matching Summer 2026 -> Deepika */
+.term-head:not(.term-head-summer26) {
+    margin-bottom: 21px;
+}
