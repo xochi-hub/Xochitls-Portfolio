@@ -710,7 +710,7 @@ footer {
 
 .visual-resume .section-title h2 {
     margin-bottom: 0;
-    line-height: 1.1; /* removes the extra space the default line height adds under the title */
+    line-height: 1; /* removes the extra space the default line height adds under the title */
 }
 
 .visual-resume h2,
@@ -766,6 +766,6 @@ footer {
     font-size: 11px;
     color: #444444;
     margin: 0;
-    padding-top: 3px;
-    padding-left: 1.5em; /* indent */
+    padding-top: 1px;
+    padding-left: 2.25em; /* indent */
 }
