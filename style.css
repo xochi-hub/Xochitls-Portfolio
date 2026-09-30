@@ -809,7 +809,6 @@ footer {
 /* Deepika Yadav HCI Lab entry: no left line, larger photo centered on the right, top cropped */
 .visual-resume .timeline-entry.hci-entry .entry-text {
     border-left: none;
-    padding-left: 0;
 }
 
 .visual-resume .hci-entry .entry-images {
@@ -820,11 +819,17 @@ footer {
     width: 300px;
     height: 280px;
     object-fit: cover;
-    object-position: center 60%; /* crops both the top and the bottom */
+    object-position: center 40%; /* shows more of the top, crops more of the bottom */
+    clip-path: inset(0 4px 0 0); /* trims 4px off the right edge */
 }
 
 /* Text and photo start at the top, right under the Summer 2026 heading */
 .visual-resume .timeline-entry.hci-entry {
     align-items: start;
     min-height: 0;
+}
+
+/* Every project's text lines up with the term heading text (12px in from the line) */
+.visual-resume .timeline-entry .entry-text {
+    padding-left: 12px;
 }
