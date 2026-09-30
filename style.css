@@ -837,6 +837,7 @@ footer {
 .visual-resume .timeline-entry.hci-entry {
     align-items: start;
     min-height: 0;
+    margin-top: -10px; /* Deepika text and everything below it raised 10px */
 }
 
 /* Every project's text lines up with the term heading text (12px in from the line) */
@@ -855,7 +856,7 @@ footer {
 
 /* HCI Lab photo pulled up beside the Summer 2026 heading */
 .visual-resume .hci-entry .entry-images {
-    margin-top: -105px;
+    margin-top: -95px; /* offsets the entry's -10px so the photo stays put */
 }
 
 /* Descriptions sit closer to their project titles */
@@ -895,7 +896,7 @@ footer {
     content: "";
     position: absolute;
     left: 0;
-    top: calc(20% - 26px);
+    top: calc(20% - 22px);
     height: 100%;
     border-left: 1px solid #999999;
 }
@@ -910,7 +911,7 @@ footer {
     content: "";
     position: absolute;
     right: 0;
-    top: calc(20% - 26px);
+    top: calc(20% - 22px);
     height: 100%;
     border-right: 1px solid #999999;
 }
