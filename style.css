@@ -710,6 +710,7 @@ footer {
 
 .visual-resume .section-title h2 {
     margin-bottom: 0;
+    line-height: 1.1; /* removes the extra space the default line height adds under the title */
 }
 
 .visual-resume h2,
