@@ -819,7 +819,7 @@ footer {
     display: block;
     width: 230px;  /* 15% smaller than 270 */
     height: 214px; /* 15% smaller than 252 */
-    margin-left: 60px; /* nudged right */
+    margin-left: 80px; /* nudged right */
     overflow: hidden;
     clip-path: inset(0 4px 0 0); /* trims 4px off the right edge */
 }
@@ -854,7 +854,7 @@ footer {
 
 /* HCI Lab photo pulled up beside the Summer 2026 heading */
 .visual-resume .hci-entry .entry-images {
-    margin-top: -70px;
+    margin-top: -105px;
 }
 
 /* Descriptions sit closer to their project titles */
