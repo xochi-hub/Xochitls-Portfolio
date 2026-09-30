@@ -765,7 +765,8 @@ footer {
 .visual-resume .section-subtitle {
     font-size: 11px;
     color: #444444;
-    margin: -3px 0 0; /* pulls the sentence up closer to the title */
+    margin: 4px 0 0; /* 4px gap below the title */
     padding-top: 0;
+    line-height: 1;
     padding-left: 1.9em; /* indent */
 }
