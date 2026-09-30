@@ -848,7 +848,7 @@ footer {
     width: 56px;
     height: 56px;
     margin-left: calc(8% - 25px); /* 8% of the heading row, pulled back 25px */
-    transform: translateY(-6px);
+    transform: translateY(calc(-6px - 30%)); /* raised a further 30% of its height */
 }
 
 /* HCI Lab photo pulled up beside the Summer 2026 heading */
@@ -877,4 +877,16 @@ footer {
 /* Summer 2026 heading and its line sit 10px lower */
 .term-head-summer26 {
     margin-top: 10px;
+    position: relative;
+    border-left: none;
+}
+
+/* Its left line, drawn separately so it can sit 20% of its height lower */
+.term-head-summer26::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 100%;
+    border-left: 1px solid #999999;
 }
