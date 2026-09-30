@@ -917,7 +917,7 @@ footer {
 
 /* Spring 2026 section raised 20px */
 .term-spring26 {
-    margin-top: -20px;
+    margin-top: -30px;
 }
 
 /* Clickable Visual Resume entries (text + photo link to the project page) */
@@ -931,6 +931,7 @@ footer {
 .entry-link:hover h4,
 .entry-link:hover .entry-title {
     text-decoration: underline;
+    text-decoration-color: #c4c4c4; /* light grey, subtle */
     text-underline-offset: 3px;
 }
 
@@ -953,18 +954,21 @@ footer {
 .term-spring26 .term-logo {
     width: 48px;
     height: 48px;
+    transform: translateY(15px);
 }
 
-/* Spring 2026: left line extended upward to double its length */
+/* Spring 2026: one continuous left line, 1.5x the heading height (extends upward) */
 .term-spring26 .term-head {
     position: relative;
+    border-left: none;
+    padding-left: 13px; /* keeps the text where it was without the border */
 }
 
 .term-spring26 .term-head::before {
     content: "";
     position: absolute;
-    left: -1px;
-    bottom: 100%;
-    height: 100%;
+    left: 0;
+    top: -50%;
+    bottom: 0;
     border-left: 1px solid #999999;
 }
