@@ -697,7 +697,7 @@ footer {
 
 /* Visual Resume: spacing and Caslon headings to match the name */
 .visual-resume {
-    padding-top: 50px;
+    padding-top: 54px;
 }
 
 /* Title + subtitle share one thin black underline (1px) below both */
@@ -918,7 +918,7 @@ footer {
 
 /* Spring 2026 section raised 20px */
 .term-spring26 {
-    margin-top: -40px;
+    margin-top: -55px;
 }
 
 /* Clickable Visual Resume entries (text + photo link to the project page) */
@@ -969,7 +969,7 @@ footer {
     content: "";
     position: absolute;
     left: 0;
-    top: calc(-50% + 20px); /* whole line shifted down 20px */
-    bottom: -20px;
+    top: calc(-50% + 35px); /* shifted down 35px (20px + 15px to stay put while the section rose) */
+    bottom: -35px;
     border-left: 1px solid #999999;
 }
