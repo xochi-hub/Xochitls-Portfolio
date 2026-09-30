@@ -917,7 +917,7 @@ footer {
 
 /* Spring 2026 section raised 20px */
 .term-spring26 {
-    margin-top: -30px;
+    margin-top: -40px;
 }
 
 /* Clickable Visual Resume entries (text + photo link to the project page) */
@@ -931,7 +931,7 @@ footer {
 .entry-link:hover h4,
 .entry-link:hover .entry-title {
     text-decoration: underline;
-    text-decoration-color: #c4c4c4; /* light grey, subtle */
+    text-decoration-color: rgba(0, 0, 0, 0.12); /* very faint grey */
     text-underline-offset: 3px;
 }
 
