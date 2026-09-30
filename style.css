@@ -697,7 +697,7 @@ footer {
 
 /* Visual Resume: spacing and Caslon headings to match the name */
 .visual-resume {
-    padding-top: 54px;
+    padding-top: 52px;
 }
 
 /* Title + subtitle share one thin black underline (1px) below both */
@@ -848,8 +848,8 @@ footer {
 /* Aalto logo at the end of Summer 2026, sitting slightly higher than the title */
 .term-logo-raised {
     align-self: flex-start;
-    width: 66px;  /* 15% bigger than 57 */
-    height: 66px;
+    width: 63px;  /* all term logos: 4% smaller than the 66px seal */
+    height: 63px;
     margin-left: calc(8% - 54px); /* 8% of the heading row, pulled back 54px */
     transform: translateY(calc(-12px - 30%)); /* raised a further 30% of its height */
 }
@@ -918,7 +918,7 @@ footer {
 
 /* Spring 2026 section raised 20px */
 .term-spring26 {
-    margin-top: -55px;
+    margin-top: -63px;
 }
 
 /* Clickable Visual Resume entries (text + photo link to the project page) */
@@ -932,7 +932,7 @@ footer {
 .entry-link:hover h4,
 .entry-link:hover .entry-title {
     text-decoration: underline;
-    text-decoration-color: rgba(0, 0, 0, 0.12); /* very faint grey */
+    text-decoration-color: rgba(0, 0, 0, 0.07); /* barely-there grey */
     text-underline-offset: 3px;
 }
 
@@ -953,8 +953,8 @@ footer {
 
 /* Spring 2026: Berkeley seal 20% bigger */
 .term-spring26 .term-logo {
-    width: 66px;  /* same size as the Aalto logo */
-    height: 66px;
+    width: 63px;  /* all term logos: 4% smaller than the 66px seal */
+    height: 63px;
     transform: translateY(15px);
 }
 
@@ -972,4 +972,10 @@ footer {
     top: calc(-50% + 35px); /* shifted down 35px (20px + 15px to stay put while the section rose) */
     bottom: -35px;
     border-left: 1px solid #999999;
+}
+
+/* Every term logo (seals, Aalto, NTU) the same size */
+.visual-resume .term-logo {
+    width: 63px;
+    height: 63px;
 }
