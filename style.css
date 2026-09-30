@@ -847,8 +847,8 @@ footer {
 /* Aalto logo at the end of Summer 2026, sitting slightly higher than the title */
 .term-logo-raised {
     align-self: flex-start;
-    width: 57px;  /* 8% smaller than 62 */
-    height: 57px;
+    width: 66px;  /* 15% bigger than 57 */
+    height: 66px;
     margin-left: calc(8% - 54px); /* 8% of the heading row, pulled back 54px */
     transform: translateY(calc(-12px - 30%)); /* raised a further 30% of its height */
 }
@@ -952,8 +952,8 @@ footer {
 
 /* Spring 2026: Berkeley seal 20% bigger */
 .term-spring26 .term-logo {
-    width: 48px;
-    height: 48px;
+    width: 66px;  /* same size as the Aalto logo */
+    height: 66px;
     transform: translateY(15px);
 }
 
@@ -968,7 +968,7 @@ footer {
     content: "";
     position: absolute;
     left: 0;
-    top: -50%;
-    bottom: 0;
+    top: calc(-50% + 20px); /* whole line shifted down 20px */
+    bottom: -20px;
     border-left: 1px solid #999999;
 }
