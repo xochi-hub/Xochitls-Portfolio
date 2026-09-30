@@ -887,7 +887,12 @@ footer {
     content: "";
     position: absolute;
     left: 0;
-    top: 20%;
+    top: calc(20% - 10px);
     height: 100%;
     border-left: 1px solid #999999;
+}
+
+/* "X" = Summer 2026 title + its left line; raised 10px without moving the logo or the project */
+.term-head-summer26 h3 {
+    transform: translateY(-10px);
 }
