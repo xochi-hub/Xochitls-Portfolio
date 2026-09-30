@@ -818,9 +818,9 @@ footer {
 
 .visual-resume .hci-entry .entry-images img {
     width: 300px;
-    height: 360px;
+    height: 280px;
     object-fit: cover;
-    object-position: center 100%; /* crops from the top */
+    object-position: center 60%; /* crops both the top and the bottom */
 }
 
 /* Text and photo start at the top, right under the Summer 2026 heading */
