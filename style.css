@@ -697,14 +697,20 @@ footer {
 
 /* Visual Resume: spacing and Caslon headings to match the name */
 .visual-resume {
-    padding-top: 40px;
+    padding-top: 52px;
 }
 
-/* Thin black underline under "Visual Resume": 1px thick, as wide as the words */
-.visual-resume h2 {
+/* Title + subtitle share one thin black underline (1px) below both */
+.visual-resume .section-title {
     display: inline-block;
     border-bottom: 1px solid #000000;
-    padding-bottom: 6px;
+    padding-bottom: 8px; /* gap between the sentence and the line */
+    margin-bottom: 30px;
+}
+
+.visual-resume .section-title h2 {
+    margin-bottom: 0;
+    line-height: 1; /* removes the extra space the default line height adds under the title */
 }
 
 .visual-resume h2,
@@ -747,4 +753,273 @@ footer {
 
 .contact-icons a:hover {
     opacity: 0.75;
+}
+
+/* Entries without the left accent line get one on the right instead */
+.visual-resume .timeline-entry:not(:nth-of-type(1)) {
+    border-right: 1px solid #999999;
+    padding-right: 12px;
+}
+
+/* Subtitle under "Visual Resume": same font and size as the University of California lines */
+.visual-resume .section-subtitle {
+    font-size: 11px;
+    color: #444444;
+    margin: 4px 0 0; /* 4px gap below the title */
+    padding-top: 0;
+    line-height: 1;
+    padding-left: 1.9em; /* indent */
+}
+
+/* Blank Visual Resume entry, reserved space for details */
+.timeline-entry-blank {
+    min-height: 160px;
+}
+
+/* Click sparkle */
+.sparkle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+    z-index: 1000;
+    background: var(--frosted-blue);
+    clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+    animation: sparkle-burst 600ms ease-out forwards;
+}
+
+@keyframes sparkle-burst {
+    from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    to   { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.3) rotate(90deg); opacity: 0; }
+}
+
+/* Bold project titles in the Visual Resume use Lora */
+.visual-resume .timeline-entry h4 {
+    font-family: 'Lora', Georgia, serif;
+}
+
+/* Summer 2026: accent line on the right of the heading instead of the left */
+.term-head-right {
+    border-left: none;
+    border-right: 1px solid #999999;
+    padding-left: 0;
+    padding-right: 12px;
+}
+
+/* Deepika Yadav HCI Lab entry: no left line, larger photo centered on the right, top cropped */
+.visual-resume .timeline-entry.hci-entry .entry-text {
+    border-left: none;
+    margin-top: -15px; /* project text raised 15px */
+}
+
+.visual-resume .hci-entry .entry-images {
+    justify-content: flex-start; /* photo sits right next to the text column */
+}
+
+.visual-resume .hci-entry .crop-frame {
+    display: block;
+    width: 219px;  /* 5% smaller than 230 */
+    height: 203px; /* 5% smaller than 214 */
+    margin-left: 110px; /* nudged right */
+    overflow: hidden;
+    clip-path: inset(0 calc(5% + 4px) 0 0); /* trims 5% (+4px) off the right edge */
+}
+
+.visual-resume .hci-entry .crop-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%; /* shows more of the top, crops more of the bottom */
+    transform: scale(1.05); /* cropped in 5% */
+}
+
+/* Text and photo start at the top, right under the Summer 2026 heading */
+.visual-resume .timeline-entry.hci-entry {
+    align-items: start;
+    min-height: 0;
+    margin-top: -10px; /* Deepika text and everything below it raised 10px */
+}
+
+/* Every project's text lines up with the term heading text (12px in from the line) */
+.visual-resume .timeline-entry .entry-text {
+    padding-left: 12px;
+}
+
+/* Aalto logo at the end of Summer 2026, sitting slightly higher than the title */
+.term-logo-raised {
+    align-self: flex-start;
+    width: 63px;  /* all term logos: 4% smaller than the 66px seal */
+    height: 63px;
+    margin-left: calc(8% - 54px); /* 8% of the heading row, pulled back 54px */
+    transform: translateY(calc(7.5px - 30%)); /* centered on the Summer 2026 title */
+}
+
+/* HCI Lab photo pulled up beside the Summer 2026 heading */
+.visual-resume .hci-entry .entry-images {
+    margin-top: -95px; /* offsets the entry's -10px so the photo stays put */
+}
+
+/* Descriptions sit closer to their project titles */
+.visual-resume .timeline-entry h4 {
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+
+.visual-resume .entry-title {
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+/* HCI Lab: photo column starts 50px further right, giving the text a longer line */
+@media (min-width: 601px) {
+    .visual-resume .timeline-entry.hci-entry {
+        grid-template-columns: 1fr calc(50% - 65px);
+    }
+
+    /* Text runs right up to 10px before the photo (30px column gap + 110px photo offset - 10px) */
+    .visual-resume .timeline-entry.hci-entry .entry-text {
+        margin-right: -130px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Summer 2026 heading and its line sit 10px lower */
+.term-head-summer26 {
+    margin-top: 10px;
+    position: relative;
+    border-left: none;
+}
+
+/* Its left line, drawn separately so it can sit 20% of its height lower */
+.term-head-summer26::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(20% - 22px);
+    height: 100%;
+    border-left: 1px solid #999999;
+}
+
+/* "X" = Summer 2026 title + its left line; raised 10px without moving the logo or the project */
+.term-head-summer26 h3 {
+    transform: translateY(-26px);
+}
+
+/* Mirror of X's left line on the right end of the Summer 2026 row */
+.term-head-summer26::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: calc(20% - 22px);
+    height: 100%;
+    border-right: 1px solid #999999;
+}
+
+/* Spring 2026 section raised 20px */
+.term-spring26 {
+    margin-top: -63px;
+}
+
+/* Clickable Visual Resume entries (text + photo link to the project page) */
+.entry-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.entry-link:hover h4,
+.entry-link:hover .entry-title {
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.07); /* barely-there grey */
+    text-underline-offset: 3px;
+}
+
+.entry-link .crop-frame,
+.entry-link img {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.entry-link:hover .crop-frame {
+    opacity: 0.85;
+}
+
+/* Project titles (before the ":") are bold, not italic; lab/class names stay bold italic */
+.visual-resume .entry-title em {
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Spring 2026: Berkeley seal 20% bigger */
+.term-spring26 .term-logo {
+    width: 63px;  /* all term logos: 4% smaller than the 66px seal */
+    height: 63px;
+    transform: translateY(15px);
+}
+
+/* Spring 2026: one continuous left line, 1.5x the heading height (extends upward) */
+.term-spring26 .term-head {
+    position: relative;
+    border-left: none;
+    padding-left: 13px; /* keeps the text where it was without the border */
+}
+
+.term-spring26 .term-head::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(-50% + 35px); /* shifted down 35px (20px + 15px to stay put while the section rose) */
+    bottom: -35px;
+    border-left: 1px solid #999999;
+}
+
+/* Every term logo (seals, Aalto, NTU) the same size */
+.visual-resume .term-logo {
+    width: 63px;
+    height: 63px;
+}
+
+/* Multi-image entries keep their images side by side inside the link */
+.entry-link-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.entry-link-images:hover img {
+    opacity: 0.85;
+}
+
+/* Every project starts at the top of its row, right under its heading (same spacing as Summer 2026 → Deepika) */
+.visual-resume .timeline-entry {
+    align-items: start;
+}
+
+/* Term logos centered on their heading, like Spring 2026 */
+.term-head:not(.term-head-summer26) .term-logo {
+    transform: translateY(15px);
+}
+
+/* Heading-to-project gap: 26px, matching Summer 2026 -> Deepika */
+.term-head:not(.term-head-summer26) {
+    margin-bottom: 21px;
+}
+
+/* Placeholder copies of the Deepika entry: same look, normal vertical spacing */
+.visual-resume .timeline-entry.hci-entry.hci-copy {
+    margin-top: 0;
+}
+
+.visual-resume .hci-copy .entry-images {
+    margin-top: 0;
+}
+
+.visual-resume .timeline-entry.hci-entry.hci-copy .entry-text {
+    margin-top: 0;
+}
+
+/* Blank project pages fill the screen so they open at the top, not showing the footer first */
+.project-page {
+    min-height: 70vh;
 }
