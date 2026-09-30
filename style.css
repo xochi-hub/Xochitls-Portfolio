@@ -833,3 +833,25 @@ footer {
 .visual-resume .timeline-entry .entry-text {
     padding-left: 12px;
 }
+
+/* Aalto logo at the end of Summer 2026, sitting slightly higher than the title */
+.term-logo-raised {
+    align-self: flex-start;
+    transform: translateY(-6px);
+}
+
+/* HCI Lab photo pulled up beside the Summer 2026 heading */
+.visual-resume .hci-entry .entry-images {
+    margin-top: -70px;
+}
+
+/* Descriptions sit closer to their project titles */
+.visual-resume .timeline-entry h4 {
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+
+.visual-resume .entry-title {
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
