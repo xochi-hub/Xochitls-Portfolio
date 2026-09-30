@@ -943,11 +943,8 @@ footer {
     opacity: 0.85;
 }
 
-/* Trial on Deepika Yadav's HCI Lab only: lab name bold (not italic), project title bold + italic */
-.visual-resume .hci-entry h4 {
-    font-style: normal;
-}
-
+/* Trial on Deepika Yadav's HCI Lab only: lab name bold + italic, project title bold (not italic) */
 .visual-resume .hci-entry .entry-title em {
     font-weight: 700;
+    font-style: normal;
 }
