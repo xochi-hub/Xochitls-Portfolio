@@ -873,3 +873,8 @@ footer {
         grid-template-columns: 1fr calc(50% - 65px);
     }
 }
+
+/* Summer 2026 heading and its line sit 10px lower */
+.term-head-summer26 {
+    margin-top: 10px;
+}
