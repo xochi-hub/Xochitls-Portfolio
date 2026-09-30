@@ -37,7 +37,6 @@
             <img class="dress-float" src="images/aa011e5a29fe4493a6b0652e67416691.gif" alt="Formaflow morphing dress">
         </section>
 
-        <hr class="divider">
 
         <!-- 2. Visual Resume -->
         <section class="visual-resume">
@@ -164,7 +163,7 @@
                 if (!stopLine) return Infinity;
                 const lineTop = stopLine.getBoundingClientRect().top + window.scrollY;
                 const dressTop = dress.getBoundingClientRect().top + window.scrollY - current;
-                return Math.max(lineTop - dressTop, 0);
+                return Math.max(lineTop - dressTop - 80, 0); // stop a little above the line
             }
             function tick() {
                 const target = Math.min(window.scrollY, maxTravel());
