@@ -762,8 +762,9 @@ footer {
 
 /* Subtitle under "Visual Resume": same font and size as the University of California lines */
 .visual-resume .section-subtitle {
-    font-size: 10px;
+    font-size: 11px;
     color: #444444;
     margin: 0;
+    padding-top: 3px;
     padding-left: 1.5em; /* indent */
 }
