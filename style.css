@@ -697,7 +697,14 @@ footer {
 
 /* Visual Resume: spacing and Caslon headings to match the name */
 .visual-resume {
-    padding-top: 20px;
+    padding-top: 40px;
+}
+
+/* Thin black underline under "Visual Resume": 1px thick, as wide as the words */
+.visual-resume h2 {
+    display: inline-block;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 6px;
 }
 
 .visual-resume h2,
@@ -707,11 +714,6 @@ footer {
 }
 
 /* Let's Connect: white outlined box, wide and short, on every page */
-footer {
-    background-color: transparent;
-    border-top: none;
-}
-
 .footer-contact {
     background: #ffffff;
     border: 1px solid #d9d9d9;
