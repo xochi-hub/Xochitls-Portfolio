@@ -770,3 +770,25 @@ footer {
     line-height: 1;
     padding-left: 1.9em; /* indent */
 }
+
+/* Blank Visual Resume entry, reserved space for details */
+.timeline-entry-blank {
+    min-height: 160px;
+}
+
+/* Click sparkle */
+.sparkle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+    z-index: 1000;
+    background: var(--frosted-blue);
+    clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+    animation: sparkle-burst 600ms ease-out forwards;
+}
+
+@keyframes sparkle-burst {
+    from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    to   { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.3) rotate(90deg); opacity: 0; }
+}
