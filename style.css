@@ -817,8 +817,14 @@ footer {
 }
 
 .visual-resume .hci-entry .entry-images img {
-    width: 260px;
-    height: 300px;
+    width: 300px;
+    height: 360px;
     object-fit: cover;
-    object-position: center 85%;
+    object-position: center 100%; /* crops from the top */
+}
+
+/* Text and photo start at the top, right under the Summer 2026 heading */
+.visual-resume .timeline-entry.hci-entry {
+    align-items: start;
+    min-height: 0;
 }
