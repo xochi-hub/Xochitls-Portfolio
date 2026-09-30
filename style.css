@@ -819,6 +819,7 @@ footer {
     display: block;
     width: 230px;  /* 15% smaller than 270 */
     height: 214px; /* 15% smaller than 252 */
+    margin-left: 60px; /* nudged right */
     overflow: hidden;
     clip-path: inset(0 4px 0 0); /* trims 4px off the right edge */
 }
