@@ -809,7 +809,7 @@ footer {
 /* Deepika Yadav HCI Lab entry: no left line, larger photo centered on the right, top cropped */
 .visual-resume .timeline-entry.hci-entry .entry-text {
     border-left: none;
-    margin-top: -15px; /* project text raised 15px */
+    margin-top: -12px; /* project text raised 15px */
 }
 
 .visual-resume .hci-entry .entry-images {
