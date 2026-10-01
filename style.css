@@ -1063,7 +1063,7 @@ a, a *, button {
 
 /* Robogatchi: two photos side by side where the single photo sat */
 .visual-resume .robogatchi-entry .entry-link-images {
-    margin-left: 71px; /* moved 25px left */
+    margin-left: 41px; /* moved 55px left in total */
     flex-wrap: nowrap;
     gap: 6px;
 }
@@ -1074,9 +1074,18 @@ a, a *, button {
     object-fit: cover;
 }
 
-/* Robogatchi text sits 35px lower beside its photos */
+/* Robogatchi: photos raised 10px; text centered on the photos' height */
+.visual-resume .timeline-entry.hci-entry.robogatchi-entry {
+    align-items: center;
+}
+
+.visual-resume .robogatchi-entry .entry-images {
+    transform: translateY(-10px);
+}
+
 .visual-resume .timeline-entry.hci-entry.robogatchi-entry .entry-text {
-    margin-top: 35px;
+    margin-top: 0;
+    transform: translateY(-12px); /* lines its center up with the photos' center */
 }
 
 /* Morphing Matters: right line raised 50px, plus a matching left line (3/4 length, 20px higher) */
