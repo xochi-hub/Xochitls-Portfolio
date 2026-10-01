@@ -918,7 +918,7 @@ footer {
 
 /* Spring 2026 section raised 20px */
 .term-spring26 {
-    margin-top: -63px;
+    margin-top: -86px;
 }
 
 /* Clickable Visual Resume entries (text + photo link to the project page) */
@@ -969,8 +969,8 @@ footer {
     content: "";
     position: absolute;
     left: 0;
-    top: calc(-50% + 35px); /* shifted down 35px (20px + 15px to stay put while the section rose) */
-    bottom: -35px;
+    top: calc(-50% + 51px); /* shifted down 51px in total */
+    bottom: -51px;
     border-left: 1px solid #999999;
 }
 
@@ -1022,4 +1022,103 @@ footer {
 /* Blank project pages fill the screen so they open at the top, not showing the footer first */
 .project-page {
     min-height: 70vh;
+}
+
+/* Self-actuating sequins: two photos stacked, sitting where the single photos sit */
+.visual-resume .sequins-entry .entry-link-images {
+    margin-left: 10px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.visual-resume .sequins-entry .entry-link-images img {
+    width: 380px; /* module photo: bigger and longer */
+    height: auto;
+    max-width: 100%;
+}
+
+.visual-resume .sequins-entry .entry-link-images img + img {
+    width: 105px; /* sketch: 25% smaller */
+    margin-left: -119px; /* shifted left */
+    margin-top: -20px;   /* and up */
+}
+
+/* Sleek dark blue cursor on every page: slim arrow with a long, sharp tip (same shape on links) */
+html, body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='miter' stroke-miterlimit='10'/%3E%3C/svg%3E") 2 1, auto;
+}
+
+a, a *, button {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='miter' stroke-miterlimit='10'/%3E%3C/svg%3E") 2 1, pointer;
+}
+
+/* Sequins text stops 10px before its (further-left) photo */
+@media (min-width: 601px) {
+    .visual-resume .timeline-entry.hci-entry.sequins-entry .entry-text {
+        margin-right: -30px; /* text stops 10px before the wider photo */
+    }
+}
+
+/* Robogatchi: two photos side by side where the single photo sat */
+.visual-resume .robogatchi-entry .entry-link-images {
+    margin-left: 41px; /* moved 55px left in total */
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+
+.visual-resume .robogatchi-entry .entry-link-images img {
+    width: 140px;
+    height: 187px;
+    object-fit: cover;
+}
+
+/* Robogatchi: photos raised 10px; text centered on the photos' height */
+.visual-resume .timeline-entry.hci-entry.robogatchi-entry {
+    align-items: center;
+}
+
+.visual-resume .robogatchi-entry .entry-images {
+    transform: translateY(-10px);
+}
+
+.visual-resume .timeline-entry.hci-entry.robogatchi-entry .entry-text {
+    margin-top: 0;
+    transform: translateY(-12px); /* lines its center up with the photos' center */
+}
+
+/* Morphing Matters: right line raised 50px, plus a matching left line (3/4 length, 20px higher) */
+.visual-resume .timeline-entry.sequins-entry {
+    position: relative;
+    border-right: none;
+}
+
+.visual-resume .timeline-entry.sequins-entry::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -80px;
+    height: 100%;
+    border-right: 1px solid #999999;
+}
+
+.visual-resume .timeline-entry.sequins-entry::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 75%;
+    border-left: 1px solid #999999;
+}
+
+/* Spring 2026 heading row only (title, M.S., seal, long line) raised 11px; left line and projects stay put */
+.term-spring26 .term-head h3,
+.term-spring26 .term-head .degree,
+.term-spring26 .term-head .term-rule {
+    transform: translateY(-11px);
+}
+
+.term-spring26 .term-head .term-logo {
+    transform: translateY(4px); /* was 15px; raised 11px with the row */
 }
