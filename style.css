@@ -918,7 +918,7 @@ footer {
 
 /* Spring 2026 section raised 20px */
 .term-spring26 {
-    margin-top: -78px;
+    margin-top: -86px;
 }
 
 /* Clickable Visual Resume entries (text + photo link to the project page) */
@@ -1050,7 +1050,7 @@ html, body {
 }
 
 a, a *, button {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='6' fill='%23003249' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 11 11, pointer;
+    cursor: inherit; /* same dark blue arrow on links */
 }
 
 /* Sequins text stops 10px before its (further-left) photo */
@@ -1058,4 +1058,17 @@ a, a *, button {
     .visual-resume .timeline-entry.hci-entry.sequins-entry .entry-text {
         margin-right: -90px;
     }
+}
+
+/* Robogatchi: two photos side by side where the single photo sat */
+.visual-resume .robogatchi-entry .entry-link-images {
+    margin-left: 96px; /* keeps both photos inside the section edge */
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+
+.visual-resume .robogatchi-entry .entry-link-images img {
+    width: 140px;
+    height: 187px;
+    object-fit: cover;
 }
