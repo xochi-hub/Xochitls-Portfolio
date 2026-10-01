@@ -1041,8 +1041,8 @@ footer {
 
 .visual-resume .sequins-entry .entry-link-images img + img {
     width: 105px; /* sketch: 25% smaller */
-    margin-left: -89px; /* shifted left */
-    margin-top: -5px;   /* and up */
+    margin-left: -119px; /* shifted left */
+    margin-top: -20px;   /* and up */
 }
 
 /* Sleek dark blue cursor on every page: slim arrow with a long, sharp tip (same shape on links) */
@@ -1107,7 +1107,7 @@ a, a *, button {
     content: "";
     position: absolute;
     left: 0;
-    top: -15px;
+    top: 15px;
     height: 75%;
     border-left: 1px solid #999999;
 }
