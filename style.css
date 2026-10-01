@@ -1107,7 +1107,7 @@ a, a *, button {
     content: "";
     position: absolute;
     left: 0;
-    top: 15px;
+    top: 5px;
     height: 75%;
     border-left: 1px solid #999999;
 }
