@@ -1102,3 +1102,14 @@ a, a *, button {
     height: 75%;
     border-left: 1px solid #999999;
 }
+
+/* Spring 2026 heading row only (title, M.S., seal, long line) raised 11px; left line and projects stay put */
+.term-spring26 .term-head h3,
+.term-spring26 .term-head .degree,
+.term-spring26 .term-head .term-rule {
+    transform: translateY(-11px);
+}
+
+.term-spring26 .term-head .term-logo {
+    transform: translateY(4px); /* was 15px; raised 11px with the row */
+}
