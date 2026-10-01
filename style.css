@@ -918,7 +918,7 @@ footer {
 
 /* Spring 2026 section raised 20px */
 .term-spring26 {
-    margin-top: -63px;
+    margin-top: -73px;
 }
 
 /* Clickable Visual Resume entries (text + photo link to the project page) */
@@ -1022,4 +1022,32 @@ footer {
 /* Blank project pages fill the screen so they open at the top, not showing the footer first */
 .project-page {
     min-height: 70vh;
+}
+
+/* Self-actuating sequins: two photos stacked, sitting where the single photos sit */
+.visual-resume .sequins-entry .entry-link-images {
+    margin-left: 110px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.visual-resume .sequins-entry .entry-link-images img {
+    width: 270px;
+    height: auto;
+    max-width: 100%;
+}
+
+.visual-resume .sequins-entry .entry-link-images img + img {
+    width: 170px;
+}
+
+/* Sleek dark blue cursor on every page */
+html, body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath d='M3 2 L3 18 L7.5 13.8 L10.5 20 L13 18.8 L10.1 12.8 L16 12.8 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 3 2, auto;
+}
+
+a, a *, button {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='6' fill='%23003249' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 11 11, pointer;
 }
