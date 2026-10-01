@@ -1045,13 +1045,13 @@ footer {
     margin-top: -5px;   /* and up */
 }
 
-/* Sleek dark blue cursor on every page */
+/* Sleek dark blue cursor on every page: slim arrow with a long, sharp tip (same shape on links) */
 html, body {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath d='M3 2 L3 18 L7.5 13.8 L10.5 20 L13 18.8 L10.1 12.8 L16 12.8 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E") 3 2, auto;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='miter' stroke-miterlimit='10'/%3E%3C/svg%3E") 2 1, auto;
 }
 
 a, a *, button {
-    cursor: inherit; /* same dark blue arrow on links */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='miter' stroke-miterlimit='10'/%3E%3C/svg%3E") 2 1, pointer;
 }
 
 /* Sequins text stops 10px before its (further-left) photo */
