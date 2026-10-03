@@ -10,6 +10,7 @@
     --alabaster-grey: #CCDBDC;
     --frosted-blue: #9AD1D4;
     --deep-space-blue: #003249;
+    --line-accent: rgba(0, 50, 73, 0.55); /* grey accent lines, tinted dark blue like the cursor */
 }
 
 html {
@@ -64,6 +65,8 @@ header {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding-right: 16px;
+    border-right: 1px solid #e0e0e0;
 }
 
 .nav-links a {
@@ -99,15 +102,17 @@ header {
 }
 
 .bio {
-    font-size: 1.2rem;
+    font-size: 0.88rem;
     color: #444444;
     font-weight: 400;
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.5;
 }
 
 /* Intro photo + text side by side */
 .intro-section {
     display: flex;
-    gap: 40px;
+    gap: 28px;
     align-items: flex-start;
 }
 
@@ -126,6 +131,7 @@ header {
 .intro-text .bio {
     margin-bottom: 12px;
 }
+
 
 /* Visual Resume Timeline */
 .visual-resume h2 {
@@ -223,7 +229,8 @@ header {
 }
 
 .resume-download-btn:hover {
-    background-color: #f5f5f5;
+    background-color: #fff;
+    border-color: #000;
 }
 
 .resume-block {
@@ -349,10 +356,10 @@ header {
 
 /* Footer & Contact */
 footer {
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid rgba(0, 50, 73, 0.12);
     padding: 60px 0 40px 0;
-    margin-top: 80px;
-    background-color: #fafafa;
+    margin-top: -38px;
+    background-color: #9cb0b8;
 }
 
 .footer-container {
@@ -384,9 +391,16 @@ footer {
     color: #fff;
     padding: 8px 18px;
     border-radius: 6px;
+    border: 1px solid #111;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-btn:hover {
+    background-color: #fff;
+    color: #111;
 }
 
 .contact-links a {
@@ -401,7 +415,7 @@ footer {
 
 .copyright {
     font-size: 0.85rem;
-    color: #999;
+    color: var(--line-accent);
 }
 
 /* Mobile Adjustments */
@@ -444,7 +458,7 @@ footer {
     border: 1px solid #d9d9d9;
     background: #ffffff;
     border-radius: 8px;
-    padding: 32px;
+    padding: 32px 32px 15px 32px;
     margin-top: 28px;
 }
 
@@ -489,12 +503,21 @@ footer {
 .intro-text h1 {
     font-family: 'Libre Caslon Text', Georgia, serif; /* closest free match to Wix's Adobe Caslon Semibold */
     font-weight: 600;
-    font-size: 1.875rem; /* 30px, same size as the Wix site */
+    font-size: 1.1rem;
     line-height: 1.2;
+    margin-bottom: 0;
 }
 
 .intro-section .credentials {
-    font-size: 0.75rem;
+    font-size: 0.68rem;
+}
+
+.name-group {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: -18px;
+    text-align: center;
 }
 
 .credentials .certificate {
@@ -503,7 +526,7 @@ footer {
 }
 
 .intro-section .bio {
-    font-size: 0.925rem;
+    font-size: 0.88rem;
 }
 
 .intro-box {
@@ -513,14 +536,15 @@ footer {
 
 /* Profile photo: zoomed 10%, cropping from the top */
 .photo-frame {
-    width: 240px;
+    width: 248px;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 8px;
+    margin-left: -2px;
 }
 
 .photo-frame {
-    aspect-ratio: 1066 / 1440; /* crops 10% off the bottom */
+    aspect-ratio: 950 / 1440; /* narrower: crops the left and right sides too */
 }
 
 .photo-frame .profile-photo {
@@ -556,7 +580,7 @@ footer {
     display: flex;
     align-items: flex-end;
     gap: 8px;
-    border-left: 1px solid #999999;
+    border-left: 1px solid var(--line-accent);
     padding: 4px 0 4px 12px;
     margin-bottom: 20px;
 }
@@ -580,7 +604,7 @@ footer {
 
 .term-rule {
     flex: 1;
-    border-top: 1px solid #999999;
+    border-top: 1px solid var(--line-accent);
     margin: 0 0 20px 24px;
 }
 
@@ -593,7 +617,7 @@ footer {
 }
 
 .visual-resume .timeline-entry:nth-of-type(1) .entry-text {
-    border-left: 1px solid #999999;
+    border-left: 1px solid var(--line-accent);
     padding-left: 12px;
 }
 
@@ -748,16 +772,18 @@ footer {
     border-radius: 50%;
     background: var(--frosted-blue);
     color: var(--deep-space-blue);
-    transition: opacity 0.2s ease;
+    border: 1px solid var(--frosted-blue);
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
 }
 
 .contact-icons a:hover {
-    opacity: 0.75;
+    background: #fff;
 }
 
 /* Entries without the left accent line get one on the right instead */
 .visual-resume .timeline-entry:not(:nth-of-type(1)) {
-    border-right: 1px solid #999999;
+    border-right: 1px solid var(--line-accent);
     padding-right: 12px;
 }
 
@@ -779,18 +805,19 @@ footer {
 /* Click sparkle */
 .sparkle {
     position: fixed;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     pointer-events: none;
     z-index: 1000;
     background: var(--frosted-blue);
+    opacity: 0.85;
     clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
-    animation: sparkle-burst 600ms ease-out forwards;
+    animation: sparkle-burst 700ms ease-out forwards;
 }
 
 @keyframes sparkle-burst {
-    from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    to   { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.3) rotate(90deg); opacity: 0; }
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0.85; }
+    to   { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.15) rotate(90deg); opacity: 0; }
 }
 
 /* Bold project titles in the Visual Resume use Lora */
@@ -801,7 +828,7 @@ footer {
 /* Summer 2026: accent line on the right of the heading instead of the left */
 .term-head-right {
     border-left: none;
-    border-right: 1px solid #999999;
+    border-right: 1px solid var(--line-accent);
     padding-left: 0;
     padding-right: 12px;
 }
@@ -898,7 +925,7 @@ footer {
     left: 0;
     top: calc(20% - 22px);
     height: 100%;
-    border-left: 1px solid #999999;
+    border-left: 1px solid var(--line-accent);
 }
 
 /* "X" = Summer 2026 title + its left line; raised 10px without moving the logo or the project */
@@ -913,7 +940,7 @@ footer {
     right: 0;
     top: calc(20% - 22px);
     height: 100%;
-    border-right: 1px solid #999999;
+    border-right: 1px solid var(--line-accent);
 }
 
 /* Spring 2026 section raised 20px */
@@ -955,23 +982,16 @@ footer {
 .term-spring26 .term-logo {
     width: 63px;  /* all term logos: 4% smaller than the 66px seal */
     height: 63px;
-    transform: translateY(15px);
 }
 
 /* Spring 2026: one continuous left line, 1.5x the heading height (extends upward) */
+/* Spring 2026 left line: mimics Spring 2025's centering and length (plain, row-height line) */
 .term-spring26 .term-head {
-    position: relative;
-    border-left: none;
-    padding-left: 13px; /* keeps the text where it was without the border */
+    align-items: center;
 }
 
-.term-spring26 .term-head::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: calc(-50% + 51px); /* shifted down 51px in total */
-    bottom: -51px;
-    border-left: 1px solid #999999;
+.term-spring26 .term-head .term-logo {
+    transform: none;
 }
 
 /* Every term logo (seals, Aalto, NTU) the same size */
@@ -1041,17 +1061,17 @@ footer {
 
 .visual-resume .sequins-entry .entry-link-images img + img {
     width: 105px; /* sketch: 25% smaller */
-    margin-left: -119px; /* shifted left */
-    margin-top: -20px;   /* and up */
+    margin-left: -125px; /* shifted left */
+    margin-top: -25px;   /* and up */
 }
 
 /* Sleek dark blue cursor on every page: slim arrow with a long, sharp tip (same shape on links) */
 html, body {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='miter' stroke-miterlimit='10'/%3E%3C/svg%3E") 2 1, auto;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249'/%3E%3C/svg%3E") 2 1, auto;
 }
 
 a, a *, button {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249' stroke='white' stroke-width='1.2' stroke-linejoin='miter' stroke-miterlimit='10'/%3E%3C/svg%3E") 2 1, pointer;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249'/%3E%3C/svg%3E") 2 1, pointer;
 }
 
 /* Sequins text stops 10px before its (further-left) photo */
@@ -1065,13 +1085,22 @@ a, a *, button {
 .visual-resume .robogatchi-entry .entry-link-images {
     margin-left: 41px; /* moved 55px left in total */
     flex-wrap: nowrap;
-    gap: 6px;
+    gap: 0;
 }
 
-.visual-resume .robogatchi-entry .entry-link-images img {
+.robogatchi-frame {
     width: 140px;
     height: 187px;
+}
+
+.visual-resume .robogatchi-entry .entry-link-images .robogatchi-frame img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+}
+
+.robogatchi-zoom {
+    transform: scale(1.12);
 }
 
 /* Robogatchi: photos raised 10px; text centered on the photos' height */
@@ -1092,33 +1121,321 @@ a, a *, button {
 .visual-resume .timeline-entry.sequins-entry {
     position: relative;
     border-right: none;
+    margin-top: 14px;
 }
 
 .visual-resume .timeline-entry.sequins-entry::after {
     content: "";
     position: absolute;
     right: 0;
-    top: -80px;
-    height: 100%;
-    border-right: 1px solid #999999;
+    top: -60px;
+    height: 20%;
+    border-right: 1px solid var(--line-accent);
 }
 
 .visual-resume .timeline-entry.sequins-entry::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 5px;
+    top: 0px;
     height: 75%;
-    border-left: 1px solid #999999;
+    border-left: 1px solid var(--line-accent);
+}
+
+/* Computational Biomechanics entry: right line shortened to 50%, text centered on the image */
+.visual-resume .timeline-entry.computational-entry {
+    position: relative;
+    border-right: none;
+    align-items: center;
+    margin-top: -33px;
+}
+
+.visual-resume .timeline-entry.computational-entry .entry-text {
+    transform: translateY(-10px);
+}
+
+.visual-resume .timeline-entry.computational-entry::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20px;
+    height: 50%;
+    border-right: 1px solid var(--line-accent);
+}
+
+/* Computational Biomechanics: no crop, shown bigger than the other hci-entry photos */
+.visual-resume .hci-entry.computational-entry .crop-frame {
+    width: 260px;
+    height: 242px;
+    clip-path: none;
+}
+
+.visual-resume .hci-entry.computational-entry .crop-frame img {
+    transform: none;
+    object-fit: contain;
+}
+
+/* Stride Recover entry: text centered on the image, matching the entry above */
+.visual-resume .timeline-entry.stride-entry {
+    align-items: center;
+}
+
+/* Same thin grey outline as the .intro-box photo frame, applied to individual photos */
+.photo-outline {
+    border: 1px solid #d9d9d9;
+}
+
+/* Stride Recover: vertical line on the left side, 25% of the entry's height */
+.visual-resume .timeline-entry.stride-entry {
+    position: relative;
+}
+
+.visual-resume .timeline-entry.stride-entry::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 40px;
+    height: 25%;
+    border-left: 1px solid var(--line-accent);
+}
+
+/* Stride Recover: the default full-height right line, shortened to 35% */
+.visual-resume .timeline-entry.stride-entry {
+    border-right: none;
+}
+
+.visual-resume .timeline-entry.stride-entry::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 35%;
+    border-right: 1px solid var(--line-accent);
+}
+
+/* Fall 2025: pulled up to close the gap after Spring 2026 */
+.term-fall25 {
+    margin-top: -60px;
+}
+
+/* Summer 2025: pulled up to match the natural gap between other sections; its photos nudged right */
+.term-summer25 {
+    margin-top: -65px;
+}
+
+.term-summer25 .term-head {
+    margin-bottom: 25px;
+}
+
+/* Spring 2025: pulled up 10px (last section, so nothing below needs adjusting) */
+.term-spring25 {
+    margin-top: -65px;
+}
+
+/* Biomechanics Lab: its default left line mirrored on the right */
+.biomech-entry {
+    border-right: 1px solid var(--line-accent);
+}
+
+.visual-resume .timeline-entry.biomech-entry .entry-text {
+    border-left: none;
+}
+
+.biomech-entry .entry-images {
+    margin-left: 45px;
+}
+
+.biomech-entry .entry-text,
+.echohand-entry .entry-text {
+    margin-right: -39px;
+}
+
+/* EchoHand: its default right line mirrored on the left */
+.visual-resume .timeline-entry.echohand-entry {
+    position: relative;
+    border-left: none;
+    border-right: none;
+}
+
+.echohand-entry::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 55px;
+    height: 56%;
+    border-left: 1px solid var(--line-accent);
+}
+
+.echohand-entry .entry-images {
+    margin-left: 88px;
+}
+
+/* Kedar entry: right line mimics the original left line, cut by 68%; left line removed */
+.visual-resume .timeline-entry.kedar-entry {
+    position: relative;
+    border-right: none;
+    margin-top: -8px;
+}
+
+.visual-resume .timeline-entry.kedar-entry::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 30px;
+    height: 32%;
+    border-right: 1px solid var(--line-accent);
+}
+
+.visual-resume .timeline-entry.kedar-entry .entry-text {
+    border-left: none;
+}
+
+.term-summer25 .entry-images {
+    margin-left: 30px;
+}
+
+/* Formaflow entry: text (with its left line) centered on the image; images bigger, nudged further right; section moved down 15px */
+.visual-resume .timeline-entry.formaflow-entry {
+    position: relative;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.formaflow-entry .entry-text {
+    padding-right: 5px;
+    border-left: none;
+    margin-right: -40px; /* text extended, closer to the image */
+}
+
+/* Zoom frame: same footprint as a normal photo, scaled content clipped to it */
+.visual-resume .entry-images .zoom-frame {
+    display: block;
+    overflow: hidden;
+}
+
+.visual-resume .entry-images .zoom-frame img {
+    display: block;
+}
+
+.zoom-8 {
+    transform: scale(1.08);
+}
+
+.zoom-15 {
+    transform: scale(1.15);
+}
+
+.zoom-10 {
+    transform: scale(1.1);
+}
+
+.zoom-20 {
+    transform: scale(1.45);
+    transform-origin: 39% calc(50% - 5px);
+}
+
+.echohand-zoom {
+    transform: scale(1.4375, 1.25); /* 15% wider on top of the existing 25% zoom */
+    transform-origin: calc(66% + 5px) 81%;
+}
+
+/* ME102B right photo: squared off instead of rectangular */
+.echohand-square-frame {
+    width: 184px;
+    height: 184px;
+}
+
+.visual-resume .entry-images .echohand-square-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.visual-resume .entry-images img.echohand-wide {
+    height: 184px;
+    transform: scaleX(1.265);
+}
+
+/* ME278 left photo: frame takes over the 50%/160px sizing so the zoomed img can fill and overflow it */
+.me278-entry .entry-images .me278-zoom-frame {
+    width: 50%;
+    height: 160px;
+}
+
+.me278-entry .entry-images .me278-zoom-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Formaflow: left line's bottom extended, shifted down 35px, cut to 78% length */
+.formaflow-entry::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 35px;
+    height: 62.4%;
+    border-left: 1px solid var(--line-accent);
+}
+
+.formaflow-entry .entry-images {
+    margin-left: 45px;
+}
+
+.formaflow-entry .entry-images img {
+    height: 180px;
+}
+
+/* Fall 2025, Summer 2025, Spring 2025: heading text centered against the left accent line */
+.term-fall25 .term-head,
+.term-summer25 .term-head,
+.term-spring25 .term-head {
+    align-items: center;
+}
+
+/* Berkeley logo truly centered now, without the flex-end-era nudge */
+.term-fall25 .term-head .term-logo,
+.term-summer25 .term-head .term-logo,
+.term-spring25 .term-head .term-logo {
+    transform: none;
+}
+
+/* Spring 2025: bigger photos */
+.term-spring25 .entry-images img {
+    height: 190px;
+}
+
+/* Summer 2025 and Spring 2025 entries: text centered on its image's height, like Formaflow and ME278 */
+.term-summer25 .timeline-entry,
+.term-spring25 .timeline-entry {
+    align-items: center;
+}
+
+/* ME278 (Gyroscope Glove): both photos side by side at the same height, text centered on them */
+.visual-resume .timeline-entry.me278-entry {
+    align-items: center;
+    position: relative;
+    border-right: none;
+}
+
+.me278-entry::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 30px;
+    height: 100%;
+    border-right: 1px solid var(--line-accent);
+}
+
+.me278-entry .entry-images {
+    flex-wrap: nowrap;
+    margin-left: -43px;
+}
+
+.me278-entry .entry-images img {
+    width: 50%;
+    height: 160px;
+    object-fit: cover;
 }
 
 /* Spring 2026 heading row only (title, M.S., seal, long line) raised 11px; left line and projects stay put */
-.term-spring26 .term-head h3,
-.term-spring26 .term-head .degree,
-.term-spring26 .term-head .term-rule {
-    transform: translateY(-11px);
-}
-
-.term-spring26 .term-head .term-logo {
-    transform: translateY(4px); /* was 15px; raised 11px with the row */
-}
