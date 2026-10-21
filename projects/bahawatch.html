@@ -28,9 +28,73 @@
     <main class="container">
         <section class="project-page">
             <h1>BahaWatch</h1>
-            <!-- Project details go here -->
+            <div class="title-underline"></div>
+            <div class="project-top-row project-wrap">
+                <div class="project-body">
+                    <p class="project-subtitle">2025 <span class="dot">&middot;</span> Disaster Resilience <span class="dot">&middot;</span> IoT Sensing</p>
+
+                    <div class="project-carousel project-carousel-baha">
+                        <div class="carousel-track">
+                            <img src="../images/bahawatch/bike-scouts-berkeley.png" alt="BahaWatch">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+                        <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+                    </div>
+
+                    <p class="project-text">The Philippines ranks first in the world for disaster risk, yet many of its flood sensors are disabled, and the warnings that do go out are often too technical and aren’t translated into local languages. Built for DevEng C200, Design, Evaluate, and Scale Development Technologies, with a team of four, BahaWatch is a community-based flood early warning system. It combines low-cost water level sensors, a localized AI flood prediction model, and local-language alerts. We worked with the Bike Scouts, a volunteer disaster response network in the Philippines, to make sure the system fits the people who will use it.</p>
+
+                    <ul class="project-bullets">
+                        <li>Researched <span class="keyword">existing flood warning efforts</span>, including Project NOAH, PhilSensors, Google FloodHub, and community groups, finding that data collection, prediction, and communication each worked on their own and <span class="keyword">no single project connected them</span></li>
+                        <li>Partnered with the <span class="keyword">Bike Scouts</span> and gathered input through <span class="keyword">community interviews and surveys</span>, which showed that residents received alerts but didn&rsquo;t know what the alerts meant for their location or what to do</li>
+                        <li>Developed a <span class="keyword">three-part system concept</span>: <span class="keyword">low-cost flood sensors on a mesh network</span>, an <span class="keyword">AI model</span> that predicts flooding at the household level, and <span class="keyword">local-language warnings</span> shared through community responders</li>
+                        <li>Built a <span class="keyword">theory of change</span>, an evaluation plan, and <span class="keyword">KPIs</span> such as sensor uptime, detection accuracy, and evacuation rates, and presented the project in a final pitch and a <span class="keyword">grant application</span> modeled on USAID&rsquo;s Development Innovation Ventures</li>
+                    </ul>
+
+                    <h3 class="project-subheading">Skills</h3>
+                    <div class="skills-columns">
+                        <div class="skills-group">
+                            <h4>Research</h4>
+                            <ul>
+                                <li>User Interviews &amp; Surveys</li>
+                                <li>Landscape Analysis</li>
+                                <li>Stakeholder Partnerships</li>
+                                <li>Problem Scoping</li>
+                                <li>Community-Based Research</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Strategy &amp; Evaluation</h4>
+                            <ul>
+                                <li>Theory of Change</li>
+                                <li>KPI &amp; Evaluation Design</li>
+                                <li>Grant Writing</li>
+                                <li>Scaling Strategy</li>
+                                <li>Disaster Risk Reduction</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Design</h4>
+                            <ul>
+                                <li>Human-Centered Design</li>
+                                <li>Community-Centered Design</li>
+                                <li>System Concept Design</li>
+                                <li>IoT Sensor Networks</li>
+                                <li>Pitch &amp; Presentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -45,6 +109,9 @@
                     <a href="https://www.linkedin.com/in/xochitl-ortega/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
                     </a>
+                    <a href="../resume.html" aria-label="Resume">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+                    </a>
                 </div>
             </div>
             <p class="copyright">&copy; 2026 Xochitl Ortega. Built with GitHub Pages.</p>
@@ -53,5 +120,96 @@
 
     <script src="../top.js"></script>
     <script src="../sparkle.js"></script>
+    <script src="../project-nav.js"></script>
+    <script>
+        (function () {
+            const images = [
+                { src: '../images/bahawatch/bike-scouts-berkeley.png', ratio: '16 / 9', fit: 'cover' }, // Experience page tile image, padded with red to 16:9 so it isn't zoomed
+                { src: '../images/bahawatch/system-overview.png' }, // sensors, AI prediction, and community warnings
+                { src: '../images/bahawatch/theory-of-change.png' },
+                { src: '../images/bahawatch/bike-scouts.png' }, // partner disaster response network
+                { src: '../images/bahawatch/inquirer-quote.png' } // why abandoned sensors matter
+            ];
+            const track = document.querySelector('.project-carousel .carousel-track img');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            if (!track) return;
+            let index = 0;
+            // Preview matches how the photo is cropped/zoomed on the home page
+            const carousel = track.closest('.project-carousel');
+            // The box takes the first photo's shape and keeps it, so it doesn't resize while clicking through
+            let framed = false;
+            function fitFrame() {
+                const spec = images[index];
+                if (framed || index !== 0 || !track.naturalWidth) return;
+                carousel.style.aspectRatio = spec.ratio || (track.naturalWidth * (spec.stretchX || 1)) / track.naturalHeight;
+                framed = true;
+            }
+            function applyImage() {
+                const spec = images[index];
+                // Photos that are uncropped on the home page show whole (contain) when they don't match the box
+                const uncropped = !spec.ratio && !spec.transform && !spec.fit;
+                track.style.objectFit = spec.fit || (uncropped && index !== 0 ? 'contain' : 'cover');
+                track.style.objectPosition = spec.pos || '';
+                track.style.transform = spec.transform || '';
+                track.style.transformOrigin = spec.origin || '';
+                if (index === 0 && spec.ratio && !framed) { carousel.style.aspectRatio = spec.ratio; framed = true; }
+                if (track.getAttribute('src') !== spec.src) track.src = spec.src;
+                else if (track.complete) fitFrame();
+            }
+            track.addEventListener('load', fitFrame);
+            applyImage();
+            function show(i) {
+                index = (i + images.length) % images.length;
+                applyImage();
+                if (lightbox.classList.contains('open')) {
+                    lightboxImg.src = images[index].src;
+                }
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
+            if (images.length > 1) {
+                // Auto-advance only in the small preview; the full-screen view flips on click only
+                setInterval(() => {
+                    if (!lightbox.classList.contains('open')) show(index + 1);
+                }, 4000);
+            }
+
+            // Full-page lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            function openLightbox() {
+                lightboxImg.src = images[index].src;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            track.addEventListener('click', openLightbox);
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => show(index - 1));
+            lightboxNext.addEventListener('click', () => show(index + 1));
+            if (images.length < 2) {
+                lightboxPrev.style.display = 'none';
+                lightboxNext.style.display = 'none';
+            }
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
+        })();
+    </script>
 </body>
 </html>

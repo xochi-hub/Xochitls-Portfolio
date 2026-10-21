@@ -59,7 +59,7 @@
                     <a class="entry-link" href="projects/soft-wearables-menopause-fatigue.html"><h4>Deepika Yadav's HCI Lab:</h4>
                     <p class="entry-title"><em>Designing Soft Wearables For Menopause Fatigue</em>: Researched How Fatigue and Exhaustion Surface Across Menstrual Life Stages Using Somatic Body-journaling Data to Design Wearables</p></a>
                     </div>
-                    <div class="entry-images"><a class="entry-link" href="projects/soft-wearables-menopause-fatigue.html"><span class="crop-frame"><img src="WhatsApp%20Image%202026-09-29%20at%2010.09.48%20PM.jpeg" alt="Xochitl presenting the menopause fatigue wearables poster" loading="lazy"></span></a></div>
+                    <div class="entry-images"><p class="click-hint">*Click on links to learn more about projects, or on images to enlarge them</p><a class="entry-link" href="projects/soft-wearables-menopause-fatigue.html"><span class="crop-frame"><img src="WhatsApp%20Image%202026-09-29%20at%2010.09.48%20PM.jpeg" alt="Xochitl presenting the menopause fatigue wearables poster" loading="lazy"></span></a></div>
                 </article>
             </div>
             <div class="timeline-term term-spring26">
@@ -87,10 +87,10 @@
                 <!-- ... -->
                 <article class="timeline-entry hci-entry hci-copy computational-entry">
                     <div class="entry-text">
-                    <a class="entry-link" href="#"><h4>Computational Biomechanics Across Multiple Scales (ME120):</h4>
+                    <a class="entry-link" href="projects/biofilm-mechanics.html"><h4>Computational Biomechanics Across Multiple Scales (ME120):</h4>
                     <p class="entry-title"><em>Biofilm Mechanics Blocking Tissue Repair</em>: Developed a Multiscale Biomechanical Simulation Framework That Maps Polymer Network Dynamics onto a 2D Continuum Mesh to Analyze Deformation in Bacterial Biofilms Under Wound-contraction Conditions</p></a>
                     </div>
-                    <div class="entry-images"><a class="entry-link" href="#"><span class="crop-frame"><img src="images/Screenshot%202026-10-01%20215158.png" alt="Biofilm mechanics simulation" loading="lazy"></span></a></div>
+                    <div class="entry-images"><a class="entry-link" href="projects/biofilm-mechanics.html"><span class="crop-frame"><img src="images/Screenshot%202026-10-01%20215158.png" alt="Biofilm mechanics simulation" loading="lazy"></span></a></div>
                 </article>
                 <article class="timeline-entry stride-entry">
                     <div class="entry-text">
@@ -116,7 +116,7 @@
                 <article class="timeline-entry me278-entry">
                     <div class="entry-text">
                     <a class="entry-link" href="projects/gyroscope-glove.html"><h4>Designing for the Human Body (ME278):</h4>
-                    <p class="entry-title">Gyroscope Glove for Reducing Hand Tremors</p></a>
+                    <p class="entry-title"><em>Gyroscope</em> Glove for Reducing Hand Tremors</p></a>
                     </div>
                     <div class="entry-images"><a class="entry-link entry-link-images" href="projects/gyroscope-glove.html"><span class="zoom-frame me278-zoom-frame"><img class="zoom-10" src="images/f6bf48cdbed14b428943c9fb5fe5fc5f.jpeg" alt="Gyroscope glove" loading="lazy"></span><img src="images/afa83e5acb6f42208e20ec600c6941a0.jpg" alt="Gyroscope glove" loading="lazy"></a></div>
                 </article>
@@ -130,7 +130,7 @@
                 <article class="timeline-entry kedar-entry">
                     <div class="entry-text">
                     <a class="entry-link" href="projects/direct-joule-synthesis.html"><h4>Kedar Hippalgaonkar's Materials by Design Lab:</h4>
-                    <p class="entry-title">Direct Joule Synthesis of Multi-Metallic Compounds for CO2 Conversion Catalysis</p></a>
+                    <p class="entry-title"><em>Direct</em> Joule Synthesis of Multi-Metallic Compounds for CO2 Conversion Catalysis</p></a>
                     </div>
                     <div class="entry-images"><a class="entry-link entry-link-images" href="projects/direct-joule-synthesis.html"><img src="images/32ae73d8e8c849b7aa1e7bbcd067706a.jpeg" alt="Materials by Design Lab" loading="lazy"><span class="zoom-frame"><img class="zoom-20" src="images/216ce2857b7740669759b114fcff37da.jpeg" alt="Materials by Design Lab" loading="lazy"></span></a></div>
                 </article>
@@ -144,7 +144,7 @@
                 <article class="timeline-entry biomech-entry">
                     <div class="entry-text">
                     <a class="entry-link" href="projects/polyurethane-foam-study.html"><h4>Berkeley Biomechanics Lab:</h4>
-                    <p class="entry-title"> Researched the Performance of Polyester Polyurethane Foam in Controlled Environments to Understand Materials in BiPAP/CPAP Devices</p></a>
+                    <p class="entry-title"><em>Researched</em> the Performance of Polyester Polyurethane Foam in Controlled Environments to Understand Materials in BiPAP/CPAP Devices</p></a>
                     </div>
                     <div class="entry-images"><a class="entry-link entry-link-images" href="projects/polyurethane-foam-study.html"><img src="images/5b24d72a29a04ad4b8537118e00646be.png" alt="Biomechanics Lab" loading="lazy"><img src="images/c6d62656f90848a58633c2cd747c365a.png" alt="Biomechanics Lab" loading="lazy"></a></div>
                 </article>
@@ -158,6 +158,14 @@
             </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -206,7 +214,7 @@
                 if (!stopLine) return Infinity;
                 const lineTop = stopLine.getBoundingClientRect().top + window.scrollY;
                 const dressTop = dress.getBoundingClientRect().top + window.scrollY - current;
-                return Math.max(lineTop - dressTop - 40, 0); // stop a little above the line
+                return Math.max(lineTop - dressTop - 15, 0); // stop just above the line
             }
             let parked = false; // once the dress reaches its stop, it stays there
             function tick() {
@@ -220,6 +228,63 @@
                 requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);
+        })();
+    </script>
+    <script>
+        // Full-page lightbox: every photo on the page opens on its own (term logos excluded);
+        // the arrows only step through the photos of the same project
+        (function () {
+            const photos = [...document.querySelectorAll('main img:not(.term-logo):not(.profile-photo)')];
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            let group = [];
+            let index = 0;
+
+            function show(i) {
+                index = (i + group.length) % group.length;
+                lightboxImg.src = group[index].src;
+                lightboxImg.alt = group[index].alt;
+            }
+            function openLightbox(i) {
+                const img = photos[i];
+                const entry = img.closest('.timeline-entry');
+                group = entry ? [...entry.querySelectorAll('img')] : [img];
+                const single = group.length < 2;
+                lightboxPrev.style.display = single ? 'none' : '';
+                lightboxNext.style.display = single ? 'none' : '';
+                show(group.indexOf(img));
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            photos.forEach((img, i) => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', (e) => {
+                    e.preventDefault(); // photo opens in the lightbox instead of following its project link
+                    e.stopPropagation();
+                    openLightbox(i);
+                });
+            });
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => show(index - 1));
+            lightboxNext.addEventListener('click', () => show(index + 1));
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (group.length < 2) return;
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
         })();
     </script>
     <script src="top.js"></script>

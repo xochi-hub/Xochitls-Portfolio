@@ -28,9 +28,81 @@
     <main class="container">
         <section class="project-page">
             <h1>Soft Wearables for Menopause Fatigue</h1>
-            <!-- Project details go here -->
+            <div class="title-underline"></div>
+
+            <div class="project-top-row project-wrap">
+                <div class="project-body">
+                    <p class="project-subtitle">2026 <span class="dot">&middot;</span> Soft Wearables <span class="dot">&middot;</span> Mechanical Design</p>
+
+                    <div class="project-carousel">
+                        <div class="carousel-track">
+                            <img src="../WhatsApp%20Image%202026-09-29%20at%2010.09.48%20PM.jpeg" alt="Soft Wearables for Menopause Fatigue">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+                        <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+                    </div>
+
+                    <p class="project-text"> More than 70% of women will experience musculoskeletal symptoms during menopause; 25% will be disabled by them. Menopause symptoms cause underlying fatigue that affect daily life. The topic of menopause is commonly stigmitized, causing generations of women to be under-resourced and unprepared for the perimenopause transition. Being able to understand and collect data about your body with a wearable can help women plan alongside their fatigue, improving their quality of life.  </p>
+
+                    <ul class="project-bullets">
+                        <li><span class="keyword">Synthesized research across five fields</span> (menopause endocrinology, musculoskeletal decline, menstrual cycle fatigue, soma design, and wearable sensing) to translate dynamic movement into a <span class="keyword">measurable signal of exhaustion</span></li>
+                        <li>Designed and ran a <span class="keyword">multi-day user study</span> using <span class="keyword">take-home kits</span> with journals, markers, a phone stand, and a <span class="keyword">body mapping</span> page where participants marked where exhaustion sits, what it feels like, and when it arrives</li>
+                        <li>Bridged user research and hardware by translating body maps into <span class="keyword">sensor placement</span> and selecting hardware built for <span class="keyword">all-day, low-power wear</span></li>
+                        <li>Prototyped <span class="keyword">soft sensing and feedback samples</span> using conductive fabric and thread, IMUs, a piezoelectric sensor with a buffer/filter stage, and inflatables for pneumatic pressure, exploring three directions: expressive surfaces, continuous sensing, and reactive touch.</li>
+                    </ul>
+
+                    <h3 class="project-subheading">Skills</h3>
+                    <div class="skills-columns">
+                        <div class="skills-group">
+                            <h4>Design &amp; Research</h4>
+                            <ul>
+                                <li>Human-Centered Design</li>
+                                <li>Somatic Design</li>
+                                <li>Research Synthesis</li>
+                                <li>Study Design &amp; Recruitment</li>
+                                <li>Diary Studies &amp; Body Mapping</li>
+                                <li>User Interviews</li>
+                                <li>Qualitative Analysis</li>
+                                <li>Literature Review</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Fabrication &amp; Prototyping</h4>
+                            <ul>
+                                <li>Soft Goods &amp; Textile Construction</li>
+                                <li>Sewing</li>
+                                <li>Conductive Fabric &amp; Thread</li>
+                                <li>Soldering</li>
+                                <li>CAD (SolidWorks, Fusion 360)</li>
+                                <li>Rapid &amp; Iterative Prototyping</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Electronics &amp; Software</h4>
+                            <ul>
+                                <li>Soft Electronics</li>
+                                <li>Embedded Sensing</li>
+                                <li>IMUs</li>
+                                <li>Piezoelectric Sensing &amp; Signal Filtering</li>
+                                <li>Sensor Placement</li>
+                                <li>Low-Power Hardware Selection</li>
+                                <li>Microcontrollers (ESP32/Arduino)</li>
+                                <li>Figma</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -45,6 +117,9 @@
                     <a href="https://www.linkedin.com/in/xochitl-ortega/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
                     </a>
+                    <a href="../resume.html" aria-label="Resume">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+                    </a>
                 </div>
             </div>
             <p class="copyright">&copy; 2026 Xochitl Ortega. Built with GitHub Pages.</p>
@@ -53,5 +128,95 @@
 
     <script src="../top.js"></script>
     <script src="../sparkle.js"></script>
+    <script src="../project-nav.js"></script>
+    <script>
+        (function () {
+            const images = [
+                { src: '../WhatsApp%20Image%202026-09-29%20at%2010.09.48%20PM.jpeg', ratio: '204 / 203', pos: 'center 40%', transform: 'scale(1.05)' },
+                { src: '../images/menopause-study-kit.png', fit: 'cover' }, // take-home user study kits
+                { src: '../images/asci-poster.jpg', fit: 'cover', pos: 'center top' }, // poster PDF as an image: fills the box's width, showing the top of the poster
+                { src: '../images/poster-menopause.jpg', fit: 'cover', pos: 'center top' } // study recruitment flyer PDF, shown the same way
+            ];
+            const track = document.querySelector('.project-carousel .carousel-track img');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            if (!track) return;
+            let index = 0;
+            // Preview matches how the photo is cropped/zoomed on the home page
+            const carousel = track.closest('.project-carousel');
+            // The box takes the first photo's shape and keeps it, so it doesn't resize while clicking through
+            let framed = false;
+            function fitFrame() {
+                const spec = images[index];
+                if (framed || index !== 0 || !track.naturalWidth) return;
+                carousel.style.aspectRatio = spec.ratio || (track.naturalWidth * (spec.stretchX || 1)) / track.naturalHeight;
+                framed = true;
+            }
+            function applyImage() {
+                const spec = images[index];
+                // Photos that are uncropped on the home page show whole (contain) when they don't match the box
+                const uncropped = !spec.ratio && !spec.transform && !spec.fit;
+                track.style.objectFit = spec.fit || (uncropped && index !== 0 ? 'contain' : 'cover');
+                track.style.objectPosition = spec.pos || '';
+                track.style.transform = spec.transform || '';
+                track.style.transformOrigin = spec.origin || '';
+                if (index === 0 && spec.ratio && !framed) { carousel.style.aspectRatio = spec.ratio; framed = true; }
+                if (track.getAttribute('src') !== spec.src) track.src = spec.src;
+                else if (track.complete) fitFrame();
+            }
+            track.addEventListener('load', fitFrame);
+            applyImage();
+            function show(i) {
+                index = (i + images.length) % images.length;
+                applyImage();
+                if (lightbox.classList.contains('open')) {
+                    lightboxImg.src = images[index].src;
+                }
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
+            if (images.length > 1) {
+                // Auto-advance only in the small preview; the full-screen view flips on click only
+                setInterval(() => {
+                    if (!lightbox.classList.contains('open')) show(index + 1);
+                }, 4000);
+            }
+
+            // Full-page lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            function openLightbox() {
+                lightboxImg.src = images[index].src;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            track.addEventListener('click', openLightbox);
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => show(index - 1));
+            lightboxNext.addEventListener('click', () => show(index + 1));
+            if (images.length < 2) {
+                lightboxPrev.style.display = 'none';
+                lightboxNext.style.display = 'none';
+            }
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
+        })();
+    </script>
 </body>
 </html>

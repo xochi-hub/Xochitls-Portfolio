@@ -28,9 +28,73 @@
     <main class="container">
         <section class="project-page">
             <h1>Gyroscope Glove</h1>
-            <!-- Project details go here -->
+            <div class="title-underline"></div>
+            <div class="project-top-row project-wrap">
+                <div class="project-body">
+                    <p class="project-subtitle">2025 <span class="dot">&middot;</span> Assistive Devices <span class="dot">&middot;</span> Human-Centered Design</p>
+
+                    <div class="project-carousel project-carousel-glove">
+                        <div class="carousel-track">
+                            <img src="../images/f6bf48cdbed14b428943c9fb5fe5fc5f.jpeg" alt="Gyroscope Glove">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+                        <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+                    </div>
+
+                    <p class="project-text">Tremors are involuntary, rhythmic movements that make everyday tasks like writing, eating, and cooking difficult. They vary from person to person and even throughout the day, so there is no one-size-fits-all solution. Existing devices can help, but people we interviewed said they are often bulky, uncomfortable, hard to put on, or hard to clean. Built for Advanced Designing for the Human Body with a team of four, this glove uses a spinning gyroscopic wheel on the back of the hand to resist wrist tremors while keeping the fingers free. The wheel’s speed can be adjusted with a knob, and weights can be added or removed, which let us experiment with how spin and weight affect tremors. We tested different combinations with a user to learn what the design needs to reduce shaking in everyday use.</p>
+
+                    <ul class="project-bullets">
+                        <li><span class="keyword">Interviewed people with tremors</span> and ran <span class="keyword">drawing tests</span> with and without arm support to define what a device needs: comfort, quick on and off, and use during daily tasks</li>
+                        <li>Iterated <span class="keyword">multiple glove designs</span> with <span class="keyword">adjustable wrist and forearm straps</span> to fit different hands, integrating <span class="keyword">3D-printed parts</span> and <span class="keyword">sewn attachments</span> to hold the gyroscope and weights securely</li>
+                        <li>Experimented with wheel speed and added weight across <span class="keyword">six conditions</span> with a user, using an <span class="keyword">IMU</span> and <span class="keyword">MATLAB</span> to measure hand motion</li>
+                    </ul>
+
+                    <h3 class="project-subheading">Skills</h3>
+                    <div class="skills-columns">
+                        <div class="skills-group">
+                            <h4>Design &amp; Research</h4>
+                            <ul>
+                                <li>Human-Centered Design</li>
+                                <li>User Interviews</li>
+                                <li>Usability Testing</li>
+                                <li>Requirements Definition</li>
+                                <li>Assistive Device Design</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Fabrication &amp; Prototyping</h4>
+                            <ul>
+                                <li>Wearable Prototyping</li>
+                                <li>3D Printing</li>
+                                <li>Sewing &amp; Soft Goods</li>
+                                <li>Adjustable Fit Design</li>
+                                <li>Rapid &amp; Iterative Prototyping</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Testing &amp; Analysis</h4>
+                            <ul>
+                                <li>Experimental Design</li>
+                                <li>IMU Motion Sensing</li>
+                                <li>MATLAB Data Analysis</li>
+                                <li>Gyroscopic Stabilization</li>
+                                <li>Tremor Motion Measurement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -45,6 +109,9 @@
                     <a href="https://www.linkedin.com/in/xochitl-ortega/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
                     </a>
+                    <a href="../resume.html" aria-label="Resume">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+                    </a>
                 </div>
             </div>
             <p class="copyright">&copy; 2026 Xochitl Ortega. Built with GitHub Pages.</p>
@@ -53,5 +120,93 @@
 
     <script src="../top.js"></script>
     <script src="../sparkle.js"></script>
+    <script src="../project-nav.js"></script>
+    <script>
+        (function () {
+            const images = [
+                { src: '../images/f6bf48cdbed14b428943c9fb5fe5fc5f.jpeg', ratio: '252 / 160', transform: 'scale(1.1)' },
+                { src: '../images/afa83e5acb6f42208e20ec600c6941a0.jpg', ratio: '252 / 160' }
+            ];
+            const track = document.querySelector('.project-carousel .carousel-track img');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            if (!track) return;
+            let index = 0;
+            // Preview matches how the photo is cropped/zoomed on the home page
+            const carousel = track.closest('.project-carousel');
+            // The box takes the first photo's shape and keeps it, so it doesn't resize while clicking through
+            let framed = false;
+            function fitFrame() {
+                const spec = images[index];
+                if (framed || index !== 0 || !track.naturalWidth) return;
+                carousel.style.aspectRatio = spec.ratio || (track.naturalWidth * (spec.stretchX || 1)) / track.naturalHeight;
+                framed = true;
+            }
+            function applyImage() {
+                const spec = images[index];
+                // Photos that are uncropped on the home page show whole (contain) when they don't match the box
+                const uncropped = !spec.ratio && !spec.transform && !spec.fit;
+                track.style.objectFit = spec.fit || (uncropped && index !== 0 ? 'contain' : 'cover');
+                track.style.objectPosition = spec.pos || '';
+                track.style.transform = spec.transform || '';
+                track.style.transformOrigin = spec.origin || '';
+                if (index === 0 && spec.ratio && !framed) { carousel.style.aspectRatio = spec.ratio; framed = true; }
+                if (track.getAttribute('src') !== spec.src) track.src = spec.src;
+                else if (track.complete) fitFrame();
+            }
+            track.addEventListener('load', fitFrame);
+            applyImage();
+            function show(i) {
+                index = (i + images.length) % images.length;
+                applyImage();
+                if (lightbox.classList.contains('open')) {
+                    lightboxImg.src = images[index].src;
+                }
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
+            if (images.length > 1) {
+                // Auto-advance only in the small preview; the full-screen view flips on click only
+                setInterval(() => {
+                    if (!lightbox.classList.contains('open')) show(index + 1);
+                }, 4000);
+            }
+
+            // Full-page lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            function openLightbox() {
+                lightboxImg.src = images[index].src;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            track.addEventListener('click', openLightbox);
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => show(index - 1));
+            lightboxNext.addEventListener('click', () => show(index + 1));
+            if (images.length < 2) {
+                lightboxPrev.style.display = 'none';
+                lightboxNext.style.display = 'none';
+            }
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
+        })();
+    </script>
 </body>
 </html>

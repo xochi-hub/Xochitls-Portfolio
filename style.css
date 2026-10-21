@@ -92,6 +92,7 @@ header {
 /* Intro Section */
 .intro-section {
     padding: 40px 0 20px 0;
+    transform: translateY(-5px);
 }
 
 .intro-section h1 {
@@ -201,23 +202,77 @@ header {
 
 /* Virtual Resume Section */
 .resume-section {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.resume-viewer-row {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 564px) 1fr;
+    align-items: start;
+    gap: 16px;
+    margin-bottom: 87px;
+}
+
+.resume-viewer-row .resume-viewer {
+    grid-column: 2;
+}
+
+.resume-viewer-row .resume-download-btn {
+    grid-column: 3;
+    justify-self: end;
+    transform: translateY(-3px);
+}
+
+.resume-viewer {
+    width: 100%;
+    max-width: 564px;
+    height: 725px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: block;
 }
 
 .section-header-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .resume-section h2, .experience-section h2 {
+    font-family: 'Lora', Georgia, serif;
     font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: -0.4px;
+    display: block;
+    flex: 1;
+}
+
+.experience-section, .project-page {
+    padding-top: 20px;
+}
+
+.resume-section {
+    padding-top: 20px;
+}
+
+/* Full-bleed grey line + lifted shadow under each page's title, spanning the whole viewport width */
+.title-underline {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.18);
+}
+
+.experience-section .title-underline {
+    margin-bottom: 10px;
 }
 
 .resume-download-btn {
+    display: inline-block;
     font-size: 0.85rem;
     font-weight: 600;
     color: #000;
@@ -225,6 +280,8 @@ header {
     border: 1px solid #e0e0e0;
     padding: 6px 14px;
     border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     transition: background-color 0.2s ease;
 }
 
@@ -296,15 +353,74 @@ header {
 
 /* Projects & Experience Section */
 .section-desc {
-    color: #666;
-    margin-top: 6px;
-    margin-bottom: 30px;
+    color: #444444;
+    margin-top: 22px;
+    margin-bottom: 9px;
 }
 
 .project-grid {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 18px;
+}
+
+.additional-skills {
+    height: 64px;
+    margin: 40px 15px 95px 15px;
+    padding: 15px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Interests, styled like the camera roll's "Utilities" heading + rounded row */
+.interests-group {
+    margin: 40px 15px 0 15px;
+}
+
+.interests-heading {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 22px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e0e0e0; /* line under Interests */
+}
+
+.interests-chevron {
+    color: #9a9a9e;
+}
+
+/* Same chevron beside the page title, sitting on the text's middle */
+.title-chevron {
+    vertical-align: middle;
+    margin-left: 2px;
+    position: relative;
+    top: -2px;
+}
+
+.interests-group .additional-skills {
+    margin: 0;
+    height: auto;
+    padding: 10.5px 20px; /* 15px shorter than before (7.5px off top and bottom) */
+    background-color: rgba(255, 255, 255, 0.92); /* same fill as the menu bar */
+    border: none;
+    border-radius: 12px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+/* Note tucked just under the Interests box, on the right */
+.page-note {
+    margin: 12px 15px 92px 15px;
+    text-align: right;
+    font-size: 0.8rem;
 }
 
 .project-card {
@@ -357,9 +473,10 @@ header {
 /* Footer & Contact */
 footer {
     border-top: 1px solid rgba(0, 50, 73, 0.12);
-    padding: 60px 0 40px 0;
-    margin-top: -38px;
+    padding: 60px 0 10px 0;
+    margin-top: -55px;
     background-color: #9cb0b8;
+    box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.18);
 }
 
 .footer-container {
@@ -458,7 +575,8 @@ footer {
     border: 1px solid #d9d9d9;
     background: #ffffff;
     border-radius: 8px;
-    padding: 32px 32px 15px 32px;
+    padding: 32px 32px 13px 32px;
+    margin-bottom: 6px;
     margin-top: 28px;
 }
 
@@ -476,13 +594,13 @@ footer {
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 2px;
-    margin-top: 24px;
+    gap: 4px;
+    margin-top: 6px;
 }
 
 .photo-tile {
     aspect-ratio: 1 / 1;
-    outline: 2px solid #d6d6d6;
+    outline: 2px solid rgba(188, 222, 230, 0.2);
     overflow: hidden;
 }
 
@@ -509,14 +627,16 @@ footer {
 }
 
 .intro-section .credentials {
-    font-size: 0.68rem;
+    font-size: 0.82rem;
+    margin-top: 4px;        /* breathing room under the name */
+    line-height: 1.55;      /* space between the two lines */
 }
 
 .name-group {
     width: fit-content;
     margin-left: auto;
-    margin-right: 0;
-    margin-top: -18px;
+    margin-right: 12px;     /* pulled in from the right edge */
+    margin-top: -8px;       /* sits 10px lower, out of the corner */
     text-align: center;
 }
 
@@ -531,24 +651,27 @@ footer {
 
 .intro-box {
     position: relative;
-    align-items: center; /* text group sits centered next to the photo */
+    align-items: stretch; /* photo stretches to match the text column's full height */
 }
 
 /* Profile photo: zoomed 10%, cropping from the top */
 .photo-frame {
     width: 248px;
+    height: auto;
+    align-self: stretch;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 8px;
     margin-left: -2px;
+    position: relative;
+    transform: translateY(-12px);
 }
 
-.photo-frame {
-    aspect-ratio: 950 / 1440; /* narrower: crops the left and right sides too */
-}
 
 .photo-frame .profile-photo {
     display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -563,7 +686,10 @@ footer {
     position: absolute;
     top: 142px;
     right: -150px;
-    width: 200px;
+    width: 160px;
+    max-height: 420px;
+    object-fit: contain;
+    object-position: top;
     pointer-events: none;
     z-index: 2;
     will-change: transform;
@@ -683,6 +809,20 @@ footer {
     text-decoration: none;
 }
 
+.fav-heart {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    z-index: 3;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+    pointer-events: none;
+}
+
+.fav-heart svg {
+    width: 18px;
+    height: 18px;
+}
+
 .tile-title {
     position: absolute;
     inset: 0;
@@ -706,11 +846,478 @@ footer {
 
 /* Project detail pages */
 .project-page {
-    padding: 60px 0;
+    padding-bottom: 60px;
 }
 
 .project-page h1 {
     font-family: 'Lora', Georgia, serif;
+}
+
+.project-page p {
+    color: #444444;
+}
+
+/* Project detail body layout: text column + carousel */
+.project-top-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 3px;
+}
+
+.project-body {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Variant: text wraps around the photo and fills the width below it */
+.project-top-row.project-wrap {
+    display: flow-root;
+}
+
+.project-wrap .project-carousel {
+    float: right;
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+
+.project-page .project-subtitle {
+    color: #003262;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.project-subtitle .dot {
+    color: #003262;
+    margin: 0 6px;
+}
+
+.project-text {
+    margin-bottom: 25px;
+}
+
+.project-bullets {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+.project-bullets li {
+    margin-bottom: 6px;
+}
+
+.project-bullets li,
+.project-bullets li::marker {
+    color: #111111;
+}
+
+/* Project-to-project arrows, styled after the iPhone camera roll's frosted round buttons */
+.project-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #111111;
+}
+
+.project-nav-prev {
+    left: 20px;
+}
+
+.project-nav-next {
+    right: 20px;
+}
+
+.project-nav-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.project-nav-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Project name drops down below the arrow in a frosted pill on hover */
+.project-nav-label {
+    max-width: 220px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    pointer-events: none;
+    /* Sits just below the arrow, lined up with the screen edge so it never runs off the page */
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-nav-next .project-nav-label {
+    left: auto;
+    right: 0;
+}
+
+.project-nav:hover .project-nav-arrow,
+.project-nav:focus-visible .project-nav-arrow {
+    background: rgba(255, 255, 255, 0.85);
+    transform: scale(1.08);
+}
+
+.project-nav:hover .project-nav-label,
+.project-nav:focus-visible .project-nav-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-nav:active .project-nav-arrow {
+    transform: scale(0.94);
+}
+
+/* On phones: smaller buttons tucked to the edges, no label (swipe also works) */
+@media (max-width: 700px) {
+    .project-nav-prev { left: 8px; }
+    .project-nav-next { right: 8px; }
+
+    .project-nav-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .project-nav-label {
+        display: none;
+    }
+}
+
+/* Key words highlighted in project text and bullets */
+.keyword {
+    color: #003262; /* dark Berkeley Blue */
+    font-weight: 600;
+}
+
+/* Skills split into columns divided by vertical lines */
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 20px;
+}
+
+.skills-group {
+    padding: 0 20px;
+    border-left: 1px solid #d9d9d9;
+}
+
+.skills-group:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.skills-group:last-child {
+    padding-right: 0;
+}
+
+.skills-group h4 {
+    color: #003262;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.skills-group ul {
+    list-style: none;
+    padding: 0;
+    color: #444444;
+}
+
+.skills-group li {
+    margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+    .skills-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-group,
+    .skills-group:first-child {
+        padding: 12px 0;
+        border-left: none;
+        border-top: 1px solid #d9d9d9;
+    }
+
+    .skills-group:first-child {
+        border-top: none;
+        padding-top: 0;
+    }
+}
+
+.project-subheading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.project-carousel {
+    position: relative;
+    width: 320px;
+    max-width: 40%;
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    background: #ffffff; /* fills around photos shown whole in a box shaped for another photo */
+    margin-bottom: 50px;
+}
+
+/* Variant: bigger photo box */
+.project-carousel.project-carousel-large {
+    width: 600px;
+    max-width: 60%;
+}
+
+/* Variant: smaller photo box (Stride Recover) */
+.project-carousel.project-carousel-medium {
+    width: 280px;
+    max-width: 28%;
+}
+
+/* Variant: 15% bigger than the default photo box (Medical Device Equity) */
+.project-carousel.project-carousel-plus {
+    width: 465px;
+    max-width: 58%;
+}
+
+/* Variant: 12% bigger than the default photo box (Gyroscope Glove) */
+.project-carousel.project-carousel-glove {
+    width: 394px;
+    max-width: 50%;
+}
+
+/* Variant: 15% bigger than the default photo box (BahaWatch) */
+.project-carousel.project-carousel-baha {
+    width: 368px;
+    max-width: 50%;
+}
+
+/* Variant: 20% smaller than the default photo box (EchoHand) */
+.project-carousel.project-carousel-echo {
+    width: 256px;
+    max-width: 32%;
+}
+
+/* Formaflow: text on the left, both photo boxes stacked on the right, Skills full width below */
+.formaflow-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.formaflow-media {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-wrap .formaflow-media .project-carousel {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.project-carousel .carousel-track {
+    width: 100%;
+    height: 100%;
+}
+
+.project-carousel .carousel-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+/* Full-page photo lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.lightbox-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-prev {
+    left: 24px;
+}
+
+.lightbox-next {
+    right: 24px;
+}
+
+@media (max-width: 600px) {
+    .lightbox-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.4rem;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: #003262;
+    transition: background-color 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background: #ffffff;
+}
+
+.carousel-prev {
+    left: 8px;
+}
+
+.carousel-next {
+    right: 8px;
+}
+
+@media (max-width: 700px) {
+    .project-top-row {
+        flex-direction: column;
+    }
+
+    .project-carousel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-wrap .project-carousel {
+        float: none;
+        margin-left: 0;
+    }
+
+    .project-carousel.project-carousel-large,
+    .project-carousel.project-carousel-medium,
+    .project-carousel.project-carousel-plus,
+    .project-carousel.project-carousel-glove,
+    .project-carousel.project-carousel-baha,
+    .project-carousel.project-carousel-echo,
+    .project-carousel.project-carousel-vertical,
+    .project-wrap .project-carousel.project-carousel-horizontal {
+        float: none;
+        margin-right: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Formaflow: photos stack under the text on phones */
+    .formaflow-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Keep the tall photo from filling a whole phone screen */
+    .project-wrap .project-carousel.project-carousel-vertical {
+        max-width: 70%;
+        margin: 0 auto 30px;
+    }
 }
 
 .placeholder-tile a {
@@ -721,7 +1328,7 @@ footer {
 
 /* Visual Resume: spacing and Caslon headings to match the name */
 .visual-resume {
-    padding-top: 52px;
+    padding-top: 30px;
 }
 
 /* Title + subtitle share one thin black underline (1px) below both */
@@ -760,7 +1367,8 @@ footer {
     display: flex;
     justify-content: center;
     gap: 18px;
-    margin-bottom: 18px;
+    padding-top: 16px;
+    margin-bottom: 0;
 }
 
 .contact-icons a {
@@ -775,6 +1383,32 @@ footer {
     border: 1px solid var(--frosted-blue);
     box-sizing: border-box;
     transition: background-color 0.2s ease;
+    position: relative;
+}
+
+/* Tooltip label on hover, pulled from each icon's existing aria-label */
+.contact-icons a::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #ffffff;
+    color: var(--deep-space-blue);
+    border: 1px solid #d9d9d9;
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 3px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .contact-icons a:hover {
@@ -841,6 +1475,22 @@ footer {
 
 .visual-resume .hci-entry .entry-images {
     justify-content: flex-start; /* photo sits right next to the text column */
+}
+
+/* Small hint above the photo, 12px in from the Summer 2026 right line (mirrors the text's 12px inset on the left) */
+.visual-resume .hci-entry .entry-images {
+    position: relative;
+}
+
+.visual-resume .hci-entry .click-hint {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    right: 12px;
+    margin: 0;
+    font-size: 10px;
+    font-style: italic;
+    color: #666666;
+    white-space: nowrap;
 }
 
 .visual-resume .hci-entry .crop-frame {
@@ -959,7 +1609,7 @@ footer {
 .entry-link:hover h4,
 .entry-link:hover .entry-title {
     text-decoration: underline;
-    text-decoration-color: rgba(0, 0, 0, 0.07); /* barely-there grey */
+    text-decoration-color: rgba(0, 0, 0, 0.165); /* light grey */
     text-underline-offset: 3px;
 }
 
@@ -976,6 +1626,7 @@ footer {
 .visual-resume .entry-title em {
     font-weight: 700;
     font-style: normal;
+    color: #C2552D;
 }
 
 /* Spring 2026: Berkeley seal 20% bigger */
@@ -992,6 +1643,7 @@ footer {
 
 .term-spring26 .term-head .term-logo {
     transform: none;
+    align-self: center;
 }
 
 /* Every term logo (seals, Aalto, NTU) the same size */
@@ -1065,13 +1717,13 @@ footer {
     margin-top: -25px;   /* and up */
 }
 
-/* Sleek dark blue cursor on every page: slim arrow with a long, sharp tip (same shape on links) */
+/* Sleek, elegant dark blue cursor on every page: slender tapered arrow (same shape on links) */
 html, body {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249'/%3E%3C/svg%3E") 2 1, auto;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='20' viewBox='0 0 22 28'%3E%3Cpath d='M1.5 1 L1.5 20.5 L5.6 16.8 L9 24.5 L11.6 23.3 L8.3 15.7 L15 15.7 Z' fill='%23003262'/%3E%3C/svg%3E") 1 1, auto;
 }
 
 a, a *, button {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' viewBox='0 0 24 30'%3E%3Cpath d='M2 1 L2 24 L7.4 18.6 L10.8 27 L13.6 25.8 L10.3 17.6 L18 17.6 Z' fill='%23003249'/%3E%3C/svg%3E") 2 1, pointer;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='20' viewBox='0 0 22 28'%3E%3Cpath d='M1.5 1 L1.5 20.5 L5.6 16.8 L9 24.5 L11.6 23.3 L8.3 15.7 L15 15.7 Z' fill='%23003262'/%3E%3C/svg%3E") 1 1, pointer;
 }
 
 /* Sequins text stops 10px before its (further-left) photo */
@@ -1110,6 +1762,8 @@ a, a *, button {
 
 .visual-resume .robogatchi-entry .entry-images {
     transform: translateY(-10px);
+    position: relative;
+    z-index: 2; /* above the text column, which overlaps the left photo, so that photo can be clicked */
 }
 
 .visual-resume .timeline-entry.hci-entry.robogatchi-entry .entry-text {
@@ -1242,12 +1896,12 @@ a, a *, button {
 }
 
 .biomech-entry .entry-images {
-    margin-left: 45px;
+    margin-left: 9%;
 }
 
 .biomech-entry .entry-text,
 .echohand-entry .entry-text {
-    margin-right: -39px;
+    margin-right: -8%;
 }
 
 /* EchoHand: its default right line mirrored on the left */
@@ -1267,7 +1921,7 @@ a, a *, button {
 }
 
 .echohand-entry .entry-images {
-    margin-left: 88px;
+    margin-left: 18%;
 }
 
 /* Kedar entry: right line mimics the original left line, cut by 68%; left line removed */
@@ -1291,7 +1945,7 @@ a, a *, button {
 }
 
 .term-summer25 .entry-images {
-    margin-left: 30px;
+    margin-left: 6%;
 }
 
 /* Formaflow entry: text (with its left line) centered on the image; images bigger, nudged further right; section moved down 15px */
@@ -1304,7 +1958,7 @@ a, a *, button {
 .formaflow-entry .entry-text {
     padding-right: 5px;
     border-left: none;
-    margin-right: -40px; /* text extended, closer to the image */
+    margin-right: -8%; /* text extended, closer to the image */
 }
 
 /* Zoom frame: same footprint as a normal photo, scaled content clipped to it */
@@ -1341,8 +1995,8 @@ a, a *, button {
 
 /* ME102B right photo: squared off instead of rectangular */
 .echohand-square-frame {
-    width: 184px;
-    height: 184px;
+    width: 202px;  /* 10% bigger than 184 */
+    height: 215px; /* same height as the wide photo beside it */
 }
 
 .visual-resume .entry-images .echohand-square-frame img {
@@ -1352,8 +2006,8 @@ a, a *, button {
 }
 
 .visual-resume .entry-images img.echohand-wide {
-    height: 184px;
-    transform: scaleX(1.265);
+    height: 215px; /* taller, so it needs less sideways stretch for the same on-page width */
+    transform: scaleX(1.19);
 }
 
 /* ME278 left photo: frame takes over the 50%/160px sizing so the zoomed img can fill and overflow it */
@@ -1379,7 +2033,7 @@ a, a *, button {
 }
 
 .formaflow-entry .entry-images {
-    margin-left: 45px;
+    margin-left: 9%;
 }
 
 .formaflow-entry .entry-images img {
@@ -1429,7 +2083,7 @@ a, a *, button {
 
 .me278-entry .entry-images {
     flex-wrap: nowrap;
-    margin-left: -43px;
+    margin-left: -9%;
 }
 
 .me278-entry .entry-images img {
@@ -1439,3 +2093,15 @@ a, a *, button {
 }
 
 /* Spring 2026 heading row only (title, M.S., seal, long line) raised 11px; left line and projects stay put */
+
+/* Linked statistics/citations inside project text */
+.cite-link {
+    color: var(--deep-space-blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.cite-link:hover {
+    color: #0a6a8a;
+}

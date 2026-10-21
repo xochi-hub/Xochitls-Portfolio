@@ -1,6 +1,5 @@
 // Small sparkle burst wherever the page is clicked
 document.addEventListener('click', function (e) {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const colors = ['#9AD1D4', '#003249'];
     for (let i = 0; i < 8; i++) {
         const s = document.createElement('span');

@@ -28,9 +28,89 @@
     <main class="container">
         <section class="project-page">
             <h1>Formaflow</h1>
-            <!-- Project details go here -->
+            <div class="title-underline"></div>
+            <div class="project-top-row project-wrap">
+                <div class="project-body">
+                    <p class="project-subtitle">2025 <span class="dot">&middot;</span> Morphing Wearables <span class="dot">&middot;</span> Robotics</p>
+
+                    <!-- Text on the left, both photo boxes stacked on the right -->
+                    <div class="formaflow-layout">
+                        <div class="formaflow-text">
+                            <p class="project-text">Formaflow is an auto-lifting, silhouette-altering dress with an integrated IMU. By detecting when the wearer climbs stairs, the dress lifts to provide clearance so the wearer can walk, climb stairs, and cross wet ground without tripping or dragging the fabric. Built for ME 292C, Design with Morphing Materials and Mechanisms, with a team of four, the dress has two layers that hide the mechanisms inside. Four servo motors pull threads that gather the hem upward, and two servo motors curl octopus-inspired TPU flippers outward to make more room for the feet. The wearer can also trigger the lift with a handheld remote.</p>
+
+                            <ul class="project-bullets">
+                                <li>Sewed the full <span class="keyword">double-layer dress</span> and designed a <span class="keyword">structural corset</span> to hold the electronics and motors, with <span class="keyword">hidden channels for thread routing</span> and a hatch inside the lining for access</li>
+                                <li>Tested <span class="keyword">thread and fabric samples</span> before building the full dress, choosing cotton thread on a midweight cotton blend because elastic thread tangled and rigid cord jammed in the pulleys</li>
+                                <li>Added <span class="keyword">taped-thread stoppers</span> along the lifting lines to control where the fabric folds and stop it from over-lifting, making the hem <span class="keyword">lift the same way each time</span></li>
+                                <li>Iterated <span class="keyword">3D-printed TPU attachments</span> sewn into the dress, moving from interlocking chevron pieces that collapsed on the moving fabric to a square attachment that created a <span class="keyword">consistent scrunch</span></li>
+                                <li>Integrated <span class="keyword">six servo motors</span>, an <span class="keyword">ESP32</span>, and an <span class="keyword">IMU</span> into the garment, lifting the hem about <span class="keyword">120 mm</span> to clear the ground while walking</li>
+                            </ul>
+                        </div>
+
+                        <div class="formaflow-media">
+                            <div class="project-carousel project-carousel-vertical" id="carousel-vertical">
+                                <div class="carousel-track">
+                                    <img src="../images/1164d00a0c5a4a1e842ca63537c96cd1.gif" alt="Formaflow walking demo">
+                                </div>
+                                <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+                                <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+                            </div>
+
+                            <div class="project-carousel project-carousel-horizontal" id="carousel-horizontal">
+                                <div class="carousel-track">
+                                    <img src="../images/formaflow/electronics-enclosure-tpu.jpg" alt="Formaflow">
+                                </div>
+                                <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+                                <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="project-subheading">Skills</h3>
+                    <div class="skills-columns">
+                        <div class="skills-group">
+                            <h4>Design</h4>
+                            <ul>
+                                <li>Morphing Materials &amp; Mechanisms</li>
+                                <li>Bio-Inspired Design</li>
+                                <li>Wearable Design</li>
+                                <li>Material Selection &amp; Testing</li>
+                                <li>Rapid &amp; Iterative Prototyping</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Fabrication</h4>
+                            <ul>
+                                <li>Garment Construction &amp; Sewing</li>
+                                <li>Corsetry &amp; Structural Garments</li>
+                                <li>Soft Goods &amp; Textile Construction</li>
+                                <li>3D Printing (TPU)</li>
+                                <li>Thread &amp; Cable Routing</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Electronics &amp; Mechatronics</h4>
+                            <ul>
+                                <li>ESP32 Microcontroller</li>
+                                <li>IMU Motion Sensing</li>
+                                <li>Servo Motor Control</li>
+                                <li>Pulley &amp; Tendon Actuation</li>
+                                <li>Wireless Remote Control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -45,6 +125,9 @@
                     <a href="https://www.linkedin.com/in/xochitl-ortega/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
                     </a>
+                    <a href="../resume.html" aria-label="Resume">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+                    </a>
                 </div>
             </div>
             <p class="copyright">&copy; 2026 Xochitl Ortega. Built with GitHub Pages.</p>
@@ -53,5 +136,145 @@
 
     <script src="../top.js"></script>
     <script src="../sparkle.js"></script>
+    <script src="../project-nav.js"></script>
+    <script>
+        (function () {
+            // Two carousels: tall photos and videos on the top right, wide ones on the left beside the bullets
+            const sets = {
+                'carousel-horizontal': [
+                    { src: '../images/formaflow/electronics-enclosure-tpu.jpg', ratio: '16 / 9', fit: 'cover' }, // box matches the 16:9 overview video; electronics enclosure with sewn TPU backing case (photo: Kamron Soltani)
+                    { src: '../images/formaflow/outer-layer-construction.jpg', fit: 'cover' }, // outer layer construction (photo: Kamron Soltani)
+                    { vimeo: '1182079818', hash: 'a76bc20631', aspect: 16 / 9, hold: 15000 } // overview video (video: Kamron Soltani)
+                ],
+                'carousel-vertical': [
+                    { src: '../images/1164d00a0c5a4a1e842ca63537c96cd1.gif', ratio: '341 / 512', fit: 'cover' }, // walking demo; GIF trims only its plain sides
+                    { src: '../images/228fbf6def96408284e695c0d3ee33ec.png', fit: 'cover' }, // full dress, shown whole
+                    { src: '../images/formaflow/final-assembled-look.jpeg', fit: 'cover' }, // final assembled look and hemline response (photo: Kamron Soltani)
+                    { vimeo: '1182079831', aspect: 9 / 16, hold: 12000 } // vertical clip: mechanism detail (video: Kamron Soltani)
+                ]
+            };
+
+            // Full-page lightbox, shared by both carousels; videos open large with controls and sound
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            let active = null; // the carousel the lightbox was opened from
+            const isOpen = () => lightbox.classList.contains('open');
+            // Vimeo link; unlisted videos need their privacy hash (h=...)
+            const vimeoUrl = (spec, params) => 'https://player.vimeo.com/video/' + spec.vimeo + '?' + (spec.hash ? 'h=' + spec.hash + '&' : '') + params;
+            const lightboxFrame = document.createElement('iframe');
+            lightboxFrame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            lightboxFrame.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share');
+            lightboxFrame.setAttribute('allowfullscreen', '');
+            lightboxFrame.setAttribute('title', 'Formaflow video');
+            lightboxFrame.style.cssText = 'border:0;border-radius:4px;background:#000;display:none;';
+            lightboxImg.after(lightboxFrame);
+            function renderLightbox(spec) {
+                if (spec.vimeo) {
+                    // Largest size that fits the screen at the video's own shape
+                    const w = Math.min(window.innerWidth * 0.9, window.innerHeight * 0.85 * spec.aspect);
+                    lightboxFrame.style.width = w + 'px';
+                    lightboxFrame.style.height = (w / spec.aspect) + 'px';
+                    lightboxFrame.src = vimeoUrl(spec, 'autoplay=1&loop=1');
+                    lightboxFrame.style.display = 'block';
+                    lightboxImg.style.display = 'none';
+                } else {
+                    lightboxFrame.removeAttribute('src');
+                    lightboxFrame.style.display = 'none';
+                    lightboxImg.style.display = '';
+                    lightboxImg.src = spec.src;
+                }
+            }
+
+            function setupCarousel(carousel, images) {
+                const track = carousel.querySelector('.carousel-track img');
+                const prevBtn = carousel.querySelector('.carousel-prev');
+                const nextBtn = carousel.querySelector('.carousel-next');
+                let index = 0, timer = null;
+
+                // Vimeo clips play muted on loop in the photo box; the arrows still work over them
+                const vimeoFrame = document.createElement('iframe');
+                vimeoFrame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+                vimeoFrame.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+                vimeoFrame.setAttribute('title', 'Formaflow video');
+                vimeoFrame.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;display:none;background:#000;';
+                track.parentNode.appendChild(vimeoFrame);
+
+                // The box takes the first item's shape and keeps it
+                carousel.style.aspectRatio = images[0].ratio;
+
+                function apply() {
+                    const spec = images[index];
+                    if (spec.vimeo) {
+                        const url = vimeoUrl(spec, 'background=1&autoplay=1&loop=1&muted=1');
+                        if (vimeoFrame.src !== url) vimeoFrame.src = url;
+                        vimeoFrame.style.display = 'block';
+                        track.style.visibility = 'hidden';
+                        return;
+                    }
+                    vimeoFrame.style.display = 'none';
+                    vimeoFrame.removeAttribute('src'); // stop the clip when moving on
+                    track.style.visibility = '';
+                    track.style.objectFit = spec.fit || 'contain';
+                    track.style.objectPosition = spec.pos || '';
+                    if (track.getAttribute('src') !== spec.src) track.src = spec.src;
+                }
+                function show(i) {
+                    index = (i + images.length) % images.length;
+                    apply();
+                    if (isOpen() && active === api) renderLightbox(images[index]);
+                    schedule();
+                }
+                // Auto-advance only in the small preview; videos stay up longer than photos
+                function schedule() {
+                    clearTimeout(timer);
+                    if (images.length < 2) return;
+                    timer = setTimeout(() => {
+                        if (isOpen()) schedule();
+                        else show(index + 1);
+                    }, images[index].hold || 4000);
+                }
+                const api = { prev: () => show(index - 1), next: () => show(index + 1) };
+
+                prevBtn.addEventListener('click', api.prev);
+                nextBtn.addEventListener('click', api.next);
+                // Clicking anywhere on the box opens it, photo or video
+                track.parentNode.style.cursor = 'pointer';
+                track.parentNode.addEventListener('click', () => {
+                    active = api;
+                    renderLightbox(images[index]);
+                    lightbox.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+                apply();
+                schedule();
+            }
+
+            Object.keys(sets).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) setupCarousel(el, sets[id]);
+            });
+
+            function closeLightbox() {
+                lightboxFrame.removeAttribute('src'); // stop the video
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => active && active.prev());
+            lightboxNext.addEventListener('click', () => active && active.next());
+            document.addEventListener('keydown', (e) => {
+                if (!isOpen()) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft' && active) active.prev();
+                if (e.key === 'ArrowRight' && active) active.next();
+            });
+        })();
+    </script>
 </body>
 </html>
