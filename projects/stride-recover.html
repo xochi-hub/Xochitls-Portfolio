@@ -32,7 +32,7 @@
             <div class="title-underline"></div>
             <div class="project-top-row project-wrap">
                 <div class="project-body">
-                    <p class="project-subtitle">2026 <span class="dot">&middot;</span> Wearables <span class="dot">&middot;</span> EMG Sensing <span class="dot">&middot;</span> Biomechanics</p>
+                    <p class="project-subtitle">Spring 2026 <span class="dot">&middot;</span> Wearables <span class="dot">&middot;</span> EMG Sensing <span class="dot">&middot;</span> Biomechanics</p>
 
                     <div class="project-carousel project-carousel-medium">
                         <div class="carousel-track">
@@ -129,8 +129,11 @@
             const images = [
                 { src: '../images/7330eeedb20240829bad946d1c201bd8.png', ratio: '4 / 5', fit: 'contain' }, // logo shown whole; sets a tall box for the photos
                 { src: '../images/stride-recover/stride-sleeve-dashboard.jpeg', fit: 'cover' }, // sleeve with the live dashboard
+                { src: '../images/stride-recover/stride-dashboard-normal-rest.jpg', fit: 'contain' }, // dashboard in the normal-rest state (from lorisemanuelli.fr)
+                { src: '../images/stride-recover/stride-dashboard-danger.jpg', fit: 'contain' }, // dashboard in the danger state (from lorisemanuelli.fr)
                 { src: '../images/stride-recover/stride-wrist-display.jpeg', fit: 'cover' }, // display worn on the arm
-                { src: '../images/stride-recover/stride-team-cropped.jpeg', fit: 'cover' } // team at the poster session, cropped to the four of us
+                { src: '../images/stride-recover/stride-adaptive-feedback-model.png', fit: 'contain' }, // adaptive recovery feedback model (from lorisemanuelli.fr)
+                { src: '../images/stride-recover/stride-team-cropped.jpeg', fit: 'cover', transform: 'scale(1.08)', origin: '0% 40%' } // team at the poster session, cropped to the four of us; zoomed from the left edge so the group sits further right
             ];
             const track = document.querySelector('.project-carousel .carousel-track img');
             const prevBtn = document.querySelector('.carousel-prev');

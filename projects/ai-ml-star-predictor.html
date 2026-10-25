@@ -31,24 +31,67 @@
             <div class="title-underline"></div>
             <div class="project-top-row project-wrap">
                 <div class="project-body">
-                    <p class="project-subtitle">2023 <span class="dot">&middot;</span> Machine Learning <span class="dot">&middot;</span> Data Science</p>
+                    <p class="project-subtitle">Fall 2023 <span class="dot">&middot;</span> Machine Learning <span class="dot">&middot;</span> Data Science</p>
 
-                    <div class="project-carousel">
-                        <div class="carousel-track"></div>
+                    <div class="project-carousel project-carousel-ml" style="aspect-ratio: 1067 / 867;">
+                        <div class="carousel-track">
+                            <img src="../images/ai-ml-star-predictor/hr-diagram-sharp.png" alt="AI/ML Star Predictor">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+                        <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
                     </div>
 
-                    <p class="project-text">Project details coming soon.</p>
+                    <p class="project-text">Astronomers sort stars into types like red dwarfs, white dwarfs, main sequence stars, and supergiants, but many algorithms struggle to tell these groups apart and lump several types together. Built for E 178, Statistics and Data Science for Engineers, with a team of five, this project tested which machine learning models classify stars most accurately. Using a dataset of 240 stars across six types, we trained K-Nearest Neighbors, decision tree, and neural network models on each star’s temperature, luminosity, radius, absolute magnitude, color, and spectral class. We then compared their accuracy and plotted the predictions on a Hertzsprung-Russell (H-R) diagram, the standard chart astronomers use to classify stars.</p>
 
                     <ul class="project-bullets">
-                        <li>Coming soon</li>
+                        <li>Prepared the data in <strong>Python</strong> by grouping vague star colors, <strong>one-hot encoding</strong> color and spectral class into <strong>15 categorical features</strong>, and <strong>standardizing the numerical features</strong> with an <strong>80/20 train-test split</strong></li>
+                        <li>Compared <strong>three K-Nearest Neighbors methods</strong> in <strong>scikit-learn</strong>, finding that distance-weighted KNN reached <strong>95.8% accuracy</strong>, compared with 77% for uniform weighting and 41.6% for radius-based classification</li>
+                        <li>Trained a <strong>decision tree</strong> that reached <strong>100% test accuracy</strong> at a depth of 5 using only <strong>absolute magnitude and radius</strong>, showing which features mattered most</li>
+                        <li>Built a <strong>neural network</strong> with two hidden layers and tuned <strong>L2 regularization</strong> with <strong>GridSearchCV</strong>, reaching <strong>100% accuracy</strong> and showing that standardizing the data raised accuracy from <strong>14% to 85%</strong> before regularization</li>
                     </ul>
 
                     <h3 class="project-subheading">Skills</h3>
-                    <p class="project-text">Coming soon</p>
+                    <div class="skills-columns">
+                        <div class="skills-group">
+                            <h4>Machine Learning</h4>
+                            <ul>
+                                <li>K-Nearest Neighbors</li>
+                                <li>Decision Trees</li>
+                                <li>Neural Networks (MLP)</li>
+                                <li>Hyperparameter Tuning</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Data Processing</h4>
+                            <ul>
+                                <li>One-Hot Encoding</li>
+                                <li>Feature Scaling</li>
+                                <li>Train-Test Splitting</li>
+                                <li>Data Visualization</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Tools</h4>
+                            <ul>
+                                <li>Python</li>
+                                <li>scikit-learn</li>
+                                <li>pandas</li>
+                                <li>Jupyter Notebook</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -75,5 +118,72 @@
     <script src="../top.js"></script>
     <script src="../sparkle.js"></script>
     <script src="../project-nav.js"></script>
+    <script>
+        (function () {
+            const images = [
+                { src: '../images/ai-ml-star-predictor/hr-diagram-sharp.png' }, // H-R diagram colored by star type
+                { src: '../images/ai-ml-star-predictor/decision-tree-sharp.png' }, // depth-5 decision tree
+                { src: '../images/ai-ml-star-predictor/knn-accuracy-k-sharp.png' }, // KNN accuracy vs. k
+                { src: '../images/ai-ml-star-predictor/radius-accuracy-sharp.png' } // radius-based classifier accuracy
+            ];
+            const track = document.querySelector('.project-carousel .carousel-track img');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            if (!track) return;
+            let index = 0;
+            function applyImage() {
+                // Later photos show whole (contain) when they don't match the box
+                track.style.objectFit = index !== 0 ? 'contain' : 'cover';
+                if (track.getAttribute('src') !== images[index].src) track.src = images[index].src;
+            }
+            applyImage();
+            function show(i) {
+                index = (i + images.length) % images.length;
+                applyImage();
+                if (lightbox.classList.contains('open')) {
+                    lightboxImg.src = images[index].src;
+                }
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
+            if (images.length > 1) {
+                // Auto-advance only in the small preview; the full-screen view flips on click only
+                setInterval(() => {
+                    if (!lightbox.classList.contains('open')) show(index + 1);
+                }, 4000);
+            }
+
+            // Full-page lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            function openLightbox() {
+                lightboxImg.src = images[index].src;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            track.addEventListener('click', openLightbox);
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => show(index - 1));
+            lightboxNext.addEventListener('click', () => show(index + 1));
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
+        })();
+    </script>
 </body>
 </html>

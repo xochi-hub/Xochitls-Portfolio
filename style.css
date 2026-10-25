@@ -912,6 +912,11 @@ footer {
     color: #111111;
 }
 
+/* Key words in bullet points: bold Berkeley blue */
+.project-bullets strong {
+    color: #003262;
+}
+
 /* Project-to-project arrows, styled after the iPhone camera roll's frosted round buttons */
 .project-nav {
     position: fixed;
@@ -1033,13 +1038,30 @@ footer {
 }
 
 .skills-group {
+    position: relative;
     padding: 0 20px;
     border-left: 1px solid #d9d9d9;
+}
+
+/* Short dark blue accent centered on each column divider */
+.skills-group::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    width: 1px;
+    height: 30px;
+    transform: translateY(-50%);
+    background: #003262;
 }
 
 .skills-group:first-child {
     padding-left: 0;
     border-left: none;
+}
+
+.skills-group:first-child::before {
+    display: none;
 }
 
 .skills-group:last-child {
@@ -1079,13 +1101,27 @@ footer {
         border-top: none;
         padding-top: 0;
     }
+
+    .skills-group::before {
+        display: none;
+    }
 }
 
 .project-subheading {
     font-family: 'Lora', Georgia, serif;
     font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+/* Short dark blue horizontal line, centered, separating the Skills section from the top section */
+.project-subheading::before {
+    content: '';
+    display: block;
+    width: 160px;
+    height: 1px;
+    margin: 24px auto 12px;
+    background: #003262;
 }
 
 .project-carousel {
@@ -1108,16 +1144,35 @@ footer {
     max-width: 60%;
 }
 
+/* Variant: big, wide photo box (L'Oreal) */
+.project-carousel.project-carousel-loreal {
+    width: 420px;
+    max-width: 48%;
+    aspect-ratio: 2 / 1;
+}
+
+/* Variant: slightly bigger photo box (SpaceX Starship) */
+.project-carousel.project-carousel-starship {
+    width: 380px;
+    max-width: 46%;
+}
+
+/* Variant: slightly bigger photo box (AI/ML Star Predictor) */
+.project-carousel.project-carousel-ml {
+    width: 380px;
+    max-width: 46%;
+}
+
 /* Variant: smaller photo box (Stride Recover) */
 .project-carousel.project-carousel-medium {
     width: 280px;
     max-width: 28%;
 }
 
-/* Variant: 15% bigger than the default photo box (Medical Device Equity) */
+/* Variant: bigger photo box (Medical Device Equity) */
 .project-carousel.project-carousel-plus {
-    width: 465px;
-    max-width: 58%;
+    width: 540px;
+    max-width: 62%;
 }
 
 /* Variant: 12% bigger than the default photo box (Gyroscope Glove) */
@@ -1295,6 +1350,9 @@ footer {
     }
 
     .project-carousel.project-carousel-large,
+    .project-carousel.project-carousel-loreal,
+    .project-carousel.project-carousel-starship,
+    .project-carousel.project-carousel-ml,
     .project-carousel.project-carousel-medium,
     .project-carousel.project-carousel-plus,
     .project-carousel.project-carousel-glove,
@@ -1609,7 +1667,7 @@ footer {
 .entry-link:hover h4,
 .entry-link:hover .entry-title {
     text-decoration: underline;
-    text-decoration-color: rgba(0, 0, 0, 0.165); /* light grey */
+    text-decoration-color: rgba(0, 0, 0, 0.35); /* medium grey */
     text-underline-offset: 3px;
 }
 
@@ -2104,4 +2162,309 @@ a, a *, button {
 
 .cite-link:hover {
     color: #0a6a8a;
+}
+
+/* Footer redesign: light frosted band matching the menu bar and white boxes */
+footer {
+    background-color: rgba(255, 255, 255, 0.92); /* same fill as the menu bar */
+    border-top: 1px solid #d9d9d9;
+    box-shadow: none;
+    padding: 56px 0 20px 0;
+}
+
+.footer-contact {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 36px 0;
+    margin-bottom: 0;
+}
+
+.footer-contact h2 {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--deep-space-blue);
+    margin-bottom: 8px;
+}
+
+.footer-contact p {
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.contact-icons a {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-icons a:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+footer .copyright {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 18px;
+    margin: 0;
+    color: var(--line-accent);
+    font-size: 0.8rem;
+}
+
+/* Footer: dark blue accents */
+footer {
+    border-top: 1.5px solid var(--deep-space-blue);
+}
+
+.footer-contact h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1.5px;
+    background: var(--deep-space-blue);
+    margin: 10px auto 0;
+}
+
+.contact-icons a:hover {
+    background: var(--deep-space-blue);
+    border-color: var(--deep-space-blue);
+    color: #fff;
+}
+
+footer .copyright {
+    color: var(--deep-space-blue);
+}
+
+/* Menu bar: dark blue line underneath, matching the footer's top edge */
+header {
+    border-bottom: 1.5px solid var(--deep-space-blue);
+}
+
+/* Menu bar links turn dark blue on hover */
+.nav-links a:hover,
+.logo:hover {
+    color: var(--deep-space-blue);
+}
+
+/* Shorter footer: less padding, smaller heading and icons */
+footer {
+    padding: 32px 0 12px 0;
+    margin-top: -27px; /* less overlap now that the top padding is smaller, so the heading doesn't ride up into the content */
+}
+
+.footer-contact {
+    padding-bottom: 20px;
+}
+
+.footer-contact h2 {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.footer-contact h2::after {
+    margin-top: 6px;
+}
+
+.footer-contact p {
+    font-size: 0.9rem;
+}
+
+.contact-icons {
+    padding-top: 10px;
+    gap: 14px;
+}
+
+.contact-icons a {
+    width: 38px;
+    height: 38px;
+}
+
+.contact-icons svg {
+    width: 18px;
+    height: 18px;
+}
+
+footer .copyright {
+    padding-top: 12px;
+}
+
+/* ============================================================
+   Phone layout: everything below only applies on small screens,
+   so the desktop design above stays exactly as it is
+   ============================================================ */
+@media (max-width: 600px) {
+    /* Use the full screen width instead of 75% */
+    .container,
+    .navbar,
+    .footer-container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navbar {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 6px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 4px 16px;
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .nav-links a {
+        white-space: nowrap;
+    }
+
+    /* Intro box: photo on top, text below */
+    .intro-box {
+        padding: 20px 18px 8px;
+        margin-top: 16px;
+    }
+
+    .photo-frame {
+        width: 70%;
+        aspect-ratio: 3 / 4;
+        margin: 0 auto;
+        transform: none;
+        align-self: center;
+    }
+
+    .name-group {
+        margin: 0 auto 6px;
+    }
+
+    /* Visual Resume: drop the desktop nudges and stack each entry (text, then photos) */
+    .visual-resume .timeline-term {
+        margin-top: 0 !important;
+        padding-bottom: 24px;
+    }
+
+    .term-head h3 {
+        font-size: 1.5rem;
+        transform: none !important;
+    }
+
+    .term-head-summer26 {
+        margin-top: 0;
+        border-left: 1px solid var(--line-accent);
+    }
+
+    .term-head-summer26::before,
+    .term-head-summer26::after,
+    .visual-resume .timeline-entry::before,
+    .visual-resume .timeline-entry::after {
+        display: none;
+    }
+
+    .visual-resume .term-logo,
+    .term-logo-raised {
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        transform: none !important;
+        align-self: center;
+    }
+
+    .visual-resume .timeline-entry {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+        margin: 0 0 32px !important;
+        border-right: none !important;
+        padding-right: 0 !important;
+        min-height: 0;
+    }
+
+    .visual-resume .timeline-entry .entry-text {
+        margin: 0 !important;
+        transform: none !important;
+        border-left: 1px solid var(--line-accent) !important;
+        padding-left: 12px;
+    }
+
+    .visual-resume .entry-images {
+        margin: 0 !important;
+        transform: none !important;
+        flex-direction: column;
+    }
+
+    .visual-resume .hci-entry .click-hint {
+        position: static;
+        white-space: normal;
+        margin-bottom: 6px;
+    }
+
+    .visual-resume .hci-entry .crop-frame,
+    .visual-resume .hci-entry.computational-entry .crop-frame {
+        width: 100%;
+        height: 240px;
+        margin-left: 0;
+        clip-path: none;
+    }
+
+    /* Photo pairs sit side by side, sharing the row evenly */
+    .visual-resume .entry-link-images {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 4px !important;
+        margin: 0 !important;
+    }
+
+    .visual-resume .entry-link-images > img,
+    .visual-resume .entry-link-images > .zoom-frame {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto !important;
+        height: 170px !important;
+        margin: 0 !important;
+    }
+
+    .visual-resume .entry-link-images img {
+        width: 100%;
+        height: 170px !important;
+        object-fit: cover;
+    }
+
+    .visual-resume .entry-images img.echohand-wide {
+        transform: none;
+    }
+
+    /* Resume page: download button on top, viewer full width below */
+    .resume-viewer-row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .resume-viewer-row .resume-download-btn {
+        order: -1;
+        align-self: flex-start;
+        transform: none;
+    }
+
+    .resume-viewer {
+        height: 75vh;
+    }
+
+    /* Project prev/next arrows: moved to the bottom corners so they don't cover the text */
+    .project-nav {
+        top: auto;
+        bottom: 16px;
+        transform: none;
+    }
+}
+
+/* Touch screens have no hover, so experience tiles always show their title along the bottom */
+@media (hover: none) {
+    .tile-title {
+        opacity: 1;
+        top: auto;
+        align-items: flex-end;
+        padding: 24px 8px 8px;
+        font-size: 0.8rem;
+        line-height: 1.25;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    }
 }

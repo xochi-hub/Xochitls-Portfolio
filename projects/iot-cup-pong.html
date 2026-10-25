@@ -31,24 +31,63 @@
             <div class="title-underline"></div>
             <div class="project-top-row project-wrap">
                 <div class="project-body">
-                    <p class="project-subtitle">2023 <span class="dot">&middot;</span> IoT <span class="dot">&middot;</span> Embedded Systems</p>
+                    <p class="project-subtitle">Fall 2023 <span class="dot">&middot;</span> IoT <span class="dot">&middot;</span> Embedded Systems</p>
 
-                    <div class="project-carousel">
-                        <div class="carousel-track"></div>
+                    <div class="project-carousel" style="aspect-ratio: 1219 / 687;">
+                        <div class="carousel-track">
+                            <img src="../images/iot-cup-pong/application-need-sharp.png" alt="IoT Cup Pong">
+                        </div>
                     </div>
 
-                    <p class="project-text">Project details coming soon.</p>
+                    <p class="project-text">IoT Pong is an automated cup pong game that keeps score on its own and pours a drink for the opposing player when a ball lands in a cup. Built for ME 100, Electronics for the Internet of Things, with a team of three, the game uses three ESP32 microcontrollers that talk to each other wirelessly. Each cup has a laser sensor that detects when the ball breaks the beam, and its ESP32 sends the point to a third ESP32, which updates the score and runs a motor-driven valve to pour 1.5 ounces from a jug. The goal was to show how connected devices can automate a game and keep players focused on playing instead of tracking points.</p>
 
                     <ul class="project-bullets">
-                        <li>Coming soon</li>
+                        <li>Built a <strong>three-ESP32 system</strong> that communicates over <strong>MQTT</strong>, with each cup’s ESP32 <strong>publishing score events</strong> to its own topic and a third ESP32 <strong>subscribing to both</strong> to control the pour</li>
+                        <li>Replaced the first prototype’s <strong>ultrasonic sensor</strong>, which was unreliable at short range, with a <strong>laser break-beam sensor</strong> on each cup to detect when the ball lands</li>
+                        <li>Wrote <strong>MicroPython</strong> code with a <strong>2-second debounce</strong>, so a ball bouncing in the cup isn’t counted twice and a point only counts once the ball settles</li>
+                        <li>Wired and programmed a <strong>DC motor and valve</strong> with <strong>PWM control</strong> to open and close the jug and <strong>pour a set amount</strong> for each point scored</li>
                     </ul>
 
                     <h3 class="project-subheading">Skills</h3>
-                    <p class="project-text">Coming soon</p>
+                    <div class="skills-columns">
+                        <div class="skills-group">
+                            <h4>Electronics</h4>
+                            <ul>
+                                <li>ESP32 Microcontrollers</li>
+                                <li>Laser Break-Beam Sensors</li>
+                                <li>DC Motor &amp; Valve Control</li>
+                                <li>Circuit Wiring</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Software</h4>
+                            <ul>
+                                <li>MicroPython</li>
+                                <li>MQTT Communication</li>
+                                <li>Sensor Debouncing</li>
+                                <li>PWM Motor Control</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Design</h4>
+                            <ul>
+                                <li>Interactive Product Design</li>
+                                <li>Rapid Prototyping</li>
+                                <li>Sensor Selection</li>
+                                <li>System Integration</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img class="lightbox-img" src="" alt="">
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -75,5 +114,29 @@
     <script src="../top.js"></script>
     <script src="../sparkle.js"></script>
     <script src="../project-nav.js"></script>
+    <script>
+        (function () {
+            const track = document.querySelector('.project-carousel .carousel-track img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            if (!track) return;
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+            track.addEventListener('click', () => {
+                lightboxImg.src = track.src;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+            lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        })();
+    </script>
 </body>
 </html>

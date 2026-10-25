@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loreal | Xochitl Ortega</title>
+    <title>L&#39;Oreal | Xochitl Ortega</title>
     <!-- Modern Clean Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,28 +27,73 @@
 
     <main class="container">
         <section class="project-page">
-            <h1>Loreal</h1>
+            <h1>L&#39;Oreal</h1>
             <div class="title-underline"></div>
             <div class="project-top-row project-wrap">
                 <div class="project-body">
-                    <p class="project-subtitle">2024 <span class="dot">&middot;</span> Manufacturing <span class="dot">&middot;</span> Process Engineering</p>
+                    <p class="project-subtitle">Summer 2024 <span class="dot">&middot;</span> Manufacturing <span class="dot">&middot;</span> Process Engineering</p>
 
-                    <div class="project-carousel">
-                        <div class="carousel-track"></div>
+                    <div class="project-carousel project-carousel-loreal">
+                        <div class="carousel-track">
+                            <img src="../images/WhatsApp%20Image%202026-10-23%20at%209.34.20%20PM.jpeg" alt="L&#39;Oreal">
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+                        <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
                     </div>
 
-                    <p class="project-text">Project details coming soon.</p>
+                    <p class="project-text">At L’Oréal’s North Little Rock plant, I worked as an operations intern on the lipstick and cosmetics production lines. On a production line, a worn part, a misaligned station, or the wrong machine setting can slow production or cause products to break. Over the summer, I focused on three projects: making a costly replacement part in-house, adapting discontinued tooling for a new product, and building standard machine settings for lipstick production. I also worked with operators to troubleshoot line issues and documented the fixes for future training.</p>
 
                     <ul class="project-bullets">
-                        <li>Coming soon</li>
+                        <li>Brought <strong>torque chuck rubber production in-house</strong> using <strong>injection molds</strong>, a part with a short lifespan, high cost, and long lead time, <strong>reducing projected part cost by 96%</strong> and <strong>lead time from 9 weeks to a couple days</strong> including curing time</li>
+                        <li>Adapted <strong>discontinued eyeshadow line tooling</strong> for a <strong>brow pomade product</strong> during a line merge, designing <strong>modular attachments</strong> for the existing starwheel so operators could swap small parts instead of whole tooling, <strong>saving about $5,450 (91%)</strong></li>
+                        <li>Ran <strong>design of experiments (DOE)</strong> on lipstick production settings such as <strong>line speed and temperature</strong>, grouping shades by color category to build <strong>baseline recipes</strong> for the line’s HMI</li>
+                        <li>Troubleshot <strong>recurring lipstick breakage</strong>, tracing it to <strong>misaligned reheat stations</strong> and a <strong>clogged water filter</strong>, and recommended adding these checks to <strong>preventive maintenance</strong> and <strong>operator training</strong></li>
                     </ul>
 
                     <h3 class="project-subheading">Skills</h3>
-                    <p class="project-text">Coming soon</p>
+                    <div class="skills-columns">
+                        <div class="skills-group">
+                            <h4>Manufacturing</h4>
+                            <ul>
+                                <li>Production Line Troubleshooting</li>
+                                <li>Preventive Maintenance</li>
+                                <li>Process Parameter Optimization</li>
+                                <li>HMI Recipe Development</li>
+                                <li>Work Instructions &amp; Training</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Design</h4>
+                            <ul>
+                                <li>Injection Mold Prototyping</li>
+                                <li>Tooling Design</li>
+                                <li>Modular Attachment Design</li>
+                                <li>Design for Quick Changeover</li>
+                                <li>Material Sourcing</li>
+                            </ul>
+                        </div>
+                        <div class="skills-group">
+                            <h4>Analysis</h4>
+                            <ul>
+                                <li>Design of Experiments (DOE)</li>
+                                <li>Root Cause Analysis</li>
+                                <li>Cost &amp; Lead Time Analysis</li>
+                                <li>Data Collection &amp; Documentation</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Full-page photo lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
 
     <!-- 4. Contact & Footer -->
     <footer id="contact">
@@ -75,5 +120,73 @@
     <script src="../top.js"></script>
     <script src="../sparkle.js"></script>
     <script src="../project-nav.js"></script>
+    <script>
+        (function () {
+            const images = [
+                { src: '../images/WhatsApp%20Image%202026-10-23%20at%209.34.20%20PM.jpeg' },
+                { src: '../images/WhatsApp%20Image%202026-10-23%20at%209.38.40%20PM.jpeg' },
+                { src: '../images/Screenshot%202026-10-23%20213138.png' },
+                { src: '../images/Screenshot%202026-10-23%20213152.png' }
+            ];
+            const track = document.querySelector('.project-carousel .carousel-track img');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            if (!track) return;
+            let index = 0;
+            // The box shape is set in style.css (project-carousel-loreal)
+            function applyImage() {
+                // Later photos show whole (contain) when they don't match the box
+                track.style.objectFit = index !== 0 ? 'contain' : 'cover';
+                if (track.getAttribute('src') !== images[index].src) track.src = images[index].src;
+            }
+            applyImage();
+            function show(i) {
+                index = (i + images.length) % images.length;
+                applyImage();
+                if (lightbox.classList.contains('open')) {
+                    lightboxImg.src = images[index].src;
+                }
+            }
+            if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
+            if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
+            if (images.length > 1) {
+                // Auto-advance only in the small preview; the full-screen view flips on click only
+                setInterval(() => {
+                    if (!lightbox.classList.contains('open')) show(index + 1);
+                }, 4000);
+            }
+
+            // Full-page lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            function openLightbox() {
+                lightboxImg.src = images[index].src;
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            track.addEventListener('click', openLightbox);
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => show(index - 1));
+            lightboxNext.addEventListener('click', () => show(index + 1));
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
+        })();
+    </script>
 </body>
 </html>
