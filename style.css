@@ -2407,9 +2407,6 @@ footer .copyright {
         display: block;
         margin: -22px 0 18px;
         text-align: right;
-        font-size: 10px;
-        font-style: italic;
-        color: #666666;
     }
 
     .visual-resume .hci-entry .crop-frame,
@@ -2474,9 +2471,11 @@ footer .copyright {
         margin-bottom: calc(75vh / 0.8 * -0.2); /* removes the empty space left below after shrinking */
     }
 
-    /* Project Skills: headings and lists centered */
-    .project-subheading,
-    .skills-group {
+    /* Page titles (and a project's date/tags line) centered */
+    .project-page h1,
+    .project-page .project-subtitle,
+    .resume-section h2,
+    .experience-section h2 {
         text-align: center;
     }
 
@@ -2491,6 +2490,22 @@ footer .copyright {
 /* Phone-only copy of the Visual Resume click hint (see the phone layout above) */
 .click-hint-mobile {
     display: none;
+}
+
+/* Click hint (desktop and phone copies): smaller, in the site's Lora italic */
+.visual-resume .hci-entry .click-hint,
+.visual-resume .click-hint-mobile {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 9px;
+    color: #666666;
+}
+
+/* Project Skills: heading, column titles and lists all centered (every screen size) */
+.project-subheading,
+.project-subheading + .project-text,
+.skills-group {
+    text-align: center;
 }
 
 /* Touch screens have no hover, so experience tiles always show their title along the bottom */
