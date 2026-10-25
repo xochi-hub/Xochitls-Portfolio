@@ -2301,14 +2301,17 @@ footer .copyright {
         padding-right: 16px;
     }
 
+    /* Menu bar centered */
     .navbar {
         padding-top: 12px;
         padding-bottom: 12px;
         gap: 6px;
+        align-items: center;
     }
 
     .nav-links {
         flex-wrap: wrap;
+        justify-content: center;
         gap: 4px 16px;
         padding-right: 0;
         border-right: none;
@@ -2342,6 +2345,10 @@ footer .copyright {
         padding-bottom: 24px;
     }
 
+    .term-head {
+        align-items: center;
+    }
+
     .term-head h3 {
         font-size: 1.5rem;
         transform: none !important;
@@ -2359,11 +2366,12 @@ footer .copyright {
         display: none;
     }
 
+    /* Logos sit right after their heading (Aalto included), centered on it */
     .visual-resume .term-logo,
     .term-logo-raised {
         width: 44px;
         height: 44px;
-        margin-left: auto;
+        margin-left: 0;
         transform: none !important;
         align-self: center;
     }
@@ -2390,10 +2398,18 @@ footer .copyright {
         flex-direction: column;
     }
 
+    /* Click hint: the copy under the Visual Resume line shows instead of the one above the first photo */
     .visual-resume .hci-entry .click-hint {
-        position: static;
-        white-space: normal;
-        margin-bottom: 6px;
+        display: none;
+    }
+
+    .visual-resume .click-hint-mobile {
+        display: block;
+        margin: -22px 0 18px;
+        text-align: right;
+        font-size: 10px;
+        font-style: italic;
+        color: #666666;
     }
 
     .visual-resume .hci-entry .crop-frame,
@@ -2444,8 +2460,24 @@ footer .copyright {
         transform: none;
     }
 
+    /* PDF zoomed out to 80%: drawn 25% larger, then shrunk back down to fit the screen */
+    .resume-viewer-row {
+        overflow: hidden;
+    }
+
     .resume-viewer {
-        height: 75vh;
+        width: 125%;
+        max-width: none;
+        height: calc(75vh / 0.8);
+        transform: scale(0.8);
+        transform-origin: top left;
+        margin-bottom: calc(75vh / 0.8 * -0.2); /* removes the empty space left below after shrinking */
+    }
+
+    /* Project Skills: headings and lists centered */
+    .project-subheading,
+    .skills-group {
+        text-align: center;
     }
 
     /* Project prev/next arrows: moved to the bottom corners so they don't cover the text */
@@ -2454,6 +2486,11 @@ footer .copyright {
         bottom: 16px;
         transform: none;
     }
+}
+
+/* Phone-only copy of the Visual Resume click hint (see the phone layout above) */
+.click-hint-mobile {
+    display: none;
 }
 
 /* Touch screens have no hover, so experience tiles always show their title along the bottom */
