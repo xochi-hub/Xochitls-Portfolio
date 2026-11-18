@@ -26,12 +26,13 @@
     </header>
 
     <main class="container">
-        <section class="project-page">
+        <section class="project-page project-v2 sticky-media">
+            <a class="back-link" href="../experience.html">&larr; All projects</a>
             <h1>Robogatchi</h1>
             <div class="title-underline"></div>
             <div class="project-top-row project-wrap">
                 <div class="project-body">
-                    <p class="project-subtitle">Spring 2026 <span class="dot">&middot;</span> Robotics <span class="dot">&middot;</span> Mechatronics</p>
+                    <ul class="project-tags"><li>Spring 2026</li><li>Robotics</li><li>Mechatronics</li></ul>
 
                     <div class="project-carousel">
                         <div class="carousel-track">
@@ -39,14 +40,10 @@
                         </div>
                         <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
                         <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+                        <span class="carousel-count" aria-live="polite"></span>
                     </div>
 
-                    <p class="project-text">Robogotchi, inspired by Tamagotchi, is a robotic pet that follows its users & requires real-time care. 
-                      Built for ME235, Design of Microprocessor-Based Mechanical Systems, Robogotchi requires regular feeding and petting or else its food and mood health bar would decrease towards death. 
-                        Mood is expressed through OLED eyes and audio feedback. 
-                        Robogotchi uses color tracking to follow its user and with a custom made 3-D printed burger with an embedded RFID, you would be able to tap to feed him. 
-                        Through a touch sensor, the Robogotchi can be petted to increase its mood and happiness. 
-                        A GUI is paired with the Robogotchi, which displays the companions hatching, character customization, mood, and hunger and health.</p>
+                    <p class="project-text">Robogatchi, inspired by Tamagotchi, is a robotic pet that follows its user and needs real-time care. Built for ME235, Design of Microprocessor-Based Mechanical Systems, Robogatchi has to be fed and petted regularly, or its food and mood bars drain toward zero. It shows its mood through OLED eyes and audio feedback. Robogatchi uses color tracking to follow its user, and tapping a custom 3D-printed burger with an embedded RFID tag feeds him. A touch sensor lets users pet him to raise his mood. A paired GUI shows the companion's hatching, character customization, mood, hunger, and health.</p>
 
                     <ul class="project-bullets">
                         <li>Designed a <span class="keyword">3D-printed differential-drive chassis</span> for a pet robot, giving it a soft, character-like shell over a clear acrylic base with two driven wheels and a front caster</li>
@@ -56,38 +53,38 @@
                         <li>Designed a browser-based control GUI served directly from the robot’s Wi-Fi access point, displaying live life bars, difficulty modes, a revive control, and a real-time target-tracking overlay, and opening with a three-click egg hatch animation to gamify the user experience </li>
                     </ul>
 
-                    <h3 class="project-subheading">Skills</h3>
-                    <div class="skills-columns">
-                        <div class="skills-group">
-                            <h4>Design</h4>
-                            <ul>
-                                <li>Product &amp; Character Design</li>
-                                <li>Mechanical Packaging</li>
-                                <li>Design for Assembly</li>
-                                <li>Rapid &amp; Iterative Prototyping</li>
-                            </ul>
-                        </div>
-                        <div class="skills-group">
-                            <h4>Fabrication</h4>
-                            <ul>
-                                <li>CAD</li>
-                                <li>3D Printing</li>
-                                <li>Soldering &amp; Protoboarding</li>
-                                <li>Wire Routing &amp; Assembly</li>
-                            </ul>
-                        </div>
-                        <div class="skills-group">
-                            <h4>Electronics &amp; Software</h4>
-                            <ul>
-                                <li>Microcontroller Programming</li>
-                                <li>Real-Time Embedded Systems</li>
-                                <li>DC Motor Control</li>
-                                <li>Sensor Integration</li>
-                                <li>OLED Displays</li>
-                                <li>Battery Power Systems</li>
-                            </ul>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            <h3 class="project-subheading">Skills</h3>
+            <div class="skills-columns">
+                <div class="skills-group">
+                    <h4>Design</h4>
+                    <ul>
+                        <li>Product &amp; Character Design</li>
+                        <li>Mechanical Packaging</li>
+                        <li>Design for Assembly</li>
+                        <li>Rapid &amp; Iterative Prototyping</li>
+                    </ul>
+                </div>
+                <div class="skills-group">
+                    <h4>Fabrication</h4>
+                    <ul>
+                        <li>CAD</li>
+                        <li>3D Printing</li>
+                        <li>Soldering &amp; Protoboarding</li>
+                        <li>Wire Routing &amp; Assembly</li>
+                    </ul>
+                </div>
+                <div class="skills-group">
+                    <h4>Electronics &amp; Software</h4>
+                    <ul>
+                        <li>Microcontroller Programming</li>
+                        <li>Real-Time Embedded Systems</li>
+                        <li>DC Motor Control</li>
+                        <li>Sensor Integration</li>
+                        <li>OLED Displays</li>
+                        <li>Battery Power Systems</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -105,8 +102,9 @@
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-contact">
-                <h2>Let's Connect</h2>
-                <p>Feel free to reach out for collaborations or opportunities, or a coffee chat!</p>
+                <h2>Let's Build Something Together</h2>
+                <p>I'm looking for roles in product design, mechanical testing, and R&amp;D. Reach out about opportunities, collaborations, or a coffee chat!</p>
+                <p class="connect-email-line"><a class="connect-email" href="mailto:xo.andrea.ortega@gmail.com">xo.andrea.ortega@gmail.com</a></p>
                 <div class="contact-icons">
                     <a href="https://www.linkedin.com/in/xochitl-ortega/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
@@ -114,7 +112,7 @@
                     <a href="../resume.html" aria-label="Resume">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
                     </a>
-                    <a href="mailto:397xochitl@berkeley.edu" aria-label="Email">
+                    <a href="mailto:xo.andrea.ortega@gmail.com" aria-label="Email">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
                     </a>
                 </div>
@@ -161,6 +159,8 @@
                 track.style.transform = spec.transform || '';
                 track.style.transformOrigin = spec.origin || '';
                 if (index === 0 && spec.ratio && !framed) { carousel.style.aspectRatio = spec.ratio; framed = true; }
+                const count = carousel.querySelector('.carousel-count');
+                if (count) count.textContent = (index + 1) + ' / ' + images.length;
                 if (track.getAttribute('src') !== spec.src) track.src = spec.src;
                 else if (track.complete) fitFrame();
             }
@@ -169,6 +169,7 @@
             function show(i) {
                 index = (i + images.length) % images.length;
                 applyImage();
+                track.animate([{ opacity: 0.2 }, { opacity: 1 }], { duration: 600, easing: 'ease-out' }); // soft fade instead of a hard cut
                 if (lightbox.classList.contains('open')) {
                     lightboxImg.src = images[index].src;
                 }
@@ -179,7 +180,7 @@
                 // Auto-advance only in the small preview; the full-screen view flips on click only
                 setInterval(() => {
                     if (!lightbox.classList.contains('open')) show(index + 1);
-                }, 4000);
+                }, 6000); // a bit slower, so each photo has time to be looked at
             }
 
             // Full-page lightbox

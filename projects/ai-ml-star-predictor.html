@@ -26,12 +26,13 @@
     </header>
 
     <main class="container">
-        <section class="project-page">
+        <section class="project-page project-v2">
+            <a class="back-link" href="../experience.html">&larr; All projects</a>
             <h1>AI/ML Star Predictor</h1>
             <div class="title-underline"></div>
             <div class="project-top-row project-wrap">
                 <div class="project-body">
-                    <p class="project-subtitle">Fall 2023 <span class="dot">&middot;</span> Machine Learning <span class="dot">&middot;</span> Data Science</p>
+                    <ul class="project-tags"><li>Fall 2023</li><li>Machine Learning</li><li>Data Science</li></ul>
 
                     <div class="project-carousel project-carousel-ml" style="aspect-ratio: 1067 / 867;">
                         <div class="carousel-track">
@@ -39,6 +40,7 @@
                         </div>
                         <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
                         <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+                        <span class="carousel-count" aria-live="polite"></span>
                     </div>
 
                     <p class="project-text">Astronomers sort stars into types like red dwarfs, white dwarfs, main sequence stars, and supergiants, but many algorithms struggle to tell these groups apart and lump several types together. Built for E 178, Statistics and Data Science for Engineers, with a team of five, this project tested which machine learning models classify stars most accurately. Using a dataset of 240 stars across six types, we trained K-Nearest Neighbors, decision tree, and neural network models on each star’s temperature, luminosity, radius, absolute magnitude, color, and spectral class. We then compared their accuracy and plotted the predictions on a Hertzsprung-Russell (H-R) diagram, the standard chart astronomers use to classify stars.</p>
@@ -50,36 +52,36 @@
                         <li>Built a <strong>neural network</strong> with two hidden layers and tuned <strong>L2 regularization</strong> with <strong>GridSearchCV</strong>, reaching <strong>100% accuracy</strong> and showing that standardizing the data raised accuracy from <strong>14% to 85%</strong> before regularization</li>
                     </ul>
 
+                </div>
+            </div>
                     <h3 class="project-subheading">Skills</h3>
-                    <div class="skills-columns">
-                        <div class="skills-group">
-                            <h4>Machine Learning</h4>
-                            <ul>
-                                <li>K-Nearest Neighbors</li>
-                                <li>Decision Trees</li>
-                                <li>Neural Networks (MLP)</li>
-                                <li>Hyperparameter Tuning</li>
-                            </ul>
-                        </div>
-                        <div class="skills-group">
-                            <h4>Data Processing</h4>
-                            <ul>
-                                <li>One-Hot Encoding</li>
-                                <li>Feature Scaling</li>
-                                <li>Train-Test Splitting</li>
-                                <li>Data Visualization</li>
-                            </ul>
-                        </div>
-                        <div class="skills-group">
-                            <h4>Tools</h4>
-                            <ul>
-                                <li>Python</li>
-                                <li>scikit-learn</li>
-                                <li>pandas</li>
-                                <li>Jupyter Notebook</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="skills-columns">
+                <div class="skills-group">
+                    <h4>Machine Learning</h4>
+                    <ul>
+                        <li>K-Nearest Neighbors</li>
+                        <li>Decision Trees</li>
+                        <li>Neural Networks (MLP)</li>
+                        <li>Hyperparameter Tuning</li>
+                    </ul>
+                </div>
+                <div class="skills-group">
+                    <h4>Data Processing</h4>
+                    <ul>
+                        <li>One-Hot Encoding</li>
+                        <li>Feature Scaling</li>
+                        <li>Train-Test Splitting</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="skills-group">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>scikit-learn</li>
+                        <li>pandas</li>
+                        <li>Jupyter Notebook</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -97,8 +99,9 @@
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-contact">
-                <h2>Let's Connect</h2>
-                <p>Feel free to reach out for collaborations or opportunities, or a coffee chat!</p>
+                <h2>Let's Build Something Together</h2>
+                <p>I'm looking for roles in product design, mechanical testing, and R&amp;D. Reach out about opportunities, collaborations, or a coffee chat!</p>
+                <p class="connect-email-line"><a class="connect-email" href="mailto:xo.andrea.ortega@gmail.com">xo.andrea.ortega@gmail.com</a></p>
                 <div class="contact-icons">
                     <a href="https://www.linkedin.com/in/xochitl-ortega/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11z"/></svg>
@@ -106,7 +109,7 @@
                     <a href="../resume.html" aria-label="Resume">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
                     </a>
-                    <a href="mailto:397xochitl@berkeley.edu" aria-label="Email">
+                    <a href="mailto:xo.andrea.ortega@gmail.com" aria-label="Email">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
                     </a>
                 </div>
@@ -135,12 +138,15 @@
             function applyImage() {
                 // Later photos show whole (contain) when they don't match the box
                 track.style.objectFit = index !== 0 ? 'contain' : 'cover';
+                const count = track.closest('.project-carousel').querySelector('.carousel-count');
+                if (count) count.textContent = (index + 1) + ' / ' + images.length;
                 if (track.getAttribute('src') !== images[index].src) track.src = images[index].src;
             }
             applyImage();
             function show(i) {
                 index = (i + images.length) % images.length;
                 applyImage();
+                track.animate([{ opacity: 0.2 }, { opacity: 1 }], { duration: 600, easing: 'ease-out' }); // soft fade instead of a hard cut
                 if (lightbox.classList.contains('open')) {
                     lightboxImg.src = images[index].src;
                 }
@@ -151,7 +157,7 @@
                 // Auto-advance only in the small preview; the full-screen view flips on click only
                 setInterval(() => {
                     if (!lightbox.classList.contains('open')) show(index + 1);
-                }, 4000);
+                }, 6000); // a bit slower, so each photo has time to be looked at
             }
 
             // Full-page lightbox

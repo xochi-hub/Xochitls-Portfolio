@@ -1205,7 +1205,7 @@ footer {
 .formaflow-media {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px; /* clear space so the two photo boxes read as separate */
 }
 
 .project-wrap .formaflow-media .project-carousel {
@@ -1512,9 +1512,11 @@ footer {
     to   { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.15) rotate(90deg); opacity: 0; }
 }
 
-/* Bold project titles in the Visual Resume use Lora */
+/* Lab/class names in the Visual Resume use Source Serif 4 semibold, upright */
 .visual-resume .timeline-entry h4 {
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 /* Summer 2026: accent line on the right of the heading instead of the left */
@@ -2106,6 +2108,7 @@ a, a *, button {
 }
 
 /* Berkeley logo truly centered now, without the flex-end-era nudge */
+.term-spring26 .term-head .term-logo,
 .term-fall25 .term-head .term-logo,
 .term-summer25 .term-head .term-logo,
 .term-spring25 .term-head .term-logo {
@@ -2518,5 +2521,776 @@ footer .copyright {
         font-size: 0.8rem;
         line-height: 1.25;
         background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    }
+}
+
+/* ---------- Hero headline ---------- */
+.hero-headline {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-size: clamp(1.45rem, 2.6vw, 2.1rem);
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--deep-space-blue);
+    margin: 10px 0 16px 0;
+    letter-spacing: -0.3px;
+}
+
+/* design / build / test get a frosted-blue highlighter that sweeps in on load */
+.hero-verb {
+    background-image: linear-gradient(rgba(154, 209, 212, 0.65), rgba(154, 209, 212, 0.65)); /* frosted blue, 65% */
+    background-repeat: no-repeat;
+    background-position: 0 88%;
+    background-size: 100% 0.35em;
+    padding: 0 2px 3px; /* bottom padding drops the highlight ~3px without moving the text */
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+    /* Intro box rises in on page load, then the headline highlights sweep in one by one */
+    .intro-box {
+        animation: rise-in 0.7s ease-out both;
+    }
+
+    .hero-verb {
+        animation: highlight-sweep 0.6s ease-out both;
+    }
+    .hero-verb:nth-of-type(1) { animation-delay: 0.5s; }
+    .hero-verb:nth-of-type(2) { animation-delay: 0.7s; }
+    .hero-verb:nth-of-type(3) { animation-delay: 0.9s; }
+
+    /* Scroll reveal (motion.js adds .reveal, then .is-visible once on screen).
+       Uses `translate` so it never fights an element's own `transform`. */
+    .reveal {
+        opacity: 0;
+        translate: 0 24px;
+        transition: opacity 0.6s ease-out, translate 0.6s ease-out;
+    }
+    .reveal.is-visible {
+        opacity: 1;
+        translate: 0 0;
+    }
+
+    /* Project photos lift slightly on hover */
+    .visual-resume .entry-images {
+        transition: translate 0.25s ease, filter 0.25s ease;
+    }
+    .visual-resume .timeline-entry:hover .entry-images {
+        translate: 0 -4px;
+        filter: drop-shadow(0 8px 12px rgba(0, 50, 73, 0.18));
+    }
+}
+
+@keyframes rise-in {
+    from { opacity: 0; translate: 0 16px; }
+    to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes highlight-sweep {
+    from { background-size: 0% 0.35em; }
+    to   { background-size: 100% 0.35em; }
+}
+
+/* ---------- Let's Connect ---------- */
+.footer-contact .connect-email {
+    display: inline-block;
+    margin-top: 4px;
+    color: var(--deep-space-blue);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--frosted-blue);
+    transition: border-color 0.2s ease;
+}
+
+.footer-contact .connect-email:hover {
+    border-color: var(--deep-space-blue);
+}
+
+.contact-icons a {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-contact p:has(+ .connect-email-line) {
+    margin-bottom: 8px;
+}
+
+.footer-contact .connect-email-line {
+    margin-bottom: 0;
+}
+
+/* ---------- Experience & project page polish ---------- */
+/* Experience tiles: photo eases in slightly on hover (`scale` stacks with any inline crop transform) */
+.photo-tile img {
+    transition: scale 0.4s ease;
+}
+
+.photo-tile a:hover img,
+.photo-tile a:focus-visible img {
+    scale: 1.04;
+}
+
+/* Keyboard users see the same title overlay as mouse users, plus a clear focus ring */
+.photo-tile a:focus-visible {
+    outline: 2px solid var(--deep-space-blue);
+    outline-offset: -2px;
+}
+
+.photo-tile a:focus-visible .tile-title {
+    opacity: 1;
+}
+
+/* Long project names stay inside their tile */
+.tile-title {
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+/* Project pages: carousel arrows get a soft shadow and a visible keyboard focus ring */
+.carousel-btn {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-btn:focus-visible,
+.lightbox-btn:focus-visible,
+.lightbox-close:focus-visible {
+    outline: 2px solid var(--frosted-blue);
+    outline-offset: 2px;
+}
+
+/* Bullet points get a little more breathing room */
+.project-bullets li {
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.project-bullets li::marker {
+    color: var(--deep-space-blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .photo-tile img {
+        transition: none;
+    }
+
+    .photo-tile a:hover img,
+    .photo-tile a:focus-visible img {
+        scale: none;
+    }
+}
+
+/* Interests: white bar holds each hobby as its own soft frosted-blue chip */
+.interests-group .additional-skills {
+    padding: 14px 16px;
+    border: 1px solid #e6eef0;
+    box-shadow: 0 4px 14px rgba(0, 50, 73, 0.06);
+}
+
+.interest-chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.interest-chips li {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(154, 209, 212, 0.28); /* frosted blue, light */
+    color: var(--deep-space-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3;
+    transition: background-color 0.2s ease;
+}
+
+.interest-chips li:hover {
+    background: rgba(154, 209, 212, 0.5);
+}
+
+/* ---------- Experience page: Photos-app touches ---------- */
+/* "16 Projects" under the grid, like the camera roll's photo count */
+.photo-count {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8e8e93;
+}
+
+/* GIF tiles get a small play badge, like video thumbnails */
+.video-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #ffffff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+    pointer-events: none;
+}
+
+/* Hover overlay: project name with its date and field underneath */
+.tile-title {
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tile-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
+}
+
+@media (hover: none) {
+    .tile-title {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .tile-meta {
+        display: none;
+    }
+}
+
+/* ---------- Visual Resume: one consistent grid ----------
+   Every term heading: title, degree, logo, then a line to the right edge.
+   Every project: text column (11) | photo column (9), text centered on its photos,
+   photos all the same height and centered in their column. */
+.visual-resume .timeline-term {
+    padding-bottom: 28px;
+}
+
+.visual-resume .term-head {
+    align-items: center;
+    gap: 12px;
+    border-left: none;
+    padding: 0;
+    margin: 0 0 24px;
+}
+
+.visual-resume .term-head .term-logo {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    transform: none;
+    align-self: center;
+}
+
+.visual-resume .term-head .term-rule {
+    margin: 0 0 0 8px;
+}
+
+.resume-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+    column-gap: 40px;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+.resume-text {
+    border-left: 1px solid var(--line-accent);
+    padding-left: 14px;
+}
+
+.resume-text h4 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0;
+}
+
+.resume-media .entry-link-images {
+    flex-wrap: nowrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.resume-media .entry-link-images > img,
+.resume-media .entry-link-images > .zoom-frame {
+    flex: 0 0 auto; /* photos keep their own crop instead of squeezing to fit */
+    min-width: 0;
+    height: 190px;
+}
+
+.resume-media .entry-link-images > img {
+    width: auto;
+    object-fit: cover;
+}
+
+.resume-media .zoom-frame {
+    display: block;
+    overflow: hidden;
+}
+
+.resume-media .zoom-frame img {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+/* The "*Click on links..." hint sits under the section title on every screen size */
+.visual-resume .click-hint-mobile {
+    display: block;
+    margin: -22px 0 18px;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .resume-entry {
+        grid-template-columns: 1fr;
+        row-gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .resume-media .zoom-frame img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Visual Resume: each project keeps the photo crops it had before the grid (desktop only) */
+@media (min-width: 601px) {
+    .resume-media .crop-frame {
+        display: block;
+        overflow: hidden;
+        flex: 0 0 auto;
+    }
+
+    .resume-media .crop-frame img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Deepika HCI Lab: top-weighted crop, trimmed on the right */
+    .r-hci .crop-frame {
+        width: 219px;
+        height: 203px;
+        clip-path: inset(0 calc(5% + 4px) 0 0);
+    }
+
+    .r-hci .crop-frame img {
+        object-fit: cover;
+        object-position: center 40%;
+        transform: scale(1.05);
+    }
+
+    /* Robogatchi: two portrait frames */
+    .r-robogatchi .robogatchi-frame {
+        width: 140px;
+        height: 187px;
+    }
+
+    .r-robogatchi .robogatchi-frame img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Sequins: wide module photo with the sketch tucked under its corner */
+    .r-sequins .entry-link-images {
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        margin: 0 auto;
+        gap: 6px;
+    }
+
+    .r-sequins .entry-link-images > img {
+        height: auto;
+        width: 380px;
+        max-width: 100%;
+    }
+
+    .r-sequins .entry-link-images > img + img {
+        width: 105px;
+        margin-top: -25px;
+        translate: -24% 14%; /* nudged 24% left and 14% down from its spot under the module photo */
+    }
+
+    /* Computational Biomechanics: whole simulation shown, no crop */
+    .r-computational .crop-frame {
+        width: 260px;
+        height: 242px;
+    }
+
+    .r-computational .crop-frame img {
+        object-fit: contain;
+    }
+
+    /* Stride Recover: original 160px row */
+    .r-stride .entry-link-images > img,
+    .r-stride .entry-link-images > .zoom-frame {
+        height: 160px;
+    }
+
+    /* Direct Joule (Kedar lab): photos a size up, 185px tall */
+    .r-kedar .entry-link-images > img,
+    .r-kedar .entry-link-images > .zoom-frame {
+        height: 185px;
+    }
+
+    /* Formaflow: 180px row */
+    .r-formaflow .entry-link-images > img,
+    .r-formaflow .entry-link-images > .zoom-frame {
+        height: 180px;
+    }
+
+    /* Gyroscope Glove: two equal half-width cells with the usual 8px gap */
+    .r-me278 .entry-link-images > img,
+    .r-me278 .entry-link-images > .zoom-frame {
+        width: calc(50% - 4px);
+        height: 160px;
+        flex: 0 0 calc(50% - 4px);
+    }
+
+    .r-me278 .zoom-frame img,
+    .r-me278 .entry-link-images > img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* EchoHand: stretched wide shot beside a squared-off zoom */
+    .r-echohand .entry-link-images > img.echohand-wide {
+        height: 215px;
+        transform: scaleX(1.19);
+        margin: 0 12px; /* room for the stretch so it doesn't cover its neighbor */
+    }
+
+    .r-echohand .echohand-square-frame {
+        width: 202px;
+        height: 215px;
+    }
+
+    .r-echohand .echohand-square-frame img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 600px) {
+    .resume-media .entry-link-images > img,
+    .resume-media .entry-link-images > .zoom-frame,
+    .resume-media .entry-link-images > .crop-frame {
+        flex: 1 1 0;
+    }
+
+    .resume-media .crop-frame {
+        display: block;
+        overflow: hidden;
+        height: 170px;
+    }
+
+    .resume-media .crop-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* "*Click on links to learn more..." hint: larger and easier to read */
+.visual-resume .click-hint-mobile {
+    font-size: 12px;
+}
+
+/* Experience grid: a few standout projects take a 2x2 spot, like the Photos app's Days view.
+   Four large tiles (Soft Wearables, Robogatchi, Gyroscope Glove, L'Oreal) fill every row of the 4-column grid with no gaps. */
+.photo-tile-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.photo-tile-large .tile-title {
+    font-size: 1.6rem;
+}
+
+.photo-tile-large .tile-meta {
+    font-size: 0.85rem;
+}
+
+/* "Recents" above the grid, opposite the project count below it */
+.grid-label {
+    margin: 4px 0 8px 2px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #8e8e93;
+}
+
+@media (max-width: 600px) {
+    /* Two columns: let later tiles fill any hole a large tile leaves */
+    .photo-grid {
+        grid-auto-flow: dense;
+    }
+}
+
+@media (hover: none) {
+    .photo-tile-large .tile-title {
+        font-size: 1rem;
+    }
+}
+
+/* Robogatchi cutout in the left margin: a sticky robot riding an invisible track,
+   so it scrolls as smoothly as the page and parks beside its Visual Resume entry */
+.robo-track {
+    position: absolute;
+    top: 60px;
+    left: -105px; /* right edge sits 15px from the page content */
+    width: 75px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Once it reaches the Robogatchi words it parks at the bottom of its track for good,
+   scooting in so it sits 12px left of the text's accent line */
+.robo-float.is-parked {
+    position: absolute;
+    top: auto; /* drop the sticky offset so bottom: 0 decides where it sits */
+    bottom: 0;
+    left: 18px;
+    animation: robo-arrive 0.5s ease-out, robo-bob 3.2s ease-in-out 0.5s infinite;
+}
+
+@keyframes robo-arrive {
+    from { translate: -18px 0; }
+    to   { translate: 0 0; }
+}
+
+.robo-float {
+    position: sticky;
+    top: 90px; /* rides just under the sticky menu bar */
+    display: block;
+    width: 100%;
+    opacity: 0.85;
+    transform-origin: 50% 90%; /* tilts from its wheels */
+}
+
+/* Idle wobble with a little hop every few seconds (moves only, never changes size or shape) */
+/* Always on, even when the device asks for reduced motion */
+.robo-float {
+    animation: robo-bob 3.2s ease-in-out infinite;
+}
+
+@keyframes robo-bob {
+    0%   { transform: translateY(0) rotate(-2deg); }
+    30%  { transform: translateY(-3px) rotate(2deg); }
+    60%  { transform: translateY(0) rotate(-1deg); }
+    68%  { transform: translateY(2px) rotate(0); }      /* dip */
+    76%  { transform: translateY(-16px) rotate(1deg); } /* hop */
+    84%  { transform: translateY(0) rotate(0); }        /* land */
+    90%  { transform: translateY(-3px) rotate(-1deg); } /* small bounce */
+    100% { transform: translateY(0) rotate(-2deg); }
+}
+
+/* Needs the side margin to sit in; hidden once the screen is too narrow */
+@media (max-width: 1000px) {
+    .robo-track {
+        display: none;
+    }
+}
+
+/* Visual Resume: a thin line on the right edge of each project, mirroring the text's left line.
+   Each one starts and ends at its own spot so they read as randomly scattered. */
+@media (min-width: 601px) {
+    .resume-entry {
+        position: relative;
+    }
+
+    .resume-entry::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: var(--rl-top, 20%);
+        height: var(--rl-h, 50%);
+        border-right: 1px solid var(--line-accent);
+        pointer-events: none;
+    }
+
+    .r-hci           { --rl-top: 10%; --rl-h: 45%; }
+    .r-robogatchi    { --rl-top: 42%; --rl-h: 50%; }
+    .r-sequins       { --rl-top: 0;   --rl-h: 35%; }
+    .r-computational { --rl-top: 28%; --rl-h: 60%; }
+    .r-stride        { --rl-top: 55%; --rl-h: 40%; }
+    .r-formaflow     { --rl-top: 5%;  --rl-h: 55%; }
+    .r-me278         { --rl-top: 38%; --rl-h: 30%; }
+    .r-kedar         { --rl-top: 12%; --rl-h: 72%; }
+    .r-biomech       { --rl-top: 48%; --rl-h: 45%; }
+    .r-echohand      { --rl-top: 0;   --rl-h: 50%; }
+}
+
+/* ---------- Project page layout v2 (trial: add .project-v2 to a page's .project-page) ---------- */
+/* "← All projects" above the title */
+.project-v2 .back-link {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-v2 .back-link:hover {
+    color: var(--deep-space-blue);
+}
+
+/* Shorter pages no longer leave a big gap before the footer */
+.project-page.project-v2 {
+    min-height: 0;
+    padding-bottom: 48px;
+}
+
+/* Two clean columns: text at a constant width, photo column that stays in view while you read */
+.project-v2 .project-top-row.project-wrap {
+    display: block;
+}
+
+.project-v2 .project-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    column-gap: 48px;
+    align-items: start;
+}
+
+.project-v2 .project-body > * {
+    grid-column: 1;
+}
+
+.project-v2 .project-wrap .project-carousel {
+    grid-column: 2;
+    grid-row: 1 / span 20;
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 4px 0 0;
+}
+
+/* Photo stays in view while you read: only on pages marked .sticky-media */
+.project-v2.sticky-media .project-wrap .project-carousel {
+    position: sticky;
+    top: 90px;
+}
+
+/* Date and fields: one quiet line of small caps, the date set apart in dark blue */
+.project-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: 0 0 18px;
+    padding: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.project-tags li + li::before {
+    content: "/";
+    margin: 0 10px;
+    color: #b6bcc4;
+    font-weight: 400;
+}
+
+.project-tags li:first-child {
+    color: var(--deep-space-blue);
+}
+
+/* "1 / 4" photo counter, like the Photos app */
+.carousel-count {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    pointer-events: none;
+}
+
+.carousel-count:empty {
+    display: none;
+}
+
+/* Skills heading on every project page: a centered divider, line - SKILLS - line, in the same small caps as the date line */
+.project-page .project-subheading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 40px 0 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--deep-space-blue);
+}
+
+/* Lines drawn as borders so they snap to whole pixels and stay crisp at any zoom */
+.project-page .project-subheading::before,
+.project-page .project-subheading::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 0;
+    margin: 0;
+    background: none;
+    border-top: 1px solid var(--deep-space-blue);
+}
+
+.project-v2 .skills-columns {
+    margin-top: 14px;
+}
+
+/* Phones and narrow windows: one column, photo after the tags, nothing sticky */
+@media (max-width: 800px) {
+    .project-v2 .project-body {
+        grid-template-columns: 1fr;
+    }
+
+    .project-v2 .project-wrap .project-carousel {
+        grid-column: 1;
+        grid-row: auto;
+        position: static;
+        margin: 0 0 24px;
+    }
+
+}
+
+/* Formaflow keeps its own text + two-carousel layout, spanning both columns */
+.project-v2 .project-body > .formaflow-layout {
+    grid-column: 1 / -1;
+}
+
+/* Project pages whose photo doesn't follow you: text wraps around the photo,
+   then runs full width beneath it */
+@media (min-width: 801px) {
+    .project-v2:not(.sticky-media) .project-top-row.project-wrap {
+        display: flow-root; /* contains the floated photo */
+    }
+
+    .project-v2:not(.sticky-media) .project-body {
+        display: block;
+    }
+
+    .project-v2:not(.sticky-media) .project-body > .project-carousel {
+        float: right;
+        width: 42%;
+        max-width: none;
+        margin: 4px 0 24px 40px;
     }
 }
