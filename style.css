@@ -2849,7 +2849,7 @@ footer .copyright {
     .resume-entry {
         grid-template-columns: 1fr;
         row-gap: 12px;
-        margin-bottom: 32px;
+        margin-bottom: 48px;
     }
 
     .resume-media .zoom-frame img {
@@ -2993,6 +2993,24 @@ footer .copyright {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    /* Sequins (Morphing Matters Lab): the wide module photo runs full width, uncropped,
+       with the sketch tucked under its corner like on desktop */
+    .visual-resume .r-sequins .entry-link-images {
+        flex-direction: column !important;
+        align-items: flex-start;
+    }
+
+    .visual-resume .r-sequins .entry-link-images > img {
+        flex: none;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .visual-resume .r-sequins .entry-link-images > img + img {
+        width: 30% !important;
+        margin: -20px 0 0 8px !important;
     }
 }
 
@@ -3269,6 +3287,13 @@ footer .copyright {
         margin: 0 0 24px;
     }
 
+}
+
+/* Phones: a little more room between the tags, photo, intro and bullets (Skills keeps its spacing) */
+@media (max-width: 600px) {
+    .project-v2 .project-body {
+        row-gap: 14px;
+    }
 }
 
 /* Formaflow keeps its own text + two-carousel layout, spanning both columns */

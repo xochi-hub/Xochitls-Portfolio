@@ -170,8 +170,9 @@
             }
             if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
             if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
-            if (images.length > 1) {
-                // Auto-advance only in the small preview; the full-screen view flips on click only
+            if (images.length > 1 && !window.matchMedia('(max-width: 600px)').matches) {
+                // Auto-advance only in the small preview; the full-screen view flips on click only.
+                // Phones skip it so the photo stays put while you read
                 setInterval(() => {
                     if (!lightbox.classList.contains('open')) show(index + 1);
                 }, 6000); // a bit slower, so each photo has time to be looked at
